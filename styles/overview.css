@@ -2,3 +2,10 @@
 body {
 	background-color: #5B2C00;
 }
+#main {
+	max-width: 980px;
+	margin-right: auto;
+	margin-left: auto;
+	text-align: center;
+	
+}
