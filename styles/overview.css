@@ -2,10 +2,23 @@
 body {
 	background-color: #5B2C00;
 }
+#globalnav {
+	background-image: url(../images/navbg-01.png);
+	height: 96px;
+	width: 847px;
+	margin-right: auto;
+	margin-left: auto;
+}
+header {
+	width: 980px;
+	margin-right: auto;
+	margin-left: auto;
+	background-color: #E4C664;
+}
 #main {
 	max-width: 980px;
 	margin-right: auto;
 	margin-left: auto;
 	text-align: center;
-	
+	background-color: #F5E4B2;	
 }
