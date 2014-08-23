@@ -32,3 +32,12 @@ footer {
 	color: #FFF;
 	text-decoration: none;
 }
+
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), 
+only screen and (min-device-pixel-ratio: 1.5) {
+　.bgImage {
+    　background-image: url(bg_image@2x.png);
+    　background-size: 100px 100px;
+　}
+}
