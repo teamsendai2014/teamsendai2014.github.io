@@ -5,7 +5,7 @@ body {
 #globalnav {
 	background-image: url(../images/navbg-01.png);
 	height: 96px;
-	width: 847px;
+	width: 846px;
 	margin-right: auto;
 	margin-left: auto;
 }
@@ -21,4 +21,14 @@ header {
 	margin-left: auto;
 	text-align: center;
 	background-color: #F5E4B2;	
+}
+footer {
+	width: 980px;
+	margin-right: auto;
+	margin-left: auto;
+	color: #FFF;
+}
+.footer a {
+	color: #FFF;
+	text-decoration: none;
 }
