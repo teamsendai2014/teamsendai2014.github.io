@@ -1,0 +1,53 @@
+@charset "UTF-8";
+
+* { margin: 0; padding: 0; }
+
+
+
+#main article {
+	
+}
+
+
+
+/* article */
+
+#main article section {
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
+
+#main article #section-hero {
+	background-color: #EEEEEE;
+}
+
+
+#main article .wrapper {
+	width: 980px;
+	margin-right: auto;
+	margin-left: auto;
+	padding-left: 10px;
+	padding-right: 10px;
+	line-height: 2.0;
+	font-family: 'Roboto', sans-serif;
+	color: #333;
+}
+
+
+
+#main article .wrapper h2 {
+	font-family: 'Roboto Slab', serif;
+	font-size: 36px;
+}
+
+
+
+#main article .wrapper p {
+	text-align: justify;
+	margin: 30px;
+}
+
+
+#main{
+	padding-top: 60px;
+}
