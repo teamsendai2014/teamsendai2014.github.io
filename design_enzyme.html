@@ -1,0 +1,293 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Design | Team Sendai - Biomod 2014</title>
+<link href="styles/common.css" rel="stylesheet" type="text/css">
+<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Roboto+Slab' rel='stylesheet' type='text/css'>
+<script src="scripts/jquery-1.11.1.min.js"></script>
+<script src="scripts/retina.js"></script>
+<script type="text/javascript">
+
+
+$(function() {
+	// ナビゲーションのリンクを指定
+	var navLink = $('#contentsnav li a');
+
+	// 各コンテンツのページ上部からの開始位置と終了位置を配列に格納しておく
+	var contentsArr = new Array();
+	for (var i = 0; i < navLink.length; i++) {
+		// コンテンツのIDを取得
+		var targetContents = navLink.eq(i).attr('href');
+		// ページ内リンクでないナビゲーションが含まれている場合は除外する
+		if(targetContents.charAt(0) == '#') {
+			// ページ上部からコンテンツの開始位置までの距離を取得
+			var targetContentsTop = $(targetContents).offset().top;
+			// ページ上部からコンテンツの終了位置までの距離を取得
+			var targetContentsBottom = targetContentsTop + $(targetContents).outerHeight(true) - 1;
+			// 配列に格納
+			contentsArr[i] = [targetContentsTop, targetContentsBottom]
+		}
+	};
+	
+	 $('a[href^=#]').click(function(){
+
+        var speed = 500;
+
+        var href= $(this).attr("href");
+
+        var target = $(href == "#" || href == "" ? 'html' : href);
+
+        var position = target.offset().top;
+
+        $("html, body").animate({scrollTop:position + 1}, speed, "swing");
+
+//2pixel下に下げてナビのずれを回避
+        return false;
+
+    });
+
+
+	// 現在地をチェックする
+	function currentCheck() {
+		// 現在のスクロール位置を取得
+		var windowScrolltop = $(window).scrollTop();
+		for (var i = 0; i < contentsArr.length; i++) {
+			// 現在のスクロール位置が、配列に格納した開始位置と終了位置の間にあるものを調べる
+			if(contentsArr[i][0] <= windowScrolltop && contentsArr[i][1] >= windowScrolltop) {
+				// 開始位置と終了位置の間にある場合、ナビゲーションにclass="current"をつける
+				navLink.removeClass('current');
+				navLink.eq(i).addClass('current');
+				i == contentsArr.length;
+			}
+		};
+	}
+
+	// ページ読み込み時とスクロール時に、現在地をチェックする
+	$(window).on('load scroll', function() {
+		currentCheck();
+	});
+});
+
+
+</script>
+
+</head>
+
+<body>
+<div id="wrapper">
+<header id="globalheader">
+<div id="globalnav">
+<img src="images/back_arrow.png" width="15" height="57" alt="back">
+<a href="index.html"><img src="images/TOlogo_thumb.png" width="249" height="57" alt="Tales of the Order" id="projectlogo"></a>
+<ul>
+<li><a href="project.html">Project Idea</a></li>
+<li class="currentpage"><a href="design.html">Design</a></li>
+<li><a href="simulation.html">Simulation</a></li>
+<li><a href="experiment.html">Experiment</a></li>
+<li><a href="discussion.html">Discussion</a></li>
+<li><a href="team.html">Team</a></li>
+</ul>
+</div>
+</header>
+<div id="main">
+<nav id="contentsnav">
+<ul>
+<li><a href="#contents01"><b>Enzyme System</b></a></li>
+<li><a href="#contents02">Reading process</a></li>
+<li><a href="#contents03">Releasing process</a></li>
+<li><a href="#contents04">Updating process</a></li>
+<li><a href="#contents05">Lorem ipsum ##</a></li>
+<li><a href="#contents06">Lorem ipsum ####</a></li>
+</ul>
+
+</nav>
+<div id="maincol">
+<article>
+<h1><div style="border-style: solid ; border-width: 1px; width: 100px;">Design</div>
+</h1>
+<!--
+<div id="index">
+<h3>Contents</h3>
+<ul>
+  <li>content1</li>
+  <ul>
+    <li>contents</li>
+    <ul>
+      <li>contents</li>
+      <li>contents</li>
+      <li>contents</li>
+    </ul>
+    <li>contents</li>
+    <li>contents</li>
+  </ul>
+  <li>content1</li>
+  <ul>
+    <li>contents</li>
+    <li>contents</li>
+    <li>contents</li>
+  </ul>
+</ul>
+</div>
+
+-->
+<section id="contents01">
+<span><!--<img src="images/square_ms.png" width="26px" height="26px"><font color="#C9FC00">--><h2>Enzyme device</h2></font></span>
+<p>In this page, we explain the device using DNA and enzymes.  </p>
+
+</section>
+<!--<video src="video/enzyme_free.mp4" width="600" height="330" frameborder="0" allowfullscreen loop autoplay controls></video>-->
+
+<section id="contents02">
+<span><h2></h2></span><!-- 題名をつけるところ -->
+<p>First, we explain rough mechanisms of the device.<br><br>
+<img src="images/design/device rough image.png" width"=600"alt="design" align="center">
+The device is composed of input DNA and three processes.
+Input DNA codes sequence of Output.
+Three processes are reading process, releasing process and updating process.<br>
+
+In reading process, Input DNA gives information to the device. With the first instruction, a signal corresponding to information is released and starts cascades of next processes.<br>
+
+In releasing process, Output is released according to the signal from the previous process.<br>
+
+After releasing process finished, updating process starts.<br>
+In updating process, the first instruction is removed from Input DNA for the next cycle.<br>
+By cycling these three processes step by step, single stranded DNAs are generated in order.<br clear="leftt">
+<br>
+
+Secondly, we explain the detail of three mechanisms.<br><br>
+The device is composed of Templates, Output device and Gates. (fig.O)<img src="images/square-01.png" width="300"alt="design" align="left"><br clear="left">
+<br><br>
+
+<font size="7">R</font>eading process utilize DNA amplification scheme based on the repeated extension and nicking of one strand of DNA duplex. This process is composed of input DNA, single stranded DNA(templates), polymerase and nickase.<br>
+
+Reading process is achieved by following chemical reactions.<br><br>
+<img src="images/square-01.png" width="300"alt="design" align="left">
+Step1. Templates hybridize with input DNA. <br>
+Step2. Polymerase elongates DNA from 3' end. To limit point elongated by polymerase, Input/templates complex contains some toholds.<br>
+
+Step3. Nickase cleaves upper side of a DNA duplex.<br>
+Step4. Polymerase elongates DNA from 3' end again with strand displacement activity . As a result, single stranded DNA is released.<br><br>
+
+Repeating Step3 and Step4, single stranded DNA which is named Signal is amplified. Signal  starts next processes: releasing process and updating process.<br clear="left">
+<bt><br>
+
+<font size="7">R</font>eleasing process is based on polymerase reaction and strand displacement. In this process, device releases single stranded DNA.<br>
+This process is composed of Signal, double stranded DNA (Output device ), and polymerase.<br>
+
+Releasing process is implemented by following chemical reactions.<br><br>
+
+<img src="images/square-01.png" width="300"alt="design" align="left">
+Step1. Signal hybridizes with a part of Output device.<br>
+Step2. Polymerase elongates DNA from 3' end.<br>
+Step3. Output DNA are released by the strand displacement activity.<br><br>
+
+These reactions take place just after reading process because the toehold region of Output device is slightly longer than that of gates.<br>
+<br clear="left">
+
+<br>
+
+<font size="7">U</font>pdating process is achieved by strand displacement and restriction enzyme. This process is composed of Signal, double stranded DNA (gate) and restriction enzyme. <br>
+
+Updating process is implemented by following chemical reactions.<br><br>
+<img src="images/square-01.png" width="300"alt="design" align="left">
+Step1. Signal hybridizes with a part of gate.<br>
+Step2. Polymerase elongates DNA from 3' end.<br>
+Step3. Single stranded DNA (Updater) is released by strand displacement activity.<br>
+Step4. Updater hybridizes with Input/template complex.<br>
+Step5. Restriction enzyme cleaves duplex of Updater and Input/template complex. Input is then updated.<br><br>
+
+Input is updated for the next cycle, the three processes can take place from the beginning.<br>
+<br clear="left">
+<br>
+The cycle is repeated again and again until all the instructions coded (written) in the Input are executed. Eventually, the Outputs are released in order. Programmability is an important feature of our system, because different Input can result in different order to release Outputs.
+
+
+
+
+</p>
+</section>
+
+
+<!--
+<section id="contents03">
+<span><img src="images/square-01.png" width="26px" height="26px"><h2>Releasing process</h2></span>
+<p>
+This process releases the liposome-A when it accepts the strand A<sub>1</sub> from amplifying process.(Fig.3) The liposome is immobilized on substrate in advance. To immobilize that, cholesterol-modified DNA (output-A) and thiol-modified DNA can be used. We can fix thiol-modified DNA onto gold plate. When output-A attached on liposome hybridizes to thiol-modified DNA, liposome is immobilized on substrate.
+</p>
+<p>
+The details of this process is shown as follows.<br>
+</p>
+<p>
+After the amplifying process, strand A<sub>1</sub> hybridizes to thiol-modified DNA on substrate.
+Polymerase synthesizes new DNA from the 3’-end of A<sub>1</sub>(⑤), separating existing hybridization(⑥).
+Eventually, liposome-A is released with output-A from the strand A<sub>1</sub>.
+</p>
+
+<img src="http://openwetware.org/images/a/a2/Figure2_fusen-04.png"><br>
+Fig.3 Schematic explanation of the releasing process
+
+</section>-->
+
+
+<!--<section id="contents04">
+<span><img src="images/square-01.png" width="26px" height="26px"><h2>Updating proce</h2></span>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+</section>
+<section id="contents05">
+<span><img src="images/square-01.png" width="26px" height="26px"><h2>h2 text</h2></span>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+</section>
+<section id="contents06">
+<span><img src="images/square-01.png" width="26px" height="26px"><h2>h2 text</h2></span>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<p>Lom ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+</section>-->
+</article>
+</div>
+</div>
+<script src="scripts/scroll-up-bar.js"></script>
+<script>
+  $('#globalheader').scrollupbar();
+</script>
+<footer>
+<div id="pageinfo">
+<a href="mailto:teamsendai2014@gmail.com" id="info_mail"><img src="images/icon_mail.png" width="18" height="12" alt="mail">TeamSendai2014@gmail.com</a><br />
+<span id="info_copyright">Copyright c 2014 Biomod 2014 team Sendai All rights reserved.</span>
+<span id="info_lab"><a href="http://www.molbot.mech.tohoku.ac.jp/eng/index.html" target=”_blank”><img src="images/Muratalab-icon2_dark-01.png" height="60"></a></span>
+</div>
+</footer>s
+
+</div>
+</body>
+</html>

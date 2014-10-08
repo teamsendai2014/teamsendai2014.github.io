@@ -1,0 +1,491 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Protocol | Team Sendai - Biomod 2014</title>
+<link href="styles/common.css" rel="stylesheet" type="text/css">
+<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Roboto+Slab' rel='stylesheet' type='text/css'>
+<script src="scripts/jquery-1.11.1.min.js"></script>
+<script src="scripts/retina.js"></script>
+<script type="text/javascript">
+
+
+$(function() {
+	// ナビゲーションのリンクを指定
+	var navLink = $('#contentsnav li a');
+
+	// 各コンテンツのページ上部からの開始位置と終了位置を配列に格納しておく
+	var contentsArr = new Array();
+	for (var i = 0; i < navLink.length; i++) {
+		// コンテンツのIDを取得
+		var targetContents = navLink.eq(i).attr('href');
+		// ページ内リンクでないナビゲーションが含まれている場合は除外する
+		if(targetContents.charAt(0) == '#') {
+			// ページ上部からコンテンツの開始位置までの距離を取得
+			var targetContentsTop = $(targetContents).offset().top;
+			// ページ上部からコンテンツの終了位置までの距離を取得
+			var targetContentsBottom = targetContentsTop + $(targetContents).outerHeight(true) - 1;
+			// 配列に格納
+			contentsArr[i] = [targetContentsTop, targetContentsBottom]
+		}
+	};
+	
+	 $('a[href^=#]').click(function(){
+
+        var speed = 500;
+
+        var href= $(this).attr("href");
+
+        var target = $(href == "#" || href == "" ? 'html' : href);
+
+        var position = target.offset().top;
+
+        $("html, body").animate({scrollTop:position + 2}, speed, "swing");
+		
+//2pixel下に下げてナビのずれを回避
+        return false;
+
+    });
+
+
+	// 現在地をチェックする
+	function currentCheck() {
+		// 現在のスクロール位置を取得
+		var windowScrolltop = $(window).scrollTop();
+		for (var i = 0; i < contentsArr.length; i++) {
+			// 現在のスクロール位置が、配列に格納した開始位置と終了位置の間にあるものを調べる
+			if(contentsArr[i][0] <= windowScrolltop && contentsArr[i][1] >= windowScrolltop) {
+				// 開始位置と終了位置の間にある場合、ナビゲーションにclass="current"をつける
+				navLink.removeClass('current');
+				navLink.eq(i).addClass('current');
+				i == contentsArr.length;
+			}
+		};
+	}
+
+	// ページ読み込み時とスクロール時に、現在地をチェックする
+	$(window).on('load scroll', function() {
+		currentCheck();
+	});
+});
+
+
+</script>
+
+</head>
+
+<body>
+<div id="wrapper">
+<header id="globalheader">
+<div id="globalnav">
+<img src="images/back_arrow.png" width="15" height="57" alt="back">
+<a href="index.html"><img src="images/TOlogo_thumb.png" width="249" height="57" alt="Tales of the Order" id="projectlogo"></a>
+<ul>
+<li><a href="project.html">Project Idea</a></li>
+<li><a href="design.html">Design</a></li>
+<li><a href="simulation.html">Simulation</a></li>
+<li><a href="experiment.html">Experiment</a></li>
+<li><a href="discussion.html">Discussion</a></li>
+<li><a href="team.html">Team</a></li>
+</ul>
+</div>
+</header>
+<div id="main">
+
+
+
+
+<!--
+
+編集しずらいのでナビゲーションをコメントアウトしました。By今井
+
+
+<nav id="contentsnav">
+<ul>
+<li><a href="#contents01">Enzyme System</a></li>
+<li><a href="#contents01.5">DNA sequences</a></li>
+<li><a href="#contents02">Function confirmation of 3 processes</a></li>
+<li><a href="#contents03">Reading Process</a></li>
+<li><a href="#contents04">Releasing Process</a></li>
+<li><a href="#contents05">Updating Process</a></li>
+<li><a href="#contents06">Enzyme free System</a></li>
+<li><a href="#contents06.5">DNA sequences</a></li>
+<li><a href="#contents07">シーソーゲートの機能確認 by spectrometer</a></li>
+<li><a href="#contents08">シーソーゲートの機能確認 by electrophoresis</a></li>
+<li><a href="#contents99">Reference</a></li>
+</ul>
+
+</nav>
+
+
+
+-->
+
+
+
+
+<div id="maincol">
+
+<article>
+
+<h1>Protocol</h1>
+
+<p>
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+</p>
+
+<div id="index">
+<h3>Contents</h3>
+<ul>
+  <li>Enzyme System</li>
+  <ul>
+    <li>DNA Sequences</li>
+    <li>Function confirmation of 3 processes</li>
+    <ul>
+      <li>Reading Process</li>
+      <li>Releasing Process</li>
+      <li>Updating Process</li>
+    </ul>
+  </ul>
+  <li>Enzyme free System</li>
+  <ul>
+    <li>シーソーゲートの機能確認 by spectrometer</li>
+    <li>シーソーゲートの機能確認 by electrophoresis</li>
+  </ul>
+</ul>
+<ul>
+  <li>Reference</li>
+</ul>
+</div>
+
+<section id="contents01">
+<span><img src="images/square_ms.png" width="26px" height="26px"><font color="#C9FC00"><h2>Enzyme System</h2></font></span>
+</section>
+
+<section id="contents01.5">
+<span><img src="images/square-01.png" width="26px" height="26px">
+<h2>Preparation of DNA, enzyme, and NEB buffer</h2>
+</span>
+<h3>DNA sequences</h3>
+<p>
+We designed DNA sequences by Sequence Design[1].<br>
+All DNAs for experiments are shown in fig.1.（この図は変更する。図に合わせて表の文字の色も変更する。）<br>
+<br>
+
+<div align="center">
+<img src="images/protocol/protocol enzyme system sequences_1.0.png" width="650"><br>
+fig.1 DNAs for experiments<br>
+</div>
+<br>
+All DNA shown in next table were purchased from Eurofins.<br><br>
+<div align="center">
+table. DNA sequences for enzyme system<br>
+<table border="1">
+<tr>
+<td>Input 1</td>
+<td>CTAGAACATACGCATTTGATTCGC<font color="#00ff00">GAATTC</font>AGCAGTACTATTCAAGCGACGGCT</td>
+</tr>
+<tr>
+<td>Template A</td>
+<td>TCACTTCTGCATCGATCACGACTAGCCGTCGCTTGAATAGT<font color="#ff8b00">GTTA</font></td>
+</tr>
+<tr>
+<td>Gate A +</td>
+<td><font color="#0000ff">AGCGTCATCGG</font><font color="#00ffff">TCTTTA</font><font color="#0000ff">AGCAGTACTATTCAAGCGACGGCTTCACTTCTGC</font></td>
+</tr>
+<tr>
+<td>Gate A - 1</td>
+<td>TCACGACTC<font color="#0000ff">AGCCGTCGCTTGAATAGTACTGCT</font><font color="#00ffff">GAATTC</font><font color="#0000ff">CCGATGACGCT</font></td>
+</tr>
+<tr>
+<td>Output A</td>
+<td>TAGGTACGCTCCGACAAGGT</td>
+</tr>
+<tr>
+<td>Anchor</td>
+<td>ACCTTGTCGGAGCGTACCTA<font color="#0000ff">TCACTTCTGCATCGA</font></td>
+</tr>
+<tr>
+<td>Key-DNA(A1)</td>
+<td><font color="#ff0000">TCGATGCAGAAGTGA</font></td>
+</tr>
+</table>
+</div>
+</p>
+
+（図と配列表の対応関係についての説明）<br>
+<font color="#00ff00">GAATTC</font>は制限酵素EcoRⅠの認識配列である。<br>
+
+<h3>Enzymes</h3>
+<p>
+ポリメラーゼ(Bst DNA Polymerase, Large Fragment)とニッカーゼ(Nt.BstNBI)はNEW ENGLAND BioLabs JAPANから購入した<br><br>
+制限酵素はEcoRI(タカラバイオ株式会社、要確認)から購入した。
+</p>
+
+<h3>NEB buffer 3.1</h3>
+<p>
+H Bufferの組成は以下の通りである。<br>
+<div align="center">
+table. Composition of H Buffer ×10<br>
+<table border="1">
+<tr>
+<td>Tris-HCl, pH7.5</td>
+<td>100mM</td>
+</tr>
+<tr>
+<td>MgCl2</td>
+<td>100mM</td>
+</tr>
+<tr>
+<td>Dithiothreitol</td>
+<td>10mM</td>
+</tr>
+<tr>
+<td>NaCl</td>
+<td>1000mM</td>
+</tr>
+</table>
+
+
+</div>
+</p>
+</section>
+
+<section id="contents02">
+<span><img src="images/square-01.png" width="26px" height="26px">
+<h2>Function confirmation of 3 processes</h2>
+</span>
+</section>
+
+<section id="contents03">
+<span><img src="images/square-01.png" width="26px" height="26px">
+<h2>Reading Process</h2>
+</span>
+<p>
+1.Input and Template を（コンプレックスを形成するために）アニーリングした。<br>
+アニーリング条件は95℃~20℃まで一分に1℃の割合でクーリングした。<br><br>
+
+2.酵素反応は37℃/55℃で1時間行った。in サーマルサイクラー<br><br>
+
+3.Formation of 20% アクリルアミドゲル<br><br>
+
+<div align="center">
+table. Formation of 20% アクリルアミドゲル<br>
+<table border="1">
+<tr>
+<td>30%アクリルアミド</td>
+<td>6.66 ml</td>
+</tr>
+<tr>
+<td>10×TBE</td>
+<td>1 ml</td>
+</tr>
+<tr>
+<td>mQ</td>
+<td>2.33 ml</td>
+</tr>
+<tr>
+<td>10%APS</td>
+<td>100 μl</td>
+</tr>
+<tr>
+<td>TEMED</td>
+<td>10 μl</td>
+</tr>
+<tr>
+<td>合計</td>
+<td>10 ml</td>
+</tr>
+</table>
+</div>
+</p>
+<p>
+
+4. Gel-electrophoresis was conducted at 100V for 50 minutes. Then gel was stained by SYBR Gold.<br><br>
+
+5.ゲルイメージャー（BioRad）で撮影した。<br>
+<div align="center">
+
+
+できれば写真を貼ります<br>
+<img src=""><br>
+
+
+fig. Gel imager(BioRad)<br>
+</div>
+</p>
+<p>
+Go back to experiment<br>
+</p>
+</section>
+
+<section id="contents04">
+<span><img src="images/square-01.png" width="26px" height="26px">
+<h2>Releasing Process</h2>
+</span>
+<p>
+1.Anchor, Output, and Key were mixed and then annealed from 95 to 20℃ (-1℃/min).<br><br>
+
+2.酵素反応は37℃/55℃で1時間行った。<br><br>
+
+3.電気泳動は20%アクリルアミドゲルでコンスタントボルト（CV）100Vで100min行った。Then gel was stained by SYBR Gold.<br><br>
+
+4.ゲルイメージャー（BioRad）で撮影した。<br>
+</p>
+<p>
+Go back to experiment<br>
+</p>
+</section>
+
+<section id="contents05">
+<span><img src="images/square-01.png" width="26px" height="26px">
+<h2>Updating Process</h2>
+</span>
+<p>
+1.Input-Template complex and Gate were formed by annealing (95 to 20℃, -1℃/min).<br><br>
+
+2.酵素反応45℃で3時間行った。<br><br>
+
+3.電気泳動は15%アクリルアミドゲルでコンスタントボルト（CV）100Vで75分行った。Then gel was stained by SYBR Gold.<br><br>
+
+4.ゲルイメージャー（BioRad）で撮影した。<br>
+</p>
+<p>
+Go back to experiment
+</p>
+</section>
+
+<section id="contents06">
+<span><img src="images/square_ms.png" width="26px" height="26px"><font color="#C9FC00"><h2>Enzyme Free System</h2></font></span>
+</section>
+
+<section id="contents08">
+<span><img src="images/square-01.png" width="26px" height="26px">
+<h2>Function confirmation of Seesaw gate</h2>
+</span>
+<p>
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+</p>
+</section>
+
+<section id="contents06.5">
+<span><img src="images/square-01.png" width="26px" height="26px">
+<h2>Preparation of DNA sequences</h2>
+</span>
+<p>
+We designed DNA sequences by Sequence Design. All DNA shown in next table were purchased from Eurofins.<br>
+<div align="center">
+table. DNA sequences for enzyme free system<br>
+<table border="1">
+<tr>
+<td>InputA</td>
+<td>CAGATGACTTTACGAGATACGATATTCCTTCTGCC</td>
+</tr>
+<tr>
+<td>InputA*</td>
+<td>GTATCTCGTAAAGTCATCTGCATAG</td>
+</tr>
+<tr>
+<td>Trigger</td>
+<td>CTATGCAGATGACTTTACGA</td>
+</tr>
+<tr>
+<td>mO</td>
+<td>CAGATGACTTTACG</td>
+</tr>
+<tr>
+<td>mO*</td>
+<td>CGTATCTCGTAAAGTCATCTG</td>
+</tr>
+<tr>
+<td>GateA</td>
+<td>GATATTCCTTCTGCCGATACCAGATGACTTTACGA</td>
+</tr>
+<tr>
+<td>GateA*</td>
+<td>GTATCGGCAGAAGGAATATCGTATC</td>
+</tr>
+<tr>
+<td>FuelA</td>
+<td>GATATTCCTTCTGCCGATAC</td>
+</tr>
+</table>
+</div>
+</p>
+</section>
+
+<section id="contents07">
+<span><img src="images/square-01.png" width="26px" height="26px">
+<h2>シーソーゲートの機能確認 by spectrometer</h2>
+</span>
+<p>
+1.The mixture of I and I* strand were annealed at the consentration of 10μM.<by>
+The annealing was conducted for 75 minutes (from 95 to 20℃: 1℃ per 1 minutes). We named this sample I-I* complex.<br> 
+
+2.Fluorescence intensity was measured by spectrofluorometer(FP6200, 日本分光株式会社) for 5000 seconds per 10 seconds. <br>
+The wavelength of excitation light was 492 nm. The fluorescence intensity of 515 nm light was measured.<br>
+mO*, Input complex, and Trigger were added in the 10 seconds time interval of measurement.<br>
+<div align="center">
+
+
+できれば写真を貼ります<br>
+<img src=""><br>
+
+
+fig. Spectrofluorometer(FP6200, 日本分光株式会社)<br>
+</div>
+
+</p>
+<p>
+Go back to experiment
+</p>
+</section>
+
+<section id="contents08">
+<span><img src="images/square-01.png" width="26px" height="26px">
+<h2>シーソーゲートの機能確認 by electrophoresis</h2>
+</span>
+<p>
+1.Input complex and Output complex were formed by annealing(cooling from 95 to 20℃ for 75min, -1℃/min). All samples were mixed after the formation of these complexes.<br>
+2.15% acryl amide gel was formed with 1×TAE buffer.<br>
+3.The electrophoresis was conducted  at 100V for 75 min.<br>
+4.Imaging by gel imager with Blue LED (Non-stained gel image).<br>
+5.Gel was stained by SYBR Gold then imaged with UV light (Stained gel image).<br>
+</p>
+<p>
+Go back to experiment
+</p>
+</section>
+
+<div align="right">
+Go To Discussion Page
+</div>
+
+<section id="contents99">
+<span><img src="images/square_ms.png" width="26px" height="26px"><font color="#C9FC00"><h2>Reference</h2></font></span>
+<p>
+<a href="#ref.1">[1]</a>オシレーターの論文<br>
+<a href="#ref.2">[2]</a> ( EcoRⅠがNEB内で働くことを示した論文もしくは電子説明書へのリンク（後で探します）)<br>
+<a href="#ref.3">[3]</a>シーソーゲートの論文<br>
+</p>
+</section>
+
+</article>
+</div>
+</div>
+<script src="scripts/scroll-up-bar.js"></script>
+<script>
+  $('#globalheader').scrollupbar();
+</script>
+<footer>
+<div id="pageinfo">
+<a href="mailto:teamsendai2014@gmail.com" id="info_mail"><img src="images/icon_mail.png" width="18" height="12" alt="mail">TeamSendai2014@gmail.com</a><br />
+<span id="info_copyright">Copyright c 2014 Biomod 2014 team Sendai All rights reserved.</span>
+<span id="info_lab"><a href="http://www.molbot.mech.tohoku.ac.jp/eng/index.html" target=”_blank”><img src="images/Muratalab-icon2_dark-01.png" height="60"></a></span>
+</div>
+</footer>
+
+</div>
+</body>
+</html>
