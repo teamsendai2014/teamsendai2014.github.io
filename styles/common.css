@@ -1,4 +1,7 @@
 @charset "UTF-8";
+
+* { margin: 0; padding: 0; }
+
 #main {
 	width: 1000px;
 	margin-right: auto;
@@ -17,39 +20,58 @@
 #wrapper {
 	width: 100%;
 }
-#globalnav {
-	border-top-width: 1px;
-	border-right-width: 1px;
-	border-bottom-width: 1px;
-	border-left-width: 1px;
-	border-top-style: solid;
-	border-right-style: solid;
-	border-bottom-style: solid;
-	border-left-style: solid;
-	height: 60px;
-	min-width: 1000px;
-	background: rgba(0, 0, 0, 0.8);
-	padding-right: 30px;
-	padding-left: 30px;
-}
-#globalheader{
+/* header */
+header {
+	position: fixed;
 	width: 100%;
-	min-width: 1010px;
-	position: absolute;
-	z-index: 2;
+	height: 60px;
+	background-color: #666666;
+
 }
-#globalnav li a{
+header #globalnav{
+	max-width: 1280px;
+	min-width: 1064px;
+	position: relative;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+header #globalnav h1{
+	display: block;
+	position: absolute;
+	top: 2px;
+	left: 30px;
+	font-family: 'Roboto Slab', serif;
+	font-size: 36px;
+}
+header #globalnav h1 a{
 	text-decoration: none;
-	color: #aaaaaa;
-	}
-#globalnav li a:hover{
 	color: #ffffff;
-	transition: color 0.2s;
-	}
-#globalnav li.currentpage a{
+}
+
+#globalnav ul {
+	position: absolute;
+	top: 18px;
+	right: 30px;
+	font-family: 'Roboto', sans-serif;
+	
+}
+#globalnav ul li {
+	display: inline;
+	text-align: right;
+	margin-right: 15px;
+}
+
+#globalnav ul li a{
 	text-decoration: none;
+	color: #bbbbbb;
+}
+#globalnav ul li a:hover{
 	color: #ffffff;
-	}
+}
+#globalnav ul .currentpage a {
+	color: #ffffff;
+}
 
 body {
 	margin: 0;
@@ -88,11 +110,9 @@ body {
 	list-style-type: none;
 	color: #999;
 }
-#wrapper #globalnav ul li a {
-	margin-left: 24px;
-}
+
 #main #contentsnav {
-	width: 300px;
+	width: 23%;
 	position: fixed;
 	left: 0px;
 	top: 100px;
