@@ -77,19 +77,20 @@ $(function() {
 
 <body>
 <div id="wrapper">
-    <header>
-      <nav id="globalnav">
-        <h1><a href="index.html">Tales of the Order</a></h1>
-        <ul>
-          <li><a href="./project.html">PROJECT IDEA</a></li>
-          <li><a href="./design_enzyme.html">DESIGN</a></li>
-          <li><a href="./simulation.html">SIMULATION</a></li>
-          <li><a href="./experiment.html">EXPERIMENT</a></li>
-          <li><a href="./discussion.html">DISCUSSION</a></li>
-          <li><a href="./team.html">TEAM</a></li>
-        </ul>
-      </nav>
-    </header>
+<header id="globalheader">
+<div id="globalnav">
+<img src="images/back_arrow.png" width="15" height="57" alt="back">
+<a href="index.html"><img src="images/TOlogo_thumb.png" width="249" height="57" alt="Tales of the Order" id="projectlogo"></a>
+<ul>
+<li><a href="project.html">Project Idea</a></li>
+<li><a href="design.html">Design</a></li>
+<li><a href="simulation.html">Simulation</a></li>
+<li><a href="experiment.html">Experiment</a></li>
+<li><a href="discussion.html">Discussion</a></li>
+<li><a href="team.html">Team</a></li>
+</ul>
+</div>
+</header>
 <div id="main">
 
 
@@ -129,11 +130,6 @@ $(function() {
 <article>
 
 <h1>Protocol</h1>
-
-<p>
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-</p>
-
 <div id="index">
 <h3>Contents</h3>
 <ul>
@@ -178,53 +174,48 @@ fig.1 DNAs for experiments<br>
 </div>
 <br>
 All DNA shown in next table were purchased from Eurofins.<br><br>
-<div align="center">
-table. DNA sequences for enzyme system<br>
-<table border="1">
-<tr>
-<td>Input 1</td>
-<td>CTAGAACATACGCATTTGATTCGC<font color="#00ff00">GAATTC</font>AGCAGTACTATTCAAGCGACGGCT</td>
-</tr>
-<tr>
-<td>Template A</td>
-<td>TCACTTCTGCATCGATCACGACTAGCCGTCGCTTGAATAGT<font color="#ff8b00">GTTA</font></td>
-</tr>
-<tr>
-<td>Gate A +</td>
-<td><font color="#0000ff">AGCGTCATCGG</font><font color="#00ffff">TCTTTA</font><font color="#0000ff">AGCAGTACTATTCAAGCGACGGCTTCACTTCTGC</font></td>
-</tr>
-<tr>
-<td>Gate A - 1</td>
-<td>TCACGACTC<font color="#0000ff">AGCCGTCGCTTGAATAGTACTGCT</font><font color="#00ffff">GAATTC</font><font color="#0000ff">CCGATGACGCT</font></td>
-</tr>
-<tr>
-<td>Output A</td>
-<td>TAGGTACGCTCCGACAAGGT</td>
-</tr>
-<tr>
-<td>Anchor</td>
-<td>ACCTTGTCGGAGCGTACCTA<font color="#0000ff">TCACTTCTGCATCGA</font></td>
-</tr>
-<tr>
-<td>Key-DNA(A1)</td>
-<td><font color="#ff0000">TCGATGCAGAAGTGA</font></td>
-</tr>
-</table>
-</div>
+
+Input 1<br>
+CTAGAACATACGCATTTGATTCGC<font color="#00ff00">GAATTC</font>AGCAGTACTATTCAAGCGACGGCT<br>
+
+
+Template A<br>
+TCACTTCTGCATCGATCACGACTAGCCGTCGCTTGAATAGT<font color="#ff8b00">GTTA</font><br>
+
+
+Gate A +<br>
+<font color="#0000ff">AGCGTCATCGG</font><font color="#00ffff">TCTTTA</font><font color="#0000ff">AGCAGTACTATTCAAGCGACGGCTTCACTTCTGC</font><br>
+
+
+Gate A - 1<br>
+TCACGACTC<font color="#0000ff">AGCCGTCGCTTGAATAGTACTGCT</font><font color="#00ffff">GAATTC</font><font color="#0000ff">CCGATGACGCT</font><br>
+
+
+Output A<br>
+TAGGTACGCTCCGACAAGGT<br>
+
+
+Anchor<br>
+ACCTTGTCGGAGCGTACCTA<font color="#0000ff">TCACTTCTGCATCGA</font><br>
+
+
+Key-DNA(A1)<br>
+<font color="#ff0000">TCGATGCAGAAGTGA</font><br>
+
 </p>
 
-（図と配列表の対応関係についての説明）<br>
-<font color="#00ff00">GAATTC</font>は制限酵素EcoRⅠの認識配列である。<br>
+（図と配列の対応関係についての説明）<br>
+<font color="#00ff00">GAATTC</font> is recognition site for restriction enzyme.<br>
 
 <h3>Enzymes</h3>
 <p>
-ポリメラーゼ(Bst DNA Polymerase, Large Fragment)とニッカーゼ(Nt.BstNBI)はNEW ENGLAND BioLabs JAPANから購入した<br><br>
-制限酵素はEcoRI(タカラバイオ株式会社、要確認)から購入した。
+Both Polymerase (Bst DNA Polymerase, Large Fragment) and Nickase (Nt.BstNBI)were purchased from NEW ENGLAND BioLabs JAPAN.<br><br>
+EcoRI (タカラバイオ株式会社) was used as restriction enzyme.<br>
 </p>
 
 <h3>NEB buffer 3.1</h3>
 <p>
-H Bufferの組成は以下の通りである。<br>
+The next table shows the composition of H Buffer.<br>
 <div align="center">
 table. Composition of H Buffer ×10<br>
 <table border="1">
@@ -262,18 +253,18 @@ table. Composition of H Buffer ×10<br>
 <h2>Reading Process</h2>
 </span>
 <p>
-1.Input and Template を（コンプレックスを形成するために）アニーリングした。<br>
-アニーリング条件は95℃~20℃まで一分に1℃の割合でクーリングした。<br><br>
+1.Input and Template was annaled to form the complex.<br>
+Annealing condition: 95 to 20℃ (-1℃/min) <br><br>
 
-2.酵素反応は37℃/55℃で1時間行った。in サーマルサイクラー<br><br>
+2.Enzymatic reaction was conducted at 37℃/55℃ for 1 hour in thermal cycler.<br><br>
 
-3.Formation of 20% アクリルアミドゲル<br><br>
+3.Formation of 20% acrylamide gel<br><br>
 
 <div align="center">
-table. Formation of 20% アクリルアミドゲル<br>
+table. Formation of 20% acrylamide gel<br>
 <table border="1">
 <tr>
-<td>30%アクリルアミド</td>
+<td>30% acrylamide</td>
 <td>6.66 ml</td>
 </tr>
 <tr>
@@ -293,7 +284,7 @@ table. Formation of 20% アクリルアミドゲル<br>
 <td>10 μl</td>
 </tr>
 <tr>
-<td>合計</td>
+<td>Total</td>
 <td>10 ml</td>
 </tr>
 </table>
@@ -301,9 +292,9 @@ table. Formation of 20% アクリルアミドゲル<br>
 </p>
 <p>
 
-4. Gel-electrophoresis was conducted at 100V for 50 minutes. Then gel was stained by SYBR Gold.<br><br>
+4.Gel-electrophoresis was conducted at 100V for 50 minutes. Then gel was stained by SYBR Gold.<br><br>
 
-5.ゲルイメージャー（BioRad）で撮影した。<br>
+5.Imaging by gel imager（BioRad)<br>
 <div align="center">
 
 
@@ -326,11 +317,11 @@ Go back to experiment<br>
 <p>
 1.Anchor, Output, and Key were mixed and then annealed from 95 to 20℃ (-1℃/min).<br><br>
 
-2.酵素反応は37℃/55℃で1時間行った。<br><br>
+2.Enzymatic reaction was conducted at 37℃/55℃ for 1 hour in thermal cycler.<br><br><br><br>
 
-3.電気泳動は20%アクリルアミドゲルでコンスタントボルト（CV）100Vで100min行った。Then gel was stained by SYBR Gold.<br><br>
+3.Gel-electrophoresis was conducted at 100V for 100 minutes with 20% acrylamide gel. Then gel was stained by SYBR Gold.Then gel was stained by SYBR Gold.<br><br>
 
-4.ゲルイメージャー（BioRad）で撮影した。<br>
+4.Imaging by gel imager（BioRad)<br>
 </p>
 <p>
 Go back to experiment<br>
@@ -364,7 +355,6 @@ Go back to experiment
 <h2>Function confirmation of Seesaw gate</h2>
 </span>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 </p>
 </section>
 
@@ -479,9 +469,9 @@ Go To Discussion Page
 </script>
 <footer>
 <div id="pageinfo">
-<a href="mailto:teamsendai2014@gmail.com" id="info_mail"><img src="images/icon_mail.png" width="18" height="12" alt="mail">TeamSendai2014@gmail.com</a><br />
+<a href="mailto:teamsendai2014@gmail.com" id="info_mail"><img src="images/icon_mail.png" width="18" height="12" alt="mail">TeamSendai2014@gmail.com</a>
 <span id="info_copyright">Copyright c 2014 Biomod 2014 team Sendai All rights reserved.</span>
-<span id="info_lab"><a href="http://www.molbot.mech.tohoku.ac.jp/eng/index.html" target=”_blank”><img src="images/Muratalab-icon2_dark-01.png" height="60"></a></span>
+<span id="info_lab"><a href="http://www.molbot.mech.tohoku.ac.jp/eng/index.html" target=”_blank”><img src="images/Muratalab-icon2_dark-01.png" width="159" height="44"></a></span>
 </div>
 </footer>
 
