@@ -1,0 +1,15 @@
+ÅEValues of chemical parameters are as follows. 
+
+Hybridization             k1=5.0Å~10^6
+Denaturation             kd=1.0Å~10^3
+Branchmigration       kb=1.0Å~10^-1
+Polymerase                 kp=17
+Nickase                         kn=3.0
+Restrictionenzyme    kr=3.0
+
+These parameter are referenced from followings.
+- Zhan and winfree (2009)
+-K.Montagne, R.Plasson, Y.sakai, T Fujii, Y. Rondelez, Mol.Sys.Biol.7 (2011) 1-7
+
+
+ÅEOur model neglects reverse reactions for the sake of simplicity.
