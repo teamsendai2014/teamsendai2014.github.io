@@ -1,0 +1,426 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Simulation | Team Sendai - Biomod 2014</title>
+<link href="styles/common.css" rel="stylesheet" type="text/css">
+<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Roboto+Slab' rel='stylesheet' type='text/css'>
+<script src="scripts/jquery-1.11.1.min.js"></script>
+<script src="scripts/retina.js"></script>
+<script type="text/javascript">
+
+
+$(function() {
+	// ナビゲーションのリンクを指定
+	var navLink = $('#contentsnav li a');
+
+	// 各コンテンツのページ上部からの開始位置と終了位置を配列に格納しておく
+	var contentsArr = new Array();
+	for (var i = 0; i < navLink.length; i++) {
+		// コンテンツのIDを取得
+		var targetContents = navLink.eq(i).attr('href');
+		// ページ内リンクでないナビゲーションが含まれている場合は除外する
+		if(targetContents.charAt(0) == '#') {
+			// ページ上部からコンテンツの開始位置までの距離を取得
+			var targetContentsTop = $(targetContents).offset().top;
+			// ページ上部からコンテンツの終了位置までの距離を取得
+			var targetContentsBottom = targetContentsTop + $(targetContents).outerHeight(true) - 1;
+			// 配列に格納
+			contentsArr[i] = [targetContentsTop, targetContentsBottom]
+		}
+	};
+	
+	 $('a[href^=#]').click(function(){
+
+        var speed = 500;
+
+        var href= $(this).attr("href");
+
+        var target = $(href == "#" || href == "" ? 'html' : href);
+
+        var position = target.offset().top;
+
+        $("html, body").animate({scrollTop:position + 1}, speed, "swing");
+
+        return false;
+
+    });
+
+
+	// 現在地をチェックする
+	function currentCheck() {
+		// 現在のスクロール位置を取得
+		var windowScrolltop = $(window).scrollTop();
+		for (var i = 0; i < contentsArr.length; i++) {
+			// 現在のスクロール位置が、配列に格納した開始位置と終了位置の間にあるものを調べる
+			if(contentsArr[i][0] <= windowScrolltop && contentsArr[i][1] >= windowScrolltop) {
+				// 開始位置と終了位置の間にある場合、ナビゲーションにclass="current"をつける
+				navLink.removeClass('current');
+				navLink.eq(i).addClass('current');
+				i == contentsArr.length;
+			}
+		};
+	}
+
+	// ページ読み込み時とスクロール時に、現在地をチェックする
+	$(window).on('load scroll', function() {
+		currentCheck();
+	});
+});
+
+
+</script>
+
+</head><body>
+<div id="wrapper">
+    <header>
+      <nav id="globalnav">        </nav>
+    </header><h1><a href="index.html">Tales of the Order</a></h1>
+        <ul>
+          <li><a href="./project.html">PROJECT IDEA</a></li>
+          <li><a href="./design_enzyme.html">DESIGN</a></li>
+          <li class="currentpage"><a href="./simulation.html">SIMULATION</a></li>
+          <li><a href="./experiment.html">EXPERIMENT</a></li>
+          <li><a href="./discussion.html">DISCUSSION</a></li>
+          <li><a href="./team.html">TEAM</a></li>
+        </ul>
+      
+    
+<div id="main">
+<nav id="contentsnav">
+</nav><ul>
+<li><a href="#contents01">Simulation of Enzyme device</a></li>
+<li><a href="#contents02">Lorem ipsum ###</a></li>
+<li><a href="#contents03">Lorem ipsum ##</a></li>
+<li><a href="#contents04">Lorem ipsum ####</a></li>
+<li><a href="#contents05">Lorem ipsum ##</a></li>
+<li><a href="#contents06">Lorem ipsum ####</a></li>
+</ul>
+<div id="maincol">
+<article>
+</article><h1>Simulation</h1>
+
+<!--
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>-->
+<div id="index">
+<!--
+
+<h3>Contents</h3>
+<ul>
+  <li>content1</li>
+  <ul>
+    <li>contents</li>
+    <ul>
+      <li>contents</li>
+      <li>contents</li>
+      <li>contents</li>
+    </ul>
+    <li>contents</li>
+    <li>contents</li>
+  </ul>
+  <li>content1</li>
+  <ul>
+    <li>contents</li>
+    <li>contents</li>
+    <li>contents</li>
+  </ul>
+</ul>
+
+-->
+</div>
+<section>
+<span id="contents01">
+<h2>About Enzyme device </h2>
+</span>
+</section><p>Since the components of the Enzyme system can result in
+combinatorially large number of intermediate structures, it is
+difficult to predict the behavior of the device. In addition, it is
+laborious to reveal the relationship between concentration of
+components and time intervals of output DNA by repeating chemical
+experiments.
+To overcome such problems, we formalized ordinary differential
+equations (ODE) based on chemical kinetics model to simulate the
+behavior of the device in a reproducible manner. The numerical
+simulation was carried by mathematical software (Scilab), while the
+ODEs were derived by wring down all the possible intermediates by hand
+(more than 400!!). Raw materials and all intermidates date are
+available [here].
+(<a href="simulation%20date/edsource.pdf" target="_blank">Raw_material</a>,
+
+<a href="simulation%20date/edsource.pdf" target="_blank">All_intemidiates</a>
+<a href="simulation%20date/Information_ed.txt" target="_blank">other_information</a>   )
+<br>
+シミュレーションのパラメータの値を載せる。
+<br>
+First, two types of simulation were implemented. One is that the device
+releases Output-A and Output-B in order, while the other is Output-B
+and Output-A in order. The results are shown in Fig.1.
+</p><div>
+ <img src="simulation%20date/graph_200nM_ab.png" width="400"><img src="simulation%20date/graph_200nM_ba.png" width="400"> 
+</div>
+Fig.1 Results of simulation of model which releases two ouputs
+(left:A then B right: B then A).All concentrations of components are
+200nM.The horizontal axis is concentration. The vertical axis is time. <br>
+<br>
+<p>
+These results indicate that the order of Output is programmable because
+the order to release the Outputs can be coded only in the Input. <br>
+
+
+Second, we increased the number of output.The result is shown in Fig.2.
+</p>
+<div class="aligncenter">
+<img src="simulation%20date/graph_200nM.png" width="400">
+</div>
+Fig.2 Result of simulation of model which releases three outputs. All  concentrations of components are 200nM.  .The horizontal axis is concentration. The vertical axis is time. <br>
+<br>
+<br>   
+
+Three Outputs were released in order(A then B then C).
+This result means that we can program the number of Output.<br>
+Even the model contains more than 400 intermediatesour, our elaborate design makes the device possible to behave as we design. <br>
+<br>
+Moreover,the time intervals between Outputs can be controlled by tuning
+the concentration of Input or Templates or Gates.We define the
+output-time as a time when 50% of the Output is released.
+Then,time interval is defined as a difference between two output-times.<br>
+Tuning concentration of Input is simple way to controll the time
+interval. The time interval depending on Input concentration is shown
+in Fig.3.<br><br>
+
+
+
+<div class="aligncenter">
+  <img src="simulation%20date/Input.png" width="400">
+</div> 
+<p>Fig.3 changes of the time interval depending on the
+  concentration of Input. Time intervals were measured in various Input
+  concentrations.(10nM ,20nM, 50nM and 100nM).The horizontal axis is concentration. The vertical axis is time interval. Rhombus indicates output-time of Output-A. Square indicates time interval between Output-A and Output-B and Triangle indicates time interval between Output-B and Output-C. </p>
+<p> <br>
+  <br>
+  In this case,
+  time intervals (between first and second, between second and third) are
+  both controlled together (homogeneous control).<br>
+  When we change the concentration of Template or Gate, the time
+  intervals can be controlled separately. (heterogeneous control).For
+  example, the time interval between Output-A and Output-B is changed
+  depending on the concentration of Template-B.(Fig.4) <br>
+  
+  <br>
+  
+</p>
+<div class="aligncenter">
+    <img src="simulation%20date/templateB.png" width="400">
+</div> 
+<p>Fig.4 changes of the time interval between Output-A and Output-B (Template-B concentration was 10nM, 20nM, 50nM and 100nM)..The horizontal axis is concentration. The vertical axis is time interval. Rhombus indicates output-time of Output-A. Square indicates time interval between Output-A and Output-B and Triangle indicates time interval between Output-B and Output-C. <br>
+  <br>
+  Only time interval between Output-A and Output-B can be changed
+  corresponding to Template-B. Another date about time interval are
+  available here (<a href="simulation%20date/templateA.png" target="_blank">Template-A</a>
+  <a href="simulation%20date/templateC.png" target="_blank">Template-C</a>
+  
+  <a href="simulation%20date/gate.png" target="_blank">All Gats</a>
+  
+  <a href="simulation%20date/gateA.png" target="_blank">Gate-A</a>
+  <a href="simulation%20date/gateB.png" target="_blank">Gate-B</a> ) .<br>
+  
+  By analyzing this model, we comfirmed the following features.<br>
+</p>
+<ul style="margin-left: 20px;"><li>programmability of the permutation of Outputs
+</li>
+  <li>programmability of the number of Outputs</li><li>programmability of the time intervals between Outputs</li></ul>
+  <br>
+  
+  
+  <!--  ?R?????g?A?E?g
+  
+  Moreover, we analyzed the model of another conditions because the time intervals of each output depend on the concentrations of each component. <br>
+  Tuning the Input concentration is one way to program the time intervals. Fig.3 shows that various time intervals corresponding to Input concentration. Increasing Input concentration results in shortening a length of the time interval. <br>
+  Another ways of programming the time intervals are tuning the concentration of Templates or Gates. When all Templates are tuned equally, the time interval is changed in the same way as Input.(Fig.4) <br>
+  Of course, the time interval between arbitrary Outputs can be also programmed by changing the concentration of relevant components. For example, the time interval between Output-A and Output-B is changed depending on the concentration of Template-B. (Fig.5) <br>
+  Another results of the simulation are here.(the time intervals corres to <a href="simulation date/templateA.png" target="_blank">Template-A</a>
+  <a href="simulation date/templateC.png" target="_blank">Template-C</a>
+  <a href="simulation date/gate.png" target="_blank">All Gats</a>
+  <a href="simulation date/gateA.png" target="_blank">Gate-A</a>
+  <a href="simulation date/gateB.png" target="_blank">Gate-B</a> ) <br>
+  <br>
+  <br>
+  <img src="simulation date/Input.png" width="300px" height="300px"> Fig.3 changes of the time interval corresponding to the concentration of Input. Time intervals were measured in various Input concentrations.(10nM ,20nM, 50nM and 100nM). The time interval is changed in the range of 10sec from 5sec in this model. <br>
+  (Rhombus: time interval between Output-A and Outut-B Square: time interval between output-B and Output-C triangle: time interval between output-A and Output-C) <br>
+  <br>
+  <br>
+  
+  <img src="simulation date/template.png" width="300px" height="300px"> Fig.4 changes of time intervals corresponding to Templates concentration. time intervals were measured in various Templates concentration (all Templates were 10nM, 20nM, 50nM and 100nM). The time interval was changed in range of 15sec from 5sec. <br>
+  <br>
+  <br>
+  <img src="simulation date/templateB.png" width="300px" height="300px"> Fig.5 changes of the time interval between Output-A and Output-B. Only time interval between Output-A and Output-B can be changed corresponding to Template-B. (Template-B concentration was 10nM, 20nM, 50nM and 100nM) <br>
+  <br>
+  <br>
+  From these results, we checked the following. <br>
+  ?programmability of the time intervals between Outputs<br>
+  <br>
+  Eventually, the model demonstrated followings in simulations. <br>
+  ?Ethe device releases outputs in order. <br>
+  ?Ethe permutation, number and time interval of outputs are programmable<br>
+  <br>
+  We achieved following two sub-goals. <br>
+  ?Formalize chemical reaction for the models<br>
+  ?Confirm the behavior of the model <br>
+  
+</p>
+?R?????g?A?E?g-->
+
+
+<section>
+<span id="contents02"><img src="images/square-01.png" height="26" width="26">
+<h2>About Enzyme free device </h2>
+
+</span></section><hr>
+<p>
+
+As
+well as Enzyme device, we formalized ordinary differential equations based on chemical kinetic model to simulate the behavior of the device.The numerical simulation wes carried by mathematical software (Scilab). Of cource, ODEs were derived by writing down all the possible intermediates by hands. </p>
+<p>Source
+  codes, workflows of chemical reactions and other informion are shown
+  here( <a href="simulation%20date/EFD_AB.pdf" target="_blank">source code 1</a>
+  <a href="simulation%20date/EFD_ABC.pdf" target="_blank">source code 2</a>
+  <a href="simulation%20date/Information_efd.txt" target="_blank">other information</a> ) <br>
+  <br>
+  By simulating the models, we analyzed the performance of Enzyme free device.<br>
+  At first, we simulated the model which releases two outputs. The results are shown in Fig.5.<br>
+ <br>
+ <br>
+<div>
+<img src="simulation%20date/AB.png" width="400"><img src="simulation%20date/BA.png" width="400">
+</div>
+Fig.5 simulations of model which releases two Output. The concentration of Input is 200nM. All Templates concentration is 200nM. All Transducer concentration is 100nM. All Gate concentration is 200nM. All Fuel concentration is 400nM. <br>
+<br>
+ Output were released in order as we designed. This results means we can program the order of Outputs as well as Enzyme free device.
+<br>
+Second, we simulated the model which releases three output(Fig.6). <br>
+<br>
+<div class="aligncenter">
+<img src="simulation%20date/ABC.png" width="400">
+</div>
+<p>Fig.6 Simulation of model which releases three Output.  The concentration of Input is 200nM. All Templates concentration is 200nM. All Transducer concentration is 100nM. All Gate concentration is 200nM. All Fuel concentration is 400nM.<br>
+<br>
+
+The device releases three Outputs in order(A then B then C). This results indicate that the number of Outputs are programmable.<br>
+  
+Next, we analyzed the time intervals of each Output by using the model which releases three Output. The time intervals between arbitrary Outputs are programmed by changing relevant components as well as Enzyme device. <br>
+Fig.7 shows the time intervals depending on various Input concentrations.
+In Enzyme free device, The time intervals of each Output are
+changed equally by adjusting all Gates concentration at the same time.
+(Fig.4)<br>
+Another result about the time intervals are here. (Changing
+
+<a href="simulation%20date/EFDgateA.png" target="_blank">Gate-A,</a><a href="simulation%20date/EFDgateB.png" target="_blank">Gate-B,</a><a href="simulation%20date/EFDfuel.png" target="_blank">all Fuels,</a><a href="simulation%20date/EFDfuelA.png" target="_blank">Fuel-A,</a><a href="simulation%20date/EFDfuelB.png" target="_blank">Fuel-B,</a><a href="simulation%20date/EFDtrigger.png" target="_blank">Trigger</a>
+)
+<br><br><div class="aligncenter">
+ <img src="simulation%20date/EFDinput.png" width="400">
+
+</div>
+Fig.7 the time intervals corresponding to Input concentrations. <br>
+The time intervals between Output-A and Output-B are changed in the
+range of 8sec from 4sec, while the time intervals between Output-B and
+Output-C are changed in the range of 18sec from 11sec. <br>
+(Rhombus: time interval between Output-A and Outut-B Square: time
+interval between output-B and Output-C triangle: time interval between
+output-A and Output-C) <br><br><div class="aligncenter">
+ <img src="simulation%20date/EFDgate.png" width="400">
+</div>
+Fig.8 time intervals corresponding to Gates concentrations. The time
+intervals between each Outputs are equally changed in the range of
+about 10 sec from 3sec. <br>
+<br><br>
+From these results, we checked the following. <br>
+
+?programmability of the time intervals between Outputs<br><br>
+Eventually, the model demonstrated followings in simulations. <br>
+?Ethe device releases outputs in order. <br>
+
+?Ethe permutation, number and time interval of outputs are programmable<br>
+
+We achieved following two sub-goals. <br>
+?Formalize chemical reaction for the models<br>
+?Confirm the behavior of the model <br><!--
+</section>
+<section>
+<span id="contents03"><img src="images/square-01.png" width="26px" height="26px"><h2>h2 text</h2></span>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+</section>
+<section>
+<span id="contents04"><img src="images/square-01.png" width="26px" height="26px"><h2>h2 text</h2></span>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+</section>
+<section>
+<span id="contents05"><img src="images/square-01.png" width="26px" height="26px"><h2>h2 text</h2></span>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+</section>
+<section>
+<span id="contents06"><img src="images/square-01.png" width="26px" height="26px"><h2>h2 text</h2></span>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<p>Lom ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+--></ul></div>
+</div>
+<script src="scripts/scroll-up-bar.js"></script>
+<script>
+  $('#globalheader').scrollupbar();
+</script>
+<footer>
+</footer><div id="pageinfo">
+<a href="mailto:teamsendai2014@gmail.com" id="info_mail"><img src="images/icon_mail.png" alt="mail" height="12" width="18">TeamSendai2014@gmail.com</a><br>
+<span id="info_copyright">Copyright c 2014 Biomod 2014 team Sendai All rights reserved.</span>
+<span id="info_lab"><a href="http://www.molbot.mech.tohoku.ac.jp/eng/index.html" target="?h_blank?h"><img src="images/Muratalab-icon2_dark-01.png" height="60"></a></span>
+</div>
+
+
+<div id="pageinfo">
+<a href="mailto:teamsendai2014@gmail.com" id="info_mail"><img src="images/icon_mail.png" alt="mail" height="12" width="18">TeamSendai2014@gmail.com</a><br>
+<span id="info_copyright">Copyright c 2014 Biomod 2014 team Sendai All rights reserved.</span>
+<span id="info_lab"><a href="http://www.molbot.mech.tohoku.ac.jp/eng/index.html" target="?h_blank?h"><img src="images/Muratalab-icon2_dark-01.png" height="60"></a></span>
+</div>
+
+
+</div>
+</body></html>

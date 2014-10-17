@@ -30,7 +30,7 @@ $(function() {
 			contentsArr[i] = [targetContentsTop, targetContentsBottom]
 		}
 	};
-	
+
 	 $('a[href^=#]').click(function(){
 
         var speed = 500;
@@ -82,7 +82,7 @@ $(function() {
         <h1><a href="index.html">Tales of the Order</a></h1>
         <ul>
           <li><a href="./project.html">PROJECT IDEA</a></li>
-          <li><a href="./design_enzyme.html">DESIGN</a></li>
+          <li class="currentpage"><a href="./design_enzyme.html">DESIGN</a></li>
           <li><a href="./simulation.html">SIMULATION</a></li>
           <li><a href="./experiment.html">EXPERIMENT</a></li>
           <li><a href="./discussion.html">DISCUSSION</a></li>
@@ -93,17 +93,19 @@ $(function() {
 <div id="main">
 <nav id="contentsnav">
 <ul>
-<li><a href="#contents01"><b>Enzyme System</b></a></li>
+<li><a href="#contents01"><b>Enzyme device</b></a></li>
 <li><a href="#contents02">Reading process</a></li>
 <li><a href="#contents03">Releasing process</a></li>
 <li><a href="#contents04">Updating process</a></li>
-
+<li><a href="#contents05"><b>Enzyme free device</b></a></li>
 </ul>
 
 </nav>
 <div id="maincol">
 <article>
-<h1><div style="width: 100px;">Design</div>
+<h1>
+  <div style="width: 100px;">Design</div>
+
 </h1>
 <!--
 <div id="index">
@@ -130,17 +132,16 @@ $(function() {
 </div>
 
 -->
-<section id="contents01">
+<section id="contents01" style="padding-bottom:0">
 <span><!--<img src="images/square_ms.png" width="26px" height="26px"><font color="#C9FC00">--><h2>Enzyme device</h2></font></span>
-<p>In this page, we explain the device using DNA and enzymes.  </p>
-
+<p>Here, we explain the device using DNA and enzymes.  </p>
 
 <!--<video src="video/enzyme_free.mp4" width="600" height="330" frameborder="0" allowfullscreen loop autoplay controls></video>-->
 
 
 <span><h2></h2></span><!-- 題名をつけるところ -->
 <p>First, we explain rough mechanisms of the device.<br><br>
-<img src="images/design/device rough image.png" width"=600"alt="design">
+<img src="images/design/device rough image.png" width="780" alt="design">
 The device is composed of input DNA and three processes.
 Input DNA codes sequence of Output.
 Three processes are reading process, releasing process and updating process.<br>
@@ -151,23 +152,20 @@ In releasing process, Output is released according to the signal from the previo
 
 After releasing process finished, updating process starts.<br>
 In updating process, the first instruction is removed from Input DNA for the next cycle.<br>
-By cycling these three processes step by step, single stranded DNAs are generated in order.<br clear="leftt">
+By cycling these three processes step by step, single stranded DNAs are generated in order.
 <br>
 
 Secondly, we explain the detail of three mechanisms.<br><br>
-The device is composed of Templates, Output device and Gates. (fig.O)<img src="images/square-01.png" width="300"alt="design"><br clear="left">
-<br><br>
+The device is composed of Templates, Transducer and Gates. (fig.O)
+<img src="images/design/components(enzyme)02.png" width="740"alt="design" style="margin-bottom:0">
 </p>
 </section>
 <section id="contents02">
-<p>
-<font size="7">R</font>eading process utilize DNA amplification scheme based on the repeated extension and nicking of one strand of DNA duplex. This process is composed of input DNA, single stranded DNA(templates), polymerase and nickase.<br>
-
+ <p>Reading process utilize DNA amplification scheme based on the repeated extension and nicking of one strand of DNA duplex. This process is composed of input DNA, single stranded DNA(templates), polymerase and nickase.<br>
 Reading process is achieved by following chemical reactions.<br><br>
-<img src="images/square-01.png" width="300"alt="design">
+<img src="images/design/workflow1(enzyme)02.png" width="804"alt="design">
 Step1. Templates hybridize with input DNA. <br>
-Step2. Polymerase elongates DNA from 3' end. To limit point elongated by polymerase, Input/templates complex contains some toholds.<br>
-
+Step2. Polymerase elongates DNA from 3' end. To limit point elongated by polymerase, Input/Templates complex contains some toholds.<br>
 Step3. Nickase cleaves upper side of a DNA duplex.<br>
 Step4. Polymerase elongates DNA from 3' end again with strand displacement activity . As a result, single stranded DNA is released.<br><br>
 
@@ -176,30 +174,28 @@ Repeating Step3 and Step4, single stranded DNA which is named Signal is amplifie
 </p>
 </section>
 <section id="contents03">
-<p>
-<font size="7">R</font>eleasing process is based on polymerase reaction and strand displacement. In this process, device releases single stranded DNA.<br>
-This process is composed of Signal, double stranded DNA (Output device ), and polymerase.<br>
+Releasing process is based on polymerase reaction and strand displacement. In this process, the device releases single stranded DNA.<br>
+This process is composed of Signal, double stranded DNA (Transducer ), and polymerase.<br>
 
 Releasing process is implemented by following chemical reactions.<br><br>
 
-<img src="images/square-01.png" width="300"alt="design">
-Step1. Signal hybridizes with a part of Output device.<br>
+<img src="images/design/workflow2(enzyme)02.png" width="795"alt="design">
+Step1. Signal hybridizes with a part of Transducer.<br>
 Step2. Polymerase elongates DNA from 3' end.<br>
 Step3. Output DNA are released by the strand displacement activity.<br><br>
 
-These reactions take place just after reading process because the toehold region of Output device is slightly longer than that of gates.<br>
+These reactions take place just after reading process because the toehold region of Transducer is slightly longer than that of gates.<br>
 <br clear="left">
 
 <br>
 </p>
 </section>
 <section id="contents04">
-<p>
-<font size="7">U</font>pdating process is achieved by strand displacement and restriction enzyme. This process is composed of Signal, double stranded DNA (gate) and restriction enzyme. <br>
+<p>Updating process is achieved by strand displacement and restriction enzyme. This process is composed of Signal, double stranded DNA (gate) and restriction enzyme. <br>
 
 Updating process is implemented by following chemical reactions.<br><br>
-<img src="images/square-01.png" width="300"alt="design">
-Step1. Signal hybridizes with a part of gate.<br>
+<img src="images/design/workflow3(enzyme)02.png" width="695"alt="design">
+Step1. Signal hybridizes with a part of Gate.<br>
 Step2. Polymerase elongates DNA from 3' end.<br>
 Step3. Single stranded DNA (Updater) is released by strand displacement activity.<br>
 Step4. Updater hybridizes with Input/template complex.<br>
@@ -208,12 +204,45 @@ Step5. Restriction enzyme cleaves duplex of Updater and Input/template complex. 
 Input is updated for the next cycle, the three processes can take place from the beginning.<br>
 <br clear="left">
 <br>
-The cycle is repeated again and again until all the instructions coded (written) in the Input are executed. Eventually, the Outputs are released in order. Programmability is an important feature of our system, because different Input can result in different order to release Outputs.
+The cycle is repeated again and again until all the instructions coded (written) in the Input are executed. Eventually, the Outputs are released in order. Programmability is an important feature of our device, because different Input can result in different order to release Outputs.</p>
 
 
 
 
-</p>
+
+ <!-- 題名をつけるところ -->
+<section id="contents05">
+<br>
+ </section>
+
+<h2><span>Enzyme free device</span></h2>
+<hr>
+  <p> Here,we explain the mechanisms of enzyme free device(using only DNA).
+
+    Enzyme free device is designed based on seesaw gates capable of cascading strand displacement reactions.<br>
+    <br>
+    <img src="images/square-01.png" width="300"alt="design" align="left"> </p>
+  <p>Components of the device are Input , Trigger, Gate, Transducer  and Fuel.<br>
+    The order to release outputs is only coded in the input, while other DNA components is utilized for cascading the reactions.<br>
+    <br>
+    <br clear="left">
+    <br>
+    Cascading reactions are implemented by following steps.<br>
+    <br>
+    <img src="images/design/workflow(enzymefree)02.png" width="600"alt="design" align="left"> </p>
+  <p>Step1. Trigger hybridizes with Input. A signal is then released by strand displacement reaction.<br>
+    <br>
+    Step2. The signal released in Step1 hybridizes with Transducer. A first output is released by strand displacement.<br>
+    This reaction takes place  faster than other reactions so that   Transducer serves as a function of threshold.<br>
+    <br>
+    Step3. After Step2 finished, remaining Signal starts to hybridize with Gate. As a result, a new trigger is then released.
+    Signal is used as a catalyst  in this step by the function of Fuel which hybridizes with Signal/Gate complex and restores Signal.
+    By consuming the excess Fuell , the reaction progresses from a small amount of Signal.<br>
+  </p>
+  <p>Step4. The new trigger hybridizes with input. A new Signal is then released which starts next cascades</p>
+</section>
+<section>
+  <p>&nbsp;</p>
 </section>
 
 
@@ -241,6 +270,8 @@ Fig.3 Schematic explanation of the releasing process
 
 
 </article>
+<p>The device repeats the cascading reaction until all Outputs are released. Eventually Outputs are released in order. As well as Enzyme device, programmability is an important feature. </p>
+<p>&nbsp;</p>
 </div>
 </div>
 <script src="scripts/scroll-up-bar.js"></script>
@@ -253,7 +284,7 @@ Fig.3 Schematic explanation of the releasing process
 <span id="info_copyright">Copyright c 2014 Biomod 2014 team Sendai All rights reserved.</span>
 <span id="info_lab"><a href="http://www.molbot.mech.tohoku.ac.jp/eng/index.html" target=”_blank”><img src="images/Muratalab-icon2_dark-01.png" height="60"></a></span>
 </div>
-</footer>s
+</footer>
 
 </div>
 </body>

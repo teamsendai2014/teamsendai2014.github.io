@@ -2,6 +2,11 @@
 
 * { margin: 0; padding: 0; }
 
+
+
+body{
+	min-width: 1024px;
+}
 #main {
 	width: 1000px;
 	margin-right: auto;
@@ -20,6 +25,9 @@
 #wrapper {
 	width: 100%;
 }
+
+
+
 /* header */
 header {
 	position: fixed;
@@ -135,6 +143,11 @@ body {
     -moz-box-shadow:rgba(0, 0, 0, 0.85098) 0px 0px 4px 0px;   */
 
 }
+
+.aligncenter{
+	margin-left:210px;
+}
+
 /* footer */
 
 footer {
