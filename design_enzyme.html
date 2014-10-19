@@ -77,7 +77,7 @@ $(function() {
 
 <body>
 <div id="wrapper">
-    <header>
+    <header id="globalheader">
       <nav id="globalnav">
         <h1><a href="index.html">Tales of the Order</a></h1>
         <ul>
@@ -85,6 +85,7 @@ $(function() {
           <li class="currentpage"><a href="./design_enzyme.html">DESIGN</a></li>
           <li><a href="./simulation.html">SIMULATION</a></li>
           <li><a href="./experiment.html">EXPERIMENT</a></li>
+          <li><a href="./protocol.html">MATERIALS&amp;METHODS</a></li>
           <li><a href="./discussion.html">DISCUSSION</a></li>
           <li><a href="./team.html">TEAM</a></li>
         </ul>
@@ -212,9 +213,6 @@ The cycle is repeated again and again until all the instructions coded (written)
 
  <!-- 題名をつけるところ -->
 <section id="contents05">
-<br>
- </section>
-
 <h2><span>Enzyme free device</span></h2>
 <hr>
   <p> Here,we explain the mechanisms of enzyme free device(using only DNA).
@@ -229,21 +227,21 @@ The cycle is repeated again and again until all the instructions coded (written)
     <br>
     Cascading reactions are implemented by following steps.<br>
     <br>
-    <img src="images/design/workflow(enzymefree)02.png" width="600"alt="design" align="left"> </p>
+    <img src="images/design/workflow(enzymefree)02.png" width="600"alt="design">
+ </p>
+<clear="left"></clear>
   <p>Step1. Trigger hybridizes with Input. A signal is then released by strand displacement reaction.<br>
     <br>
-    Step2. The signal released in Step1 hybridizes with Transducer. A first output is released by strand displacement.<br>
-    This reaction takes place  faster than other reactions so that   Transducer serves as a function of threshold.<br>
-    <br>
-    Step3. After Step2 finished, remaining Signal starts to hybridize with Gate. As a result, a new trigger is then released.
-    Signal is used as a catalyst  in this step by the function of Fuel which hybridizes with Signal/Gate complex and restores Signal.
-    By consuming the excess Fuell , the reaction progresses from a small amount of Signal.<br>
+    Step2. The signal released in Step1 hybridizes with Transducer. A first output is released by strand <span style="margin-left:55px">displacement.</span><br>
+    <span style="margin-left:55px">This reaction takes place  faster than other reactions so that   Transducer serves as a function of</span><br /> 
+<span style="margin-left:55px">threshold.</span>
+    <br /></br />
+    Step3. After Step2 finished, remaining Signal starts to hybridize with Gate. As a result, a new trigger is then<br /><span style="margin-left:50px"> released.Signal is used as a catalyst  in this step by the function of Fuel which hybridizes with<br /></span><span style="margin-left:50px"> Signal/Gate complex and restores Signal.
+    By consuming the excess Fuell , the reaction progresses</span><br /><span style="margin-left:50px"> from a small amount of Signal.</span>
   </p>
   <p>Step4. The new trigger hybridizes with input. A new Signal is then released which starts next cascades</p>
 </section>
-<section>
-  <p>&nbsp;</p>
-</section>
+
 
 
 
@@ -269,9 +267,10 @@ Fig.3 Schematic explanation of the releasing process
 
 
 
-</article>
+
 <p>The device repeats the cascading reaction until all Outputs are released. Eventually Outputs are released in order. As well as Enzyme device, programmability is an important feature. </p>
 <p>&nbsp;</p>
+</article>
 </div>
 </div>
 <script src="scripts/scroll-up-bar.js"></script>

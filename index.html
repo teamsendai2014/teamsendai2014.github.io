@@ -2,12 +2,20 @@
 <html lang="ja">
   <head>
   <meta charset="UTF-8" />
+
     <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Roboto+Slab' rel='stylesheet' type='text/css'>
     <link href="styles/top.css" rel="stylesheet" type="text/css">
-    <link href="styles/common_index.css" rel="stylesheet" type="text/css">
+    <link href="styles/common.css" rel="stylesheet" type="text/css">
+    <style type="text/css">
+
+    </style>
     <script src="scripts/jquery-1.11.1.min.js"></script>
     <script src="scripts/retina.js"></script>
+     <script type="text/javascript" src="scripts/video/js/mootools.js"></script>
+  <script type="text/javascript" src="scripts/video/js/swfobject.js"></script>
+  <script type="text/javascript" src="scripts/video/js/videobox.js"></script>
+  <link rel="stylesheet" href="scripts/video/css/videobox.css" type="text/css" />
     <title>Tales of the Taste | team Sendai - Biomod 2014</title>
   </head>
   
@@ -20,6 +28,7 @@
           <li><a href="./design_enzyme.html">DESIGN</a></li>
           <li><a href="./simulation.html">SIMULATION</a></li>
           <li><a href="./experiment.html">EXPERIMENT</a></li>
+          <li><a href="./protocol.html">MATERIALS&amp;METHODS</a></li>
           <li><a href="./discussion.html">DISCUSSION</a></li>
           <li><a href="./team.html">TEAM</a></li>
         </ul>
@@ -30,7 +39,7 @@
       <article>
         <section id="section-hero">
           <div class="wrapper">
-            <img src="./images/box_angle.Scene.00017.png" width="960px" height="540px">
+            <img src="./images/box_angle.Scene.00017.jpg" width="960px" height="540px" style="margin-top:20px; margin-left:10px">
 
 <h2>Abstract</h2>
 Our goal is to realize a device which is able to generate different DNA strands in a given arbitrary order. The device consists of a tape and a black box. The tape is a long single-stranded DNA which describes the order of the output. There is no limitation in the length of the tape. The black box is a set of molecules that reads out the information on the tape to generate corresponding output strands. To achieve this, we have designed a reaction network by using DNA computing. When the tape is put in the box (e.g. a test tube containing the molecules), a section on its 3’-end is read and corresponding output is produced. When the concentration of the output reaches the threshold, the tape strand is updated though disabling the first section and enabling the next section. By repeating this, the device generates single stranded DNA in order.<br>
@@ -43,7 +52,7 @@ By using our devices, we can program various complex molecular reactions such as
         <section>
           <div class="wrapper">
             <h2>Youtube</h2>
-<iframe width="560" height="315" src="http://www.youtube.com/embed/3ahnPcQxzhk?rel=0"  frameborder="0" allowfullscreen></iframe>
+<a href="https://www.youtube.com/watch?v=3ahnPcQxzhk" rel="vidbox 1280 720 title="Tales of the Order -Universal Strand Generator-"><img src="images/youtubethumb.png" width="560px" height="315px" border="0" onMouseOver="this.src='images/youtubethumb-over.png'" onMouseOut="this.src='images/youtubethumb.png'" ></a>
           </div>
         </section>
 

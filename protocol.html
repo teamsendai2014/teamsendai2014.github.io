@@ -1,11 +1,83 @@
+
 <!doctype html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Protocol | Team Sendai - Biomod 2014</title>
+<title>Matelial&Methods | Team Sendai - Biomod 2014</title>
 <link href="styles/common.css" rel="stylesheet" type="text/css">
 <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Roboto+Slab' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
+<style type="text/css">
+.seqa0, .seqa0- {
+	background-color: #F30;
+}
+.seqb0, .seqb0- {
+	background-color: #0C6;
+}
+.seqc0, .seqc0- {
+	background-color: #09F;
+}
+
+
+.seqx {
+	color: #FFF;
+	background-color: #666;
+}
+
+
+.seqtemphead {
+	color: #FFF;
+	background-color: #963;
+}
+
+
+.seqa0-, .seqb0-, .seqc0- {
+	color: #FFF;
+}
+
+
+.seqouta, .seqtra {
+	color: #fd5a2a;
+}
+.seqoutb, .seqtrb {
+	color: #0C6;
+}
+.seqoutc, .seqtrc {
+	color: #4073ff;
+}
+
+ 
+
+table {
+	font-family: Inconsolata;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+
+
+.seqsga, .seqsga-, .seqa1-, .seqtmpa {
+	color: #F9F;
+}
+.seqsgb, .seqsgb-, .seqb1-, .seqtmpb {
+	color: #3F9;
+}
+.seqsgc, .seqsgc-, .seqc1-, .seqtmpc {
+	color: #0FF;
+}
+
+
+.seqnick {
+	color: #90F;
+	background-color: #F3C;
+}
+
+
+.seqother {
+	background-color: #FC3;
+}
+</style>
 <script src="scripts/jquery-1.11.1.min.js"></script>
 <script src="scripts/retina.js"></script>
 <script type="text/javascript">
@@ -30,7 +102,7 @@ $(function() {
 			contentsArr[i] = [targetContentsTop, targetContentsBottom]
 		}
 	};
-	
+
 	 $('a[href^=#]').click(function(){
 
         var speed = 500;
@@ -41,8 +113,8 @@ $(function() {
 
         var position = target.offset().top;
 
-        $("html, body").animate({scrollTop:position + 2}, speed, "swing");
-		
+        $("html, body").animate({scrollTop:position + 1}, speed, "swing");
+
 //2pixel下に下げてナビのずれを回避
         return false;
 
@@ -71,45 +143,38 @@ $(function() {
 });
 
 
+
 </script>
 
 </head>
 
 <body>
 <div id="wrapper">
-    <header>
+    <header id="globalheader">
       <nav id="globalnav">
         <h1><a href="index.html">Tales of the Order</a></h1>
         <ul>
           <li><a href="./project.html">PROJECT IDEA</a></li>
           <li><a href="./design_enzyme.html">DESIGN</a></li>
           <li><a href="./simulation.html">SIMULATION</a></li>
-          <li class="currentpage"><a href="./experiment.html">EXPERIMENT</a></li>
+          <li><a href="./experiment.html">EXPERIMENT</a></li>
+          <li class="currentpage"><a href="./protocol.html">MATERIALS&amp;METHODS</a></li>
           <li><a href="./discussion.html">DISCUSSION</a></li>
           <li><a href="./team.html">TEAM</a></li>
         </ul>
       </nav>
     </header>
 <div id="main">
-
-
-
-
-
-編集しずらいのでナビゲーションをコメントアウトしました。By今井
-
-
 <nav id="contentsnav">
 <ul>
-<li><a href="#contents01">Enzyme System</a></li>
-<li><a href="#contents01.5">Sample Preparation </a></li>
-<li><a href="#contents02">Whole device</a></li>
-<li><a href="#contents03">Components (3 processes) </a></li>
-<li><a href="#contents04">Enzyme free device</a></li>
-<li><a href="#contents04.5">Preparation of DNA sequences</a></li>
-<li><a href="#contents05">Whole device</a></li>
-<li><a href="#contents06">Component (Seesaw gate) </a></li>
-<li><a href="#contents99">Reference</a></li>
+<li><a href="#contents01"><b>Enzyme System</b></a></li>
+<li><a href="#contents02">Sample Preparation </a></li>
+<li><a href="#contents03">Whole device</a></li>
+<li><a href="#contents04">Components (3 processes) </a></li>
+<li><a href="#contents05"><b>Enzyme free device</b></a></li>
+<li><a href="#contents06">Preparation of DNA sequences</a></li>
+<li><a href="#contents07">Whole device</a></li>
+<li><a href="#contents08">Component (Seesaw gate) </a></li>
 </ul>
 </nav>
 
@@ -125,54 +190,11 @@ $(function() {
 <article>
 <h1>Materials and Methods</h1>
 
-<!--
-
-ダミー文。ここに文章は載せないと思うのでコメントアウトby今井
-
-<p>
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-</p>
-
--->
-<!--
-<div id="index">
-<h3>Contents</h3>
-<ul>
-  <li>Enzyme Device</li>
-  <ul>
-    <li>Preparation of DNA, enzyme, and NEB buffer</li>
-    <li>Function confirmation of 3 processes</li>
-    <ul>
-      <li>Reading Process</li>
-      <li>Releasing Process</li>
-      <li>Updating Process</li>
-    </ul>
-    <li>Function confirmation of whole device</li>
-    <ul>
-      <li>First output confirmation</li>
-    </ul>
-  </ul>
-  <li>Enzyme free Device</li>
-  <ul>
-    <li>Preparation of DNA sequences</li>
-    <li>Function confirmation of Seesaw gate</li>
-    <ul>
-      <li>Measurement of fluorescence intensity</li>
-      <li>Electrophoresis</li>
-    </ul>
-  </ul>
-</ul>
-<ul>
-  <li>Reference</li>
-</ul>
-</div>
--->
-
 <section id="contents01">
 <span><h1>Enzyme Device</h1></span>
 </section>
 
-<section id="contents01.5">
+<section id="contents02">
 <span>
 <h2>Sample Preparation</h2>
 </span>
@@ -192,132 +214,128 @@ All DNA shown below were purchased from Eurofins.<br><br>
 <font size="-1">
 <table>
 <tr>
-<td>Input-AB</td>
-<td>CTAGAACATACGCATTTGATTCGCGAATTCAGCAGTACTATTCAAGCGACGGCT</td>
+<td width="113">Input-AB</td>
+<td width="658"><span class="seqb0">CTAGAACATACGCATTTGATTCGC</span><span class="seqx">GAATTC</span><span class="seqa0">AGCAGTACTATTCAAGCGACGGCT</span></td>
 </tr>
 <tr>
 <td>Input-BA</td>
-<td>AGCAGTACTATTCAAGCGACGGCTGAATTCCTAGAACATACGCATTTGATTCGC</td>
+<td><span class="seqa0">AGCAGTACTATTCAAGCGACGGCT</span><span class="seqx">GAATTC</span><span class="seqb0">CTAGAACATACGCATTTGATTCGC</span></td>
 </tr>
 <tr>
 <td>Input-ABC</td>
-<td>GCCTGATAGACCGTTTCCGTAGTAGAATTCCTAGAACATACGCATTTGATTCGCGAATTCAGCAGTACTATTCAAGCGACGGCT</td>
+<td><span class="seqc0">GCCTGATAGACCGTTTCCGTAGTA</span><span class="seqx">GAATTC</span><span class="seqb0">CTAGAACATACGCATTTGATTCGC</span><span class="seqx">GAATTC</span><span class="seqa0">AGCAGTACTATTCAAGCGACGGCT</span></td>
 </tr>
 <tr>
 <td>Template-A</td>
-<td>TCACTTCTGCATCGATCACGACTCAGCCGTCGCTTGAATAGTGTTA</td>
+<td><span class="seqtmpa">TCACTTCTGCATCGA</span><span class="seqnick"><span class="seqnick">TCACGACTC</span></span><span class="seqa0-">AGCCGTCGCTTGAATAGT</span><span class="seqtemphead">GTTA</span></td>
 </tr>
 <tr>
 <td>Template-B</td>
-<td>AGGATATGCTCTCGTTCACGACTCGCGAATCAAATGCGTATGGTTA</td>
+<td><span class="seqtmpb">AGGATATGCTCTCGT</span><span class="seqnick">TCACGACTC</span><span class="seqb0-">GCGAATCAAATGCGTATG</span><span class="seqtemphead">GTTA</span></td>
 </tr>
 <tr>
 <td>Template-C</td>
-<td>AATCTACTCGCTACATCACGACTCTACTACGGAAACGGTCTAGTTA</td>
+<td><span class="seqtmpc">AATCTACTCGCTACA</span><span class="seqnick">TCACGACTC</span><span class="seqc0-">TACTACGGAAACGGTCTA</span><span class="seqtemphead">GTTA</span></td>
 </tr>
 <tr>
 <td>Output-A</td>
-<td>TAGGTACGCTCCGACAAGGT</td>
+<td><span class="seqouta">TAGGTACGCTCCGACAAGGT</span></td>
 </tr>
 <tr>
 <td>Output-B</td>
-<td>GTACAGGCATCTATACGTTACCATA</td>
+<td><span class="seqoutb">GTACAGGCATCTATACGTTACCATA</span></td>
 </tr>
 <tr>
 <td>Output-C</td>
-<td>AGCTTATGTTGCATATCTTAGTGTCCATCGCGTAG</td>
+<td><span class="seqoutc">AGCTTATGTTGCATATCTTAGTGTCCATCGCGTAG</span></td>
 </tr>
 <tr>
 <td>Transducer-A</td>
-<td>ACCTTGTCGGAGCGTACCTATCACTTCTGCATCGA</td>
+<td><span class="seqtra">ACCTTGTCGGAGCGTACCTA</span><span class="seqsga-">TCACTTCTGCATCGA</span></td>
 </tr>
 <tr>
 <td>Transducer-B</td>
-<td>TATGGTAACGTATAGATGCCTGTACAGGATATGCTCTCGT</td>
+<td><span class="seqtrb">TATGGTAACGTATAGATGCCTGTAC</span><span class="seqsgb-">AGGATATGCTCTCGT</span></td>
 </tr>
 <tr>
 <td>Transducer-C</td>
-<td>CTACGCGATGGACACTAAGATATGCAACATAAGCTAATCTACTCGCTACA</td>
+<td><span class="seqtrc">CTACGCGATGGACACTAAGATATGCAACATAAGCT</span><span class="seqsgc-">AATCTACTCGCTACA</span></td>
 </tr>
 <tr>
 <td>Gate-A +</td>
-<td>AGCGTCATCGGTCTTTAAGCAGTACTATTCAAGCGACGGCTTCACTTCTGC</td>
+<td><span class="seqother">AGCGTCATCGGTCTTTA</span><span class="seqa0">AGCAGTACTATTCAAGCGACGGCT</span><span class="seqa1-">TCACTTCTGC</span></td>
 </tr>
 <tr>
 <td>Gate-A -</td>
-<td>TCACGACTCAGCCGTCGCTTGAATAGTACTGCTGAATTCCCGATGACGCT</td>
+<td><span class="seqnick">TCACGACTC</span><span class="seqa0-">AGCCGTCGCTTGAATAGTACTGCT</span><span class="seqx">GAATTC</span><span class="seqother">CCGATGACGCT</span></td>
 </tr>
 <tr>
 <td>Gate-B +</td>
-<td>TGCTTAGAACGAGGCTTCTAGAACATACGCATTTGATTCGCAGGATATGCT</td>
+<td><span class="seqother">TGCTTAGAACGAGGCTT</span><span class="seqb0">CTAGAACATACGCATTTGATTCGC</span><span class="seqb1-">AGGATATGCT</span></td>
 </tr>
 <tr>
 <td>Gate-B -</td>
-<td>TCACGACTCGCGAATCAAATGCGTATGTTCTAGGAATTCCGTTCTAAGCA</td>
+<td><span class="seqnick">TCACGACTC</span><span class="seqb0-">GCGAATCAAATGCGTATGTTCTAG</span><span class="seqx">GAATTC</span><span class="seqother">CGTTCTAAGCA</span></td>
 </tr>
 <tr>
 <td>Gate-C +</td>
-<td>GCCAGATTCCACATCCGGCCTGATAGACCGTTTCCGTAGTAAATCTACTCG</td>
+<td><span class="seqother">GCCAGATTCCACATCCG</span><span class="seqc0">GCCTGATAGACCGTTTCCGTAGTA</span><span class="seqc1-">AATCTACTCG</span></td>
 </tr>
 <tr>
 <td>Gate-C -</td>
-<td>TCACGACTCTACTACGGAAACGGTCTATCAGGCGAATTCTGGAATCTGGC</td>
+<td><span class="seqnick">TCACGACTC</span><span class="seqc0-">TACTACGGAAACGGTCTATCAGGC</span><span class="seqx">GAATTC</span><span class="seqother">TGGAATCTGGC</span></td>
 </tr>
 <tr>
 <td>Signal-A</td>
-<td>TCGATGCAGAAGTGA</td>
+<td><span class="seqsga">TCGATGCAGAAGTGA</span></td>
 </tr>
 <tr>
 <td>Signal-B</td>
-<td>ACGAGAGCATATCCT</td>
+<td><span class="seqsgb">ACGAGAGCATATCCT</span></td>
 </tr>
 <tr>
 <td>Siganl-C</td>
-<td>TGTAGCGAGTAGATT</td>
+<td><span class="seqsgc">TGTAGCGAGTAGATT</span></td>
 </tr>
 </table>
 </font>
 </p>
-
-<!--
-（図と配列の対応関係についての説明）<br>
-<font color="#00ff00">GAATTC</font> is recognition site for restriction enzyme.<br>
--->
 
 
 <br>
 <h3>Enzymes</h3>
 <p>
 Both Polymerase (Bst DNA Polymerase, Large Fragment) and Nickase (Nt.BstNBI)were purchased from NEW ENGLAND BioLabs JAPAN.<br><br>
-EcoRI (タカラバイオ株式会社) was used as restriction enzyme.<br>
+EcoRI (TAKARA BIO INC.) was used as restriction enzyme.<br>
 </p>
 <br>
 <h3>NEB buffer 3.1</h3>
 <p>
 The next table shows the composition of H Buffer.<br>
+<br>
 <div align="center">
-Table. Composition of H Buffer ×10<br>
+Table.1 Composition of H Buffer ?~10<br>
 <div align="center">
 <img src="images/protocol/NEB.png" width="300">
 </div>
 </p>
 </section>
 
-<section id="contents02">
+<section id="contents03">
 <span><h2 id="ed Whole device">Whole device</h2></span>
 <p>
 <h3>First experiment</h3>
 1.All enzymes and DNA molecules were mixed after annaling. Input-AB or BA/Template complex, Transducer, and Gate were formed by annealing(cooling from 95 to 20&#08451 for 75min, -1&#08451/min). <br>
 
  2.Enzymatic reaction was conducted for various time (1,2,5,10,12,,15,20,25,30,60,100 min), then these were left at 80&#08451 for 30 minutes. After that, all samples were left at room temperature by the time of applying (more than 1 hour).<br>
- 3.15% acrylamide gel was formed with 1×TBE buffer.<br>
+ 3.15% acrylamide gel was formed with 1&times;TBE buffer.<br>
  4.The electrophoresis was conducted at 100V for 86 min.<br>
  5.Imaging by gel imager (BioRad) with Green light.<br>
 <br>
 <h3>Second experiment</h3>
 1.Input-AB or BA/Template complex, Transducer, and Gate were formed by annealing(cooling from 95 to 20&#08451 for 75min, -1&#08451/min). All samples were mixed after the formation of these complexes.<br>
  2.Enzymatic reaction was conducted for various time (1/6,1/2.1,2,5,10,,12,15,20,25,30,40 min), then these were left at 80&#08451 for 30 minutes. After that, all samples were annealed again for 35 minutes(cooling from 95 to 70&#08451 for 25min, -1&#08451/min, then cooling from 70 to 20&#08451 for 10min, -5&#08451/min).<br>
- 3.15% acrylamide gel was formed with 1×TBE buffer.<br>
+ 3.15% acrylamide gel was formed with 1&times;TBE buffer.<br>
  4.The electrophoresis was conducted at 100V for 85 min.<br>
  5.Imaging by gel imager with Green light.<br>
 </p>
@@ -326,7 +344,7 @@ Table. Composition of H Buffer ×10<br>
 </p>
 </section>
 
-<section id="contents03">
+<section id="contents04">
 <span><h2>Components (3 processes)</h2></span>
 <span><h3 id="Reading Process">Releasing Process</h3></span>
 <p>
@@ -345,7 +363,7 @@ Table. Recipe of 20% acrylamide gel<br>
 <p>
 <br>
 4.Gel-electrophoresis was conducted at 100V for 50 minutes. Then gel was stained by SYBR Gold.<br>
-5.Imaging by gel imager（BioRad)<br>
+5.Imaging by gel imager(BioRad)<br>
 <div align="center">
 <img src="images/protocol/gel imager.jpg" width="250"><br>
 Fig. Gel imager(BioRad)<br>
@@ -368,7 +386,7 @@ Fig. Gel imager(BioRad)<br>
 1.Anchor, Output, and Key were mixed and then annealed from 95 to 20&#08451 (-1&#08451/min).<br>
 2.Enzymatic reaction was conducted at 37&#08451/55&#08451 for 1 hour in thermal cycler.<br>
 3.Gel-electrophoresis was conducted at 100V for 100 minutes with 20% acrylamide gel. Then gel was stained by SYBR Gold.Then gel was stained by SYBR Gold.<br>
-4.Imaging by gel imager（BioRad).<br>
+4.Imaging by gel imager(BioRad).<br>
 </p>
 <p>
 <a href="experiment.html#Releasing Process ex">Go back to experiment</a><br><br>
@@ -386,7 +404,7 @@ Fig. Gel imager(BioRad)<br>
 1.Input-Template complex and Gate were formed by annealing (95 to 20&#08451, -1&#08451/min).<br>
 2.Enzymatic reaction was conducted at 45&#08451 for 3 hour in thermal cycler.<br>
 3.Gel-electrophoresis was conducted at 100V for 75 minutes with 15% acrylamide gel. Then gel was stained by SYBR Gold.Then gel was stained by SYBR Gold.<br>
-4.Imaging by gel imager (BioRad).<br>
+4.Imaging by gel imager(BioRad).<br>
 </p>
 <p>
 <a href="experiment.html#Updating Process ex">Go back to experiment</a><br>
@@ -402,7 +420,7 @@ Fig. Gel imager(BioRad)<br>
 <p>
 1.Input/Template complex and Output complex were formed by annealing(cooling from 95 to 20&#08451 for 75min, -1&#08451/min). All samples were mixed after the formation of these complexes.<br>
 2.Enzymatic reaction was conducted for various time (1,2,5,10,20,50 min), then these were left at 80&#08451 for 20 min. After that, all samples were left at room temperature by the time of applying (more than 1 hour).<br>
-3.15% acrylamide gel was formed with 1×TBE buffer.<br>
+3.15% acrylamide gel was formed with 1&times;TBE buffer.<br>
 4.The electrophoresis was conducted  at 100V for 75 min.<br>
 5.Imaging by gel imager with Blue LED (Non-stained gel image).<br>
 6.Gel was stained by SYBR Gold then imaged with UV light (Stained gel image).<br>
@@ -417,11 +435,11 @@ Fig. Gel imager(BioRad)<br>
 
 
 
-<section id="contents04">
+<section id="contents05">
 <span><h1>Enzyme free device</h1></span>
 </section>
 
-<section id="contents04.5">
+<section id="contents06">
 <span>
 <h2>Preparation of DNA sequences</h2>
 </span>
@@ -436,8 +454,8 @@ All DNA shown below were purchased from Eurofins.<br><br>
 </table>
 <table>
 <tr>
-<td>Input-A +</td>
-<td>CAGATGACTTTACGAGATACGATATTCCTTCTGCC</td>
+<td width="121">Input-A +</td>
+<td width="398">CAGATGACTTTACGAGATACGATATTCCTTCTGCC</td>
 </tr>
 <tr>
 <td>Input-A -</td>
@@ -505,26 +523,26 @@ All DNA shown below were purchased from Eurofins.<br><br>
 </p>
 </section>
 
-<section id="contents05">
+<section id="contents07">
 <span><h2 id="efd Whole device">Whole device</h2></span>
 <p>
 1.Final concentration of each component were<br>
 <table>
 <tr>
 <td>Input :</td>
-<td>200μM</td>
+<td>200nM</td>
 </tr>
 <tr>
 <td>Transducer :</td>
-<td>100μM</td>
+<td>100nM</td>
 </tr>
 <tr>
 <td>Gate :</td>
-<td>200μM</td>
+<td>200nM</td>
 </tr>
 <tr>
 <td>Fuel :</td>
-<td>400μM</td>
+<td>400nM</td>
 </tr>
 </table>
 Input, Transducer, and Gate were annealed previously for 75 minutes.(from 95 to 20&#08451: -1&#08451 per 1 minutes).<br> 
@@ -538,12 +556,12 @@ The fluorescence intensity of 520 nm light was measured.<br>
 </p>
 </section>
 
-<section id="contents06">
+<section id="contents08">
 <span><h2>Component (Seesaw gate)</h2></span>
 
 <span><h3 id="Measurement of fluorescence">Measurement of fluorescence</h3></span>
 <p>
-1.Input was annealed at the consentration of 10μM.<by>
+1.Input was annealed at the consentration of 10&micro;M.<by>
 The annealing was conducted for 75 minutes (from 95 to 20&#08451: 1&#08451 per 1 minutes).<br> 
 
 2.Fluorescence intensity was measured by spectrofluorometer(FP6200, JASCO) for 5000 seconds per 10 seconds. <br>
@@ -565,7 +583,7 @@ Fig. Spectrofluorometer(FP6200, JASCO)<br>
 <span><h3 id="Electrophoresis">Electrophoresis</h3></span>
 <p>
 1.Input and Output were formed by annealing(cooling from 95 to 20&#08451 for 75min, -1&#08451/min). All samples were mixed after the formation of these complexes.<br>
-2.15% acryl amide gel was formed with 1×TAE buffer.<br>
+2.15% acryl amide gel was formed with 1&times;TAE buffer.<br>
 3.The electrophoresis was conducted  at 100V for 75 min.<br>
 4.Imaging by gel imager with Blue LED (Non-stained gel image).<br>
 5.Gel was stained by SYBR Gold then imaged with UV light (Stained gel image).<br>
@@ -575,19 +593,14 @@ Fig. Spectrofluorometer(FP6200, JASCO)<br>
 </p>
 </section>
 
-<div align="right">
-Go To Discussion Page
-</div>
 
-<section id="contents99">
+
+<section>
 <span><h1>Reference</h1></span>
 <p>
 <a href="#ref.1">[1]</a>F. Tanaka, M. Nakatsugawa, M. Yamamoto, T. Shiba, A. Ohuchi, 10.1109/CEC.2002.1006212<br>
 <a href="#ref.2">[2]</a>Soo-Yong Shin, In-Hee Lee, Dongmin Kim, Byoung-Tak Zhang , 10.1109/TEVC.2005.844166 <br>
-<!--
-<a href="#ref.3">[3]</a> ( EcoRⅠがNEB内で働くことを示した論文もしくは電子説明書へのリンク（後で探します）)<br>
-<a href="#ref.4">[4]</a>シーソーゲートの論文<br>
--->
+
 </p>
 </section>
 
@@ -603,7 +616,7 @@ Go To Discussion Page
 <div id="pageinfo">
 <a href="mailto:teamsendai2014@gmail.com" id="info_mail"><img src="images/icon_mail.png" width="18" height="12" alt="mail">TeamSendai2014@gmail.com</a><br />
 <span id="info_copyright">Copyright c 2014 Biomod 2014 team Sendai All rights reserved.</span>
-<span id="info_lab"><a href="http://www.molbot.mech.tohoku.ac.jp/eng/index.html" target=”_blank”><img src="images/Muratalab-icon2_dark-01.png" height="60"></a></span>
+<span id="info_lab"><a href="http://www.molbot.mech.tohoku.ac.jp/eng/index.html" target=?h_blank?h><img src="images/Muratalab-icon2_dark-01.png" height="60"></a></span>
 </div>
 </footer>
 </div>
