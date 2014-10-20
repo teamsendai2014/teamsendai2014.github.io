@@ -106,40 +106,13 @@ $(function() {
 <article>
 <h1>
   <div style="width: 100px;">Design</div>
-
 </h1>
-<!--
-<div id="index">
-<h3>Contents</h3>
-<ul>
-  <li>content1</li>
-  <ul>
-    <li>contents</li>
-    <ul>
-      <li>contents</li>
-      <li>contents</li>
-      <li>contents</li>
-    </ul>
-    <li>contents</li>
-    <li>contents</li>
-  </ul>
-  <li>content1</li>
-  <ul>
-    <li>contents</li>
-    <li>contents</li>
-    <li>contents</li>
-  </ul>
-</ul>
-</div>
 
--->
 <section id="contents01" style="padding-bottom:0">
 <span><h2>Enzyme device</h2></font></span>
+<hr>
 <p>Here, we explain the device using DNA and enzymes.  </p>
-
-
-<span><h2></h2></span><!-- 題名をつけるところ -->
-<p>First, we explain rough mechanisms of the device.<br><br>
+<p>First, we explain rough mechanisms of the device.<br />
 <img src="images/design/device_rough_image.png" width="780" alt="design">
 The device is composed of input DNA and three processes.
 Input DNA codes sequence of Output.
@@ -153,12 +126,12 @@ After releasing process finished, updating process starts.<br>
 In updating process, the first instruction is removed from Input DNA for the next cycle.<br>
 By cycling these three processes step by step, single stranded DNAs are generated in order.
 <br>
-
 Secondly, we explain the detail of three mechanisms.<br><br>
 The device is composed of Templates, Transducer and Gates. (fig.O)
 <img src="images/design/components(enzyme)02.png" width="740"alt="design" style="margin-bottom:0">
 </p>
 </section>
+
 <section id="contents02">
  <p>Reading process utilize DNA amplification scheme based on the repeated extension and nicking of one strand of DNA duplex. This process is composed of input DNA, single stranded DNA(templates), polymerase and nickase.<br>
 Reading process is achieved by following chemical reactions.<br><br>
@@ -172,6 +145,7 @@ Repeating Step3 and Step4, single stranded DNA which is named Signal is amplifie
 <bt><br>
 </p>
 </section>
+
 <section id="contents03">
 Releasing process is based on polymerase reaction and strand displacement. In this process, the device releases single stranded DNA.<br>
 This process is composed of Signal, double stranded DNA (Transducer ), and polymerase.<br>
@@ -185,10 +159,10 @@ Step3. Output DNA are released by the strand displacement activity.<br><br>
 
 These reactions take place just after reading process because the toehold region of Transducer is slightly longer than that of gates.<br>
 <br clear="left">
-
 <br>
 </p>
 </section>
+
 <section id="contents04">
 <p>Updating process is achieved by strand displacement and restriction enzyme. This process is composed of Signal, double stranded DNA (gate) and restriction enzyme. <br>
 
@@ -199,75 +173,43 @@ Step2. Polymerase elongates DNA from 3' end.<br>
 Step3. Single stranded DNA (Updater) is released by strand displacement activity.<br>
 Step4. Updater hybridizes with Input/template complex.<br>
 Step5. Restriction enzyme cleaves duplex of Updater and Input/template complex. Input is then updated.<br><br>
-
 Input is updated for the next cycle, the three processes can take place from the beginning.<br>
 <br clear="left">
 <br>
 The cycle is repeated again and again until all the instructions coded (written) in the Input are executed. Eventually, the Outputs are released in order. Programmability is an important feature of our device, because different Input can result in different order to release Outputs.</p>
+</section>
 
-
-
-
-
- <!-- 題名をつけるところ -->
 <section id="contents05">
 <h2><span>Enzyme free device</span></h2>
 <hr>
-  <p> Here,we explain the mechanisms of enzyme free device(using only DNA).
+  <p>Here,we explain the mechanisms of enzyme free device(using only DNA).
 
     Enzyme free device is designed based on seesaw gates capable of cascading strand displacement reactions.<br>
     <br>
     <img src="images/square-01.png" width="300"alt="design" align="left"> </p>
+<br clear="left">
   <p>Components of the device are Input , Trigger, Gate, Transducer  and Fuel.<br>
     The order to release outputs is only coded in the input, while other DNA components is utilized for cascading the reactions.<br>
-    <br>
     <br clear="left">
-    <br>
     Cascading reactions are implemented by following steps.<br>
     <br>
     <img src="images/design/workflow(enzymefree)02.png" width="600"alt="design">
  </p>
 <clear="left"></clear>
-  <p>Step1. Trigger hybridizes with Input. A signal is then released by strand displacement reaction.<br>
-    <br>
+  Step1. Trigger hybridizes with Input. A signal is then released by strand displacement reaction.<br>
     Step2. The signal released in Step1 hybridizes with Transducer. A first output is released by strand <span style="margin-left:55px">displacement.</span><br>
     <span style="margin-left:55px">This reaction takes place  faster than other reactions so that   Transducer serves as a function of</span><br /> 
 <span style="margin-left:55px">threshold.</span>
-    <br /></br />
+    <br />
     Step3. After Step2 finished, remaining Signal starts to hybridize with Gate. As a result, a new trigger is then<br /><span style="margin-left:50px"> released.Signal is used as a catalyst  in this step by the function of Fuel which hybridizes with<br /></span><span style="margin-left:50px"> Signal/Gate complex and restores Signal.
-    By consuming the excess Fuell , the reaction progresses</span><br /><span style="margin-left:50px"> from a small amount of Signal.</span>
-  </p>
-  <p>Step4. The new trigger hybridizes with input. A new Signal is then released which starts next cascades</p>
-</section>
+    By consuming the excess Fuell , the reaction progresses</span><br /><span style="margin-left:50px"> from a small amount of Signal.</span><br />
+  
+  Step4. The new trigger hybridizes with input. A new Signal is then released which starts next cascades
 
-
-
-
-<!--
-<section id="contents03">
-<span><img src="images/square-01.png" width="26px" height="26px"><h2>Releasing process</h2></span>
-<p>
-This process releases the liposome-A when it accepts the strand A<sub>1</sub> from amplifying process.(Fig.3) The liposome is immobilized on substrate in advance. To immobilize that, cholesterol-modified DNA (output-A) and thiol-modified DNA can be used. We can fix thiol-modified DNA onto gold plate. When output-A attached on liposome hybridizes to thiol-modified DNA, liposome is immobilized on substrate.
-</p>
-<p>
-The details of this process is shown as follows.<br>
-</p>
-<p>
-After the amplifying process, strand A<sub>1</sub> hybridizes to thiol-modified DNA on substrate.
-Polymerase synthesizes new DNA from the 3’-end of A<sub>1</sub>(⑤), separating existing hybridization(⑥).
-Eventually, liposome-A is released with output-A from the strand A<sub>1</sub>.
-</p>
-
-<img src="http://openwetware.org/images/a/a2/Figure2_fusen-04.png"><br>
-Fig.3 Schematic explanation of the releasing process
-
-</section>-->
-
-
-
-
-<p>The device repeats the cascading reaction until all Outputs are released. Eventually Outputs are released in order. As well as Enzyme device, programmability is an important feature. </p>
 <p>&nbsp;</p>
+<p>The device repeats the cascading reaction until all Outputs are released. Eventually Outputs are released in order. As well as Enzyme device, programmability is an important feature. </p>
+
+</section>
 </article>
 </div>
 </div>
