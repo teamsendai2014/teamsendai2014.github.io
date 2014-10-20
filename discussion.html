@@ -103,7 +103,7 @@ $(function() {
 <article>
 <h1>Discussion</h1>
 <section id="contents01">
-<span><h1>Enzyme device</h1></span>
+<span><h2>Enzyme device</h2></span>
 <p>In this section, we contrast the result of simulation and experiments and study differences between these two results.
 As shown in in previous section, the reaction velocity in simulation is more 100 times greater than in experiments.
 Perhaps the cause of this difference is in reaction rate constant or reaction process in simulation.
@@ -116,25 +116,46 @@ In each process, some single strand DNAs are released. In simulation, they are r
 
 
 
-
-
-
-
-
-
 <section id="contents02">
-<span><h1>Enztme free device</h1></span>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<span><h2>Enzyme free device</h2></span>
+<p>The graph shape of simulation was sigmoid curve while that of experiment was convex upward. The thresholding may not work.2 causes are possible for this difference.<br>
+Firstly, the DNA sequences may not designed to make difference reaction rate constants of hybridization. Signal must not hybridize to transducer early enough compared with the hybridization to Gate.<br>
+Secondly, Signal which was presumed to exist released the corresponding Output .
+Signal is presumed to exist  bacause we did not conducted the purification.
 
+また2つ目の原因は
+最初にインプットコンプレックスが十分にアニーリングされずシグナルが最初から存在していた
+その影響として
+A先に出力を出してしまっている
+B最初上がっている
+のようなことがあった
+
+というのを考えた。
+
+特に1つ目の原因については
+
+先と後の速度定数を一緒にしてみると、以下のようなシミュ結果が得られた。
+比べてみるとどっちも下に凸になっている
+
+ということは、トーホールドの設計ミスではなく、2つ目の原因のせいだろう
+
+精製・測定前の核酸濃度測定をしていない
+すればなくなるんじゃないの？
+
+シミュレーションは100秒くらいで初めの出力が出て、実験は1800秒ぐらいででた。18倍の差があった。
+
+シミュ20℃、実験は21.5℃だから温度補正はしなくていい？
+シーソーの論文の速度定数を再度チェックする
+でもシーソーゲートは1つ目の出力は1時間くらい
+
+時間間隔はシミュは600秒、実験は4200秒ぐらいで出た。7倍程度なので両者の差は様相よりも小さかった。
+シミュはある程度実際のDNAの反応を正確にモデル化できていると考える
+
+ただし、きっちりと一致したわけではない。
+精製
+反応速度位定数の測定
+を行いよりわれわれのデバイスに特化したパラメータを設定すればより良い結果が得られると考える。
+</p>
 </section>
 </article>
 </div>

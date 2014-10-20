@@ -119,8 +119,7 @@ $(function() {
 <article>
 <h1>Experiment</h1>
 <p>
-<br>
-Experimental results prove our devices (Enzyme and Enzyme free device) work properly as we designed by electrophoresis or other chemical observation methods. This page explains these experimental results of Enzyme and Enzyme free device, both of which include detail analysis of component reactions.<br>
+Experimental results of electrophoresis and other chemical observation methods proved our devices (Enzyme and Enzyme free device) work properly as we designed by electrophoresis or other chemical observation methods. This page explains these experimental results of Enzyme and Enzyme free device, both of which include detail analysis of component reactions.<br>
 </p>
 
 
@@ -163,15 +162,14 @@ Experimental results prove our devices (Enzyme and Enzyme free device) work prop
 <section id="contents02">
 <span><h2 id="ed Whole device ex">Whole device</h2></span>
 <p>
-Our device released different Outputs in order depending on the information of Input. It was proved by two experimental results of electrophoresis (Fig.1 and Fig.2) where we add two types of Inputs (<font color="DB0015">A</font> then <font color="6BBF3F">B</font>, <font color="6BBF3F">B</font> then <font color="DB0015">A</font>).Both of Output-A and B were tagged with TAMRA. We conducted quantitative analysis of the band intensity of Outputs based on the result of electrophoresis.
+Our device released different Outputs in order depending on the information of Input. It was proved by two experimental results of electrophoresis (Fig.1) where we add two types of Inputs (<font color="DB0015">A</font> then <font color="6BBF3F">B</font>, <font color="6BBF3F">B</font> then <font color="DB0015">A</font>).Both of Output-A and B were tagged with TAMRA. We conducted quantitative analysis of the band intensity of Outputs based on the result of electrophoresis.
 Following graphs show the ratio of Outputs to the total intensity of 2 bands (Transducer, Output) on each lane. <br>
 <br>
 
 
 
 
-<!--
-戦略的にコメントアウト
+
 
 <div align="center">
 <img src="images/experiment/experiment es second output electrophoresis after AB_1.0.png" width="800"><br>
@@ -183,12 +181,14 @@ All enzymes and DNAs (Transducer, Gate) were mixed at 45 &#08451 , then the reac
 
 
 
--->
+
 
 
 
 
 <br>
+</p>
+<p>
 In this experimental result, the time series variation of Outputs proved that our device releases Outputs in order.
 The order of Outputs changed depending on the information of input. Both graphs show that saturated time of the first and the second Output was 2 and 20 minutes. Thus, both time intervals were about 18 minutes. The ratio of Outputs was saturated around 90 %.<br> 
 </p>
@@ -222,6 +222,8 @@ Reaction conditions such as temperature, concentration, and time were determined
 <span><h3 id="Reading Process ex">Reading Process</h3></span>
 <p>
 This process should work if Input, Template, Polymerase, Nickase, and dNTP are all in the same solution. If this process works properly, the signal will be amplified.<br>
+</p>
+<p>
 The result of electrophoresis is shown right. 
 The band of Signal strand appeared on lane2 while that did not appear on lane3. Unlike lane1, Signal strand was not contained in the sample of lane3. The band of Signal strand appeared by the function of Polymerase and Nickase. Reading process works precisely when the reaction temperature is 37 &#08451; ~45 &#08451; .<br>
 </p><br />
@@ -239,6 +241,8 @@ Fig.2 Confirmation of Reading process<br>
 <img src="images/experiment/experiment releasing process eido_1.0.png" width="350" align="right" style="margin-left:10px">
 <p>
 In this process, existing Output should be released by both the hybridization of Signal strand and the displacement of polymerase.<br>
+</p>
+<p>
 The result of electrophoresis is shown right. Output did not appear on lane1 in which Signal was not contained. Output appeared on lane2 and lane3 in which Signal was contained. From this result, we can conclude that Releasing process works correctly. Lane2 and lane3 differ on the reaction temperature, the band of Output appeared on both lane2 and lane3. Releasing process would work precisely when the reaction temperature is between 37 &#08451;  and 45 &#08451; .<br>
 </p>
 <p style="margin-bottom:100px">
@@ -258,6 +262,8 @@ Fig.3 Confirmation of Releasing process<br />
 <span><h3 id="Updating Process ex" style="margin-top:20px">Updating Process</h3></span>
 <p>
 In this process, Updater is released by both the hybridization of Signal and the displacement of polymerase. Recognition sequence is formed by the hybridization of Updater and Input, and then EcoRI cuts the Input.<br>
+</p>
+<p>
 The result of electrophoresis is shown right. From the result of lane1 and lane2, we found that Updated complex and Waste are generated when Signal is entered. Therefore, Updating process works correctly by the function of EcoRI and Polymerase.<br>
 </p>
 <p>
@@ -299,14 +305,17 @@ Fig.. The time variation of fluorescence intensity of Output and Transducer <br>
 <br>
 </div>
 -->
+<p>
 Fluorescent intensity of Output was increased as reaction time became longer. Output was saturated about 10 minutes later. Therefore, we concluded that it takes about 5~10 minutes for our device to release first Output.<br>
 Figure below shows the result of electrophoresis above. The gel was stained with SYBR Gold.<br>
 <br>
+</p>
 <div align="center">
 <img src="images/experiment/experiment es first output electrophoresis 02_1.0.png" width="600"><br>
 Fig.6 Result of electrophoresis to confirm the first output releasing (after staining)<br>
 <br>
 </div>
+<p>
 When reaction time is over 20 minutes, Signal band emerged. 
 The reason can be thought that Output discharged in Releasing process saturated, and Signal exceeded. 
 This excess Signal is used in next Updating process. <br>
@@ -335,13 +344,14 @@ This excess Signal is used in next Updating process. <br>
 <section id="contents05">
 <span><h2 id="efd Whole device ex">Whole device</h2></span>
 <p>
-It is necessary to confirm that enzyme free device we designed really releases Output depends on Input sequences in order. This experiment measures the intensity of Output-A modified with FAM. We prepared Input-AB and Input-BA.  The order of releasing would be changed depending on these Inputs if our device works properly.<br>
-Following graph shows the time series variation of Output-A.<br>
+It is necessary to confirm that enzyme free device we designed really releases Output depends on Input sequences in order. This experiment measures the intensity of Output-A modified with FAM. We prepared Input-AB and Input-BA.  The order of releasing would be changed depending on these Inputs if our device works properly. Following graph shows the time series variation of Output-A.<br>
+</p>
 <div align="center">
 <img src="images/experiment/experiment efs whole device spectro together_1.0.png" width="600"><br>
 Fig.7 The intensity of Output-A (FAM) measured by spectrofluorometer.<br> <font size="-1">The fluorescence wavelength is 520nm. To do quantitative analysis the highest intensity data was defined 100% while the lowest was defined 0 %.</font><br>
 </div>
 <br>
+<p>
 According to the graph, the intensity of Output-A coded as second domain was increased later than that was first domain. Therefore, this result shows our device releases Output based on the code written in Input.
 The time difference between first and second releasing is about 40 minutes.<br>
 We are going to discuss about this result along with simulation in <a href="discussion.html">Discussion page</a>.
@@ -407,6 +417,7 @@ Fig.9 Confirmation of Seesaw gate by electrophoresis<br>
 In two bands appeared on lane1 and lane3 in the figure, the upper one is Transducer, and the lower one is Output.  <br>
 The fluorescence intensity of lane1 with Trigger is strong. <br>
 Table.1 shows the results of measuring the fluorescence intensity of 2 bands in lane 1 and 3.<br>
+</p>
 <!--
 <div align="center">
 <img src="images/experiment/experiment efs seesaw 1stoutputdetecting eido intensity analysis lane2_1.0.png"  width="650"><br>
@@ -421,6 +432,7 @@ Table.1 Band intensity of Transducer-A and Output-A<br>
 <img src="images/experiment/experiment efs seesaw 1stoutputdetecting eido intensity analysis table_1.0.png"  width="400"><br>
 </div>
 <br>
+<p>
 Comparing lane1 (with Trigger) with lane3 (with no Trigger), the intensity of Output increased by 83.0%, and Transducer decreased 83.0% when Trigger was added. We can conclude that Output is released by Trigger.<br>
 </p>
 <p>
