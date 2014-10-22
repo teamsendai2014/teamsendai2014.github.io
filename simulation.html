@@ -11,7 +11,7 @@
 <script type="text/javascript">
 
 
-$(function() {
+window.onload=$(function() {
 	// ナビゲーションのリンクを指定
 	var navLink = $('#contentsnav li a');
 
@@ -50,6 +50,21 @@ $(function() {
 
 	// 現在地をチェックする
 	function currentCheck() {
+
+	for (var i = 0; i < navLink.length; i++) {
+		// コンテンツのIDを取得
+		var targetContents = navLink.eq(i).attr('href');
+		// ページ内リンクでないナビゲーションが含まれている場合は除外する
+		if(targetContents.charAt(0) == '#') {
+			// ページ上部からコンテンツの開始位置までの距離を取得
+			var targetContentsTop = $(targetContents).offset().top;
+			// ページ上部からコンテンツの終了位置までの距離を取得
+			var targetContentsBottom = targetContentsTop + $(targetContents).outerHeight(true) - 1;
+			// 配列に格納
+			contentsArr[i] = [targetContentsTop, targetContentsBottom]
+		}
+	};
+
 		// 現在のスクロール位置を取得
 		var windowScrolltop = $(window).scrollTop();
 		for (var i = 0; i < contentsArr.length; i++) {
@@ -69,7 +84,6 @@ $(function() {
 	});
 });
 
-
 </script>
 
 </head>
@@ -78,7 +92,7 @@ $(function() {
 <div id="wrapper">
     <header id="globalheader">
       <nav id="globalnav">
-        <h1><a href="index.html">Tales of the Order</a></h1>
+        <a href="index.html"><img src="images/logo3.png" height="60px" width="300px" style="margin-right:40px; margin-left:20px" align="left"></a>
         <ul>
           <li><a href="./project.html">OUR PROJECT</a></li>
           <li><a href="./design_enzyme.html">DESIGN</a></li>
@@ -93,16 +107,13 @@ $(function() {
 <div id="main">
 <nav id="contentsnav">
 <ul>
-<li><a href="#contents01">About Enzyme device</a></li>
-<li><a href="#contents02">About Enzyme free device</a></li>
+<li><a href="#contents01">Enzyme device</a></li>
+<li><a href="#contents02">Enzyme free device</a></li>
 </ul>
 </nav>
 <div id="maincol">
 <article>
 <h1>Simulation</h1>
-
-<!--
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>-->
 
 <section id="contents01">
 <span>
@@ -115,12 +126,12 @@ difficult to predict the behavior of the device. In addition, it is
 laborious to reveal the relationship between concentration of
 components and time intervals of output DNA by repeating chemical
 experiments.
-To overcome such problems, we formalized ordinary differential
+To overcome these problems, we formalized ordinary differential
 equations (ODE) based on chemical kinetics model to simulate the
 behavior of the device in a reproducible manner. The numerical
 simulation was carried by mathematical software (Scilab), while the
-ODEs were derived by wring down all the possible intermediates by hand
-(more than 400!!). Raw materials, all intermidates and more information are
+ODEs were derived by writing down all the possible intermediates by hand
+(more than 400!!). Raw materials, all intermidiates and more information are
 available [here].
 (<a href="simulation%20date/edsource.pdf" target="_blank">Raw_material</a>,
 
@@ -137,7 +148,7 @@ and Output-A in order. The results are shown in Fig.1.
 </div>
 Fig.1 Results of simulation of model which releases two ouputs
 (left:A then B right: B then A).All concentrations of components are
-200nM.The horizontal axis is concentration. The vertical axis is time. <br>
+200nM.The horizontal and the vertical axes are time and concentration respectively. <br>
 <br>
 <p>
 These results indicate that the order of Output is programmable because
@@ -149,7 +160,7 @@ Second, we increased the number of output.The result is shown in Fig.2.
 <div class="aligncenter">
 <img src="simulation%20date/graph_200nM.png" width="400">
 </div>
-Fig.2 Result of simulation of model which releases three outputs. All  concentrations of components are 200nM.  .The horizontal axis is concentration. The vertical axis is time. <br>
+Fig.2 Result of simulation of model which releases three outputs. All concentrations of components are 200nM.The horizontal and the vertical axes are time and concentration respectively. <br>
 <br>
 <br>   
 
@@ -158,10 +169,10 @@ This result means that we can program the number of Output.<br>
 Even the model contains more than 400 intermediatesour, our elaborate design makes the device possible to behave as we design. <br>
 <br>
 Moreover,the time intervals between Outputs can be controlled by tuning
-the concentration of Input or Templates or Gates.We define the
+the concentration of Input or Templates or Gates. We define the
 output-time as a time when 50% of the Output is released.
-Then,time interval is defined as a difference between two output-times.<br>
-Tuning concentration of Input is simple way to controll the time
+Then, time interval is defined as a difference between two output-times.<br>
+Tuning concentration of Input is a simple way to control the time
 interval. The time interval depending on Input concentration is shown
 in Fig.3.<br><br>
 
@@ -172,7 +183,7 @@ in Fig.3.<br><br>
 </div> 
 <p>Fig.3 changes of the time interval depending on the
   concentration of Input. Time intervals were measured in various Input
-  concentrations.(10nM ,20nM, 50nM and 100nM).The horizontal axis is concentration. The vertical axis is time interval. Rhombus indicates output-time of Output-A. Square indicates time interval between Output-A and Output-B and Triangle indicates time interval between Output-B and Output-C. </p>
+  concentrations.(10nM ,20nM, 50nM and 100nM). The horizontal and the vertical axes are concentration and time intervals respectively. Rhombus indicates output-time of Output-A. Square indicates time interval between Output-A and Output-B. Triangle indicates time interval between Output-B and Output-C. </p>
 <p> <br>
   <br>
   In this case,
@@ -189,7 +200,7 @@ in Fig.3.<br><br>
 <div class="aligncenter">
     <img src="simulation%20date/templateB.png" width="400">
 </div> 
-<p>Fig.4 changes of the time interval between Output-A and Output-B (Template-B concentration was 10nM, 20nM, 50nM and 100nM)..The horizontal axis is concentration. The vertical axis is time interval. Rhombus indicates output-time of Output-A. Square indicates time interval between Output-A and Output-B and Triangle indicates time interval between Output-B and Output-C. <br>
+<p>Fig.4 changes of the time interval between Output-A and Output-B (Template-B concentration was 10nM, 20nM, 50nM and 100nM). The horizontal and the vertical axes are concentration and time interval respectively. Rhombus indicates output-time of Output-A. Square indicates time interval between Output-A and Output-B and Triangle indicates time interval between Output-B and Output-C. <br>
   <br>
   Only time interval between Output-A and Output-B can be changed
   corresponding to Template-B in a range of about 10sec from 6sec.<br>
@@ -218,7 +229,7 @@ More date about time interval are
 <p>
 
 As
-well as Enzyme device, we formalized ordinary differential equations based on chemical kinetic model to simulate the behavior of the device.The numerical simulation wes carried by mathematical software (Scilab). Of cource, ODEs were derived by writing down all the possible intermediates by hands. </p>
+well as Enzyme device, we formalized ordinary differential equations based on chemical kinetic model to simulate the behavior of the device. The numerical simulation wes carried by mathematical software (Scilab). Of cource, ODEs were derived by writing down all the possible intermediates by hands. </p>
 <p>Source
   codes, workflows of chemical reactions and more informion are available
   here( <a href="simulation%20date/EFD_AB.pdf" target="_blank">source_code_1,</a>
@@ -244,7 +255,7 @@ Second, we simulated the model which releases three output(Fig.6). <br>
 <p>Fig.6 Simulation of model which releases three Output.  The concentration of Input is 200nM. All Templates concentration is 200nM. All Transducers concentration is 100nM. All Gates concentration is 200nM. All Fuels concentration is 400nM.This simulation was implemented by using source_code_2.<br>
 <br>
 
-The device releases three Outputs in order(A then B then C). This results indicate that the number of Outputs are programmable.<br>
+The device releases three Outputs in order(A then B then C). This result indicates that the number of Outputs is programmable.<br>
   <br>
 Next, we analyzed the time intervals of each Outputs. The time intervals between arbitrary Outputs are programmed by changing relevant components as well as Enzyme device. <br>
   Fig.7 shows the time intervals depending on various Input concentrations.
@@ -254,7 +265,7 @@ Output-C are changed in the range of 18sec from 12sec. <br>
 The time intervals between Output-B and Output-C are
   changed by adjusting Gate-B concentration.
   (Fig.8)<br>
-  More date about the time intervals are available here. (Changing
+  More data about the time intervals are available here. (Changing
   
   <a href="simulation%20date/EFDgateA.png" target="_blank">Gate-A,</a><a href="simulation%20date/EFDgate.png" target="_blank">All_Gates,</a><a href="simulation%20date/EFDfuel.png" target="_blank">all Fuels,</a><a href="simulation%20date/EFDfuelA.png" target="_blank">Fuel-A,</a><a href="simulation%20date/EFDfuelB.png" target="_blank">Fuel-B,</a><a href="simulation%20date/EFDtrigger.png" target="_blank">Trigger</a>
   )

@@ -11,7 +11,7 @@
 <script type="text/javascript">
 
 
-$(function() {
+window.onload=$(function() {
 	// ナビゲーションのリンクを指定
 	var navLink = $('#contentsnav li a');
 
@@ -41,9 +41,8 @@ $(function() {
 
         var position = target.offset().top;
 
-        $("html, body").animate({scrollTop:position + 2}, speed, "swing");
-		
-//2pixel下に下げてナビのずれを回避
+        $("html, body").animate({scrollTop:position + 1}, speed, "swing");
+
         return false;
 
     });
@@ -51,6 +50,21 @@ $(function() {
 
 	// 現在地をチェックする
 	function currentCheck() {
+
+	for (var i = 0; i < navLink.length; i++) {
+		// コンテンツのIDを取得
+		var targetContents = navLink.eq(i).attr('href');
+		// ページ内リンクでないナビゲーションが含まれている場合は除外する
+		if(targetContents.charAt(0) == '#') {
+			// ページ上部からコンテンツの開始位置までの距離を取得
+			var targetContentsTop = $(targetContents).offset().top;
+			// ページ上部からコンテンツの終了位置までの距離を取得
+			var targetContentsBottom = targetContentsTop + $(targetContents).outerHeight(true) - 1;
+			// 配列に格納
+			contentsArr[i] = [targetContentsTop, targetContentsBottom]
+		}
+	};
+
 		// 現在のスクロール位置を取得
 		var windowScrolltop = $(window).scrollTop();
 		for (var i = 0; i < contentsArr.length; i++) {
@@ -70,7 +84,6 @@ $(function() {
 	});
 });
 
-
 </script>
 
 </head>
@@ -79,7 +92,7 @@ $(function() {
 <div id="wrapper">
     <header id="globalheader">
       <nav id="globalnav">
-        <h1><a href="index.html">Tales of the Order</a></h1>
+        <a href="index.html"><img src="images/logo3.png" height="60px" width="300px" style="margin-right:40px; margin-left:20px" align="left"></a>
         <ul>
           <li><a href="./project.html">OUR PROJECT</a></li>
           <li><a href="./design_enzyme.html">DESIGN</a></li>
@@ -94,8 +107,8 @@ $(function() {
 <div id="main">
 <nav id="contentsnav">
 <ul>
-<li><a href="#contents01">Enzyme device</a></li>
-<li><a href="#contents02">Enzyme free device</a></li>
+<li><a href="#contents01"><b>Enzyme device</b></a></li>
+<li><a href="#contents02"><b>Enzyme free device</b></a></li>
 </ul>
 
 </nav>
@@ -104,13 +117,20 @@ $(function() {
 <h1>Discussion</h1>
 <section id="contents01">
 <span><h2>Enzyme device</h2></span>
-<p>In this section, we contrast the result of simulation and experiments and study differences between these two results.
-As shown in in previous section, the reaction velocity in simulation is more 100 times greater than in experiments.
+<hr></hr>
+<p>
+<!--
+<div align="center">
+<img src=""><br>
+Fig. Fitting result of simulation<br>
+</div>
+-->
+ In this section, we contrast the result of simulation and experiments and discuss differences between these two results.
+As shown in previous section, the reaction velocity in simulation is more 100 times greater than in experiments.
 Perhaps the cause of this difference is in reaction rate constant or reaction process in simulation.
- Rate coefficient of reaction in simulation is quoted from references. However, we    equally decided the reaction velocity in all reaction except gate.
-The reaction velocity of hybridization with gate DNA is 10 times greater than that of  the value.
- If we determine these reaction rate constant by using experiments and apply the values to simulation, we will achieve accurate simulation.
-In each process, some single strand DNAs are released. In simulation, they are released endlessly.   However a quantity of dNTP is limited, so they converge on a constant value. Therefore if we add to reaction formulas of simulation to make Key DNA be a constant value, we can get accurate value. Moreover in simulation DNA denature reaction does not occur, but actually there are not a few denature reaction. We should experiment about this reaction and consider the impact in simulation.
+ Rate coefficient of reaction in simulation is quoted from references. However, we    equally decided the reaction velocity in all reaction except gate and the reaction velocity of hybridization with gate DNA is one-tenth as low as that of the value.
+ By right, the reaction velocity of hybridization with gate DNA is a lower. Therefore if we determine these reaction rate constants by using experiments and apply the values to simulation, we will perform accurate simulation.
+In each process, some single strand DNAs are released and in simulation, they are released endlessly.   However a quantity of dNTP is limited. Thus they converge on a constant value. Therefore if we apply some treatment to make Signal be a constant value, we can perform accurate simulation. Moreover in simulation DNA denature- reaction does not occur, but actually there are not a few denature reaction. We should experiment about this reaction and consider the impact in simulation.
 </p>
 </section>
 
@@ -118,43 +138,18 @@ In each process, some single strand DNAs are released. In simulation, they are r
 
 <section id="contents02">
 <span><h2>Enzyme free device</h2></span>
-<p>The graph shape of simulation was sigmoid curve while that of experiment was convex upward. The thresholding may not work.2 causes are possible for this difference.<br>
-Firstly, the DNA sequences may not designed to make difference reaction rate constants of hybridization. Signal must not hybridize to transducer early enough compared with the hybridization to Gate.<br>
-Secondly, Signal which was presumed to exist released the corresponding Output .
-Signal is presumed to exist  bacause we did not conducted the purification.
-
-また2つ目の原因は
-最初にインプットコンプレックスが十分にアニーリングされずシグナルが最初から存在していた
-その影響として
-A先に出力を出してしまっている
-B最初上がっている
-のようなことがあった
-
-というのを考えた。
-
-特に1つ目の原因については
-
-先と後の速度定数を一緒にしてみると、以下のようなシミュ結果が得られた。
-比べてみるとどっちも下に凸になっている
-
-ということは、トーホールドの設計ミスではなく、2つ目の原因のせいだろう
-
-精製・測定前の核酸濃度測定をしていない
-すればなくなるんじゃないの？
-
-シミュレーションは100秒くらいで初めの出力が出て、実験は1800秒ぐらいででた。18倍の差があった。
-
-シミュ20℃、実験は21.5℃だから温度補正はしなくていい？
-シーソーの論文の速度定数を再度チェックする
-でもシーソーゲートは1つ目の出力は1時間くらい
-
-時間間隔はシミュは600秒、実験は4200秒ぐらいで出た。7倍程度なので両者の差は様相よりも小さかった。
-シミュはある程度実際のDNAの反応を正確にモデル化できていると考える
-
-ただし、きっちりと一致したわけではない。
-精製
-反応速度位定数の測定
-を行いよりわれわれのデバイスに特化したパラメータを設定すればより良い結果が得られると考える。
+<hr></hr>
+<p>The graph shape of simulation was sigmoid curve while that of experiment was convex upward. We guess that this difference maked beause the thresholding did not work well. We did simulation in which the thresholding does not work. The reslt is shown in following graphs.
+<div align="center">
+<img src="images/discussion/EFD_AB_NoThreshold.png" width="500"><br>
+Fig.2 Result of simulation without the function of threshold<br>
+<font size="-2">
+The thresholding is caused by the difference of reaction rate constant of two hybridizations: Signal to Output and Signal to Gate.<br>
+ We set same number for that constant in this simulation.
+</font>
+</div>
+<br>
+The shape of graph is concave up, which is similar to experimental prot. Signal must not hybridize to Transducer early enough compared with the hybridization to Gate for thresholding. However, it is possible that Signal presumes to exist at the beginning of the reaction because we did not conducted purification. The result of experiment may become simillar to simulation by doing purification and/or measurening the concentration of DNAs. These are the next tasks for our Enzyme free device.<br>
 </p>
 </section>
 </article>

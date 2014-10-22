@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html>
 <head>
@@ -82,7 +81,7 @@ table {
 <script type="text/javascript">
 
 
-$(function() {
+window.onload=$(function() {
 	// ナビゲーションのリンクを指定
 	var navLink = $('#contentsnav li a');
 
@@ -101,7 +100,7 @@ $(function() {
 			contentsArr[i] = [targetContentsTop, targetContentsBottom]
 		}
 	};
-
+	
 	 $('a[href^=#]').click(function(){
 
         var speed = 500;
@@ -112,9 +111,8 @@ $(function() {
 
         var position = target.offset().top;
 
-        $("html, body").animate({scrollTop:position+1}, speed, "swing");
+        $("html, body").animate({scrollTop:position + 1}, speed, "swing");
 
-//2pixel下に下げてナビのずれを回避
         return false;
 
     });
@@ -122,6 +120,21 @@ $(function() {
 
 	// 現在地をチェックする
 	function currentCheck() {
+
+	for (var i = 0; i < navLink.length; i++) {
+		// コンテンツのIDを取得
+		var targetContents = navLink.eq(i).attr('href');
+		// ページ内リンクでないナビゲーションが含まれている場合は除外する
+		if(targetContents.charAt(0) == '#') {
+			// ページ上部からコンテンツの開始位置までの距離を取得
+			var targetContentsTop = $(targetContents).offset().top;
+			// ページ上部からコンテンツの終了位置までの距離を取得
+			var targetContentsBottom = targetContentsTop + $(targetContents).outerHeight(true) - 1;
+			// 配列に格納
+			contentsArr[i] = [targetContentsTop, targetContentsBottom]
+		}
+	};
+
 		// 現在のスクロール位置を取得
 		var windowScrolltop = $(window).scrollTop();
 		for (var i = 0; i < contentsArr.length; i++) {
@@ -142,7 +155,6 @@ $(function() {
 });
 
 
-
 </script>
 
 </head>
@@ -151,7 +163,7 @@ $(function() {
 <div id="wrapper">
     <header id="globalheader">
       <nav id="globalnav">
-        <h1><a href="index.html">Tales of the Order</a></h1>
+        <a href="index.html"><img src="images/logo3.png" height="60px" width="300px" style="margin-right:40px; margin-left:20px" align="left"></a>
         <ul>
           <li><a href="./project.html">OUR PROJECT</a></li>
           <li><a href="./design_enzyme.html">DESIGN</a></li>
@@ -185,7 +197,7 @@ $(function() {
 <h1>Materials and Methods</h1>
 
 <section id="contents01">
-<span><h1>Enzyme Device</h1></span>
+<span><h1>Enzyme Device</h1><hr></span>
 </section>
 
 <section id="contents02">
@@ -398,6 +410,13 @@ Fig. Gel imager(BioRad)<br>
 
 
 <span><h3 id="Combination of 3 processes">Combination of 3 processes</h3></span>
+We apply FRET to detect that Output-A is released inspired by a paper[3]. Before the releasing of Output-A, the 6-FAM does not glow because the fluorescence of 6-FAM is absorbed by BHQ-1 (this fenomenon is named FRET). In the presence of Signal, Output-A is released, and then 6-FAM glows. Therefore, we can confirm whether Output is released or not.
+<div align="center">
+<img src="images/protocol/fret.png" width="650"><br>
+Fig. Detection of Output-A by using FRET.<br>
+<br>
+</div>
+
 1.Input/Template complex and Output complex were formed by annealing(cooling from 95 to 20&#08451 for 75min, -1&#08451/min). All samples were mixed after the formation of these complexes.<br>
 2.Enzymatic reaction was conducted for various time (1,2,5,10,20,50 min), then these were left at 80&#08451 for 20 min. After that, all samples were left at room temperature by the time of applying (more than 1 hour).<br>
 3.15% acrylamide gel was formed with 1&times;TBE buffer.<br>
@@ -412,7 +431,7 @@ Fig. Gel imager(BioRad)<br>
 
 
 <section id="contents05">
-<span><h1>Enzyme free device</h1></span>
+<span><h1>Enzyme free device</h1><hr></span>
 </section>
 
 <section id="contents06">
