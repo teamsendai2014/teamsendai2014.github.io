@@ -78,10 +78,7 @@ $(function() {
 <div id="wrapper">
     <header id="globalheader">
       <nav id="globalnav">
-        <a href="index.html">
-<!--<h1><a href="index.html">Tales of the Order</a></h1>-->
-	<img src="images/logo3.png" height="60px" width="300px" style="margin-right:40px; margin-left:20px" align="left">
-</a>
+        <a href="index.html"><img src="images/logo3.png" height="60px" width="300px" style="margin-right:40px; margin-left:20px" align="left"></a>
         <ul>
           <li><a href="./project.html">OUR PROJECT</a></li>
           <li><a href="./design_enzyme.html">DESIGN</a></li>
@@ -117,14 +114,14 @@ components and time intervals of output DNA by repeating chemical
 experiments.
 To overcome these problems, we formalized ordinary differential
 equations (ODE) based on chemical kinetics model to simulate the
-behavior of the device in a reproductible manner. The numerical
+behavior of the device in a reproducible manner. The numerical
 simulation was carried by mathematical software (Scilab), while the
 ODEs were derived by writing down all the possible intermediates by hand
 (more than 400). Raw materials, all intermidiates and more information are
 available [here].
 (<a href="simulation%20date/edsource.pdf" target="_blank">Source_code</a>,
 
-<a href="simulation%20date/edsource.pdf" target="_blank">All_intermidiates</a>
+<a href="simulation%20date/intermidiates_ed.html" target="_blank">All_intermidiates</a>
 <a href="simulation%20date/Information_ed.html" target="_blank">Chemical_parameters</a>   )
 </p>
 <br>
@@ -134,7 +131,7 @@ The results are shown in Fig.1.<br>
  <img src="simulation%20date/graph_200nM_ab.png" width="400"><img src="simulation%20date/graph_200nM_ba.png" width="400"> 
 </div>
 Fig.1 Results of simulation of model which releases two outputs
-(left:A then B right: B then A). All concentrations of components are
+(left:A then B right: B then A).All concentrations of components are
 200nM. The horizontal and the vertical axes are time and concentration respectively. <br>
 <br>
 <p>
@@ -152,9 +149,9 @@ Fig.2 Result of simulation of model which releases three outputs. All concentrat
 <p>
 Three Outputs were released in order (A then B then C).
 This result means that we can program the number of Output.
-Even the model contains more than 400 intermediates, our elaborate design makes the device possible to behave as we design.</p> 
+Even the model contains more than 400 intermediatesour, our elaborate design makes the device possible to behave as we design.</p> 
 <p>
-Moreover, the time intervals between Outputs can be controlled by tuning
+Moreover,the time intervals between Outputs can be controlled by tuning
 the concentration of Input or Templates or Gates. We define the
 output-time as a time when 50% of the Output is released.
 Then, time interval is defined as a difference between two output-times.
@@ -174,7 +171,7 @@ interval. Fig.3 shows the relationship between Input concentration and the time 
   time intervals (between first and second, between second and third) are
   both controlled together (homogeneous control). Both time interval range from 5sec to more than 10sec.
   When we change the concentration of Templates or Gates, the time
-  intervals can be controlled separately (heterogeneous control). For
+  intervals can be controlled separately. (heterogeneous control).For
   example, Fig.4 shows the relationship between Template-B concentration and time interval. 
   
   <br><br>
@@ -187,7 +184,7 @@ interval. Fig.3 shows the relationship between Input concentration and the time 
 <p>
   Only time interval between Output-A and Output-B can be changed
   corresponding to Template-B in a range of about 10sec from 6sec.<br>
-More data about time interval are
+More date about time interval are
   available here (<a href="simulation%20date/templateA.png" target="_blank">Template-A</a>
   <a href="simulation%20date/templateC.png" target="_blank">Template-C</a>
   
@@ -212,7 +209,7 @@ More data about time interval are
 <p>
 
 As
-well as Enzyme device, we formalized ordinary differential equations based on chemical kinetic model to simulate the behavior of Enzyme free device. The numerical simulation was carried by mathematical software (Scilab). Of cource, ODEs were derived by writing down all the possible intermediates by hands. </p>
+well as Enzyme device, we formalized ordinary differential equations based on chemical kinetic model to simulate the behavior of Enzyme free device. The numerical simulation wes carried by mathematical software (Scilab). Of cource, ODEs were derived by writing down all the possible intermediates by hands. </p>
 Source
   codes, workflows of chemical reactions and more informion are available
   here( <a href="simulation%20date/EFD_AB.pdf" target="_blank">source_code_1,</a>
@@ -226,16 +223,16 @@ Source
 <div>
 <img src="simulation%20date/AB.png" width="400"><img src="simulation%20date/BA.png" width="400"> .
 </div>
-Fig.5 Simulations of model which releases two Outputs. The concentration of Input is 200nM. All Templates concentration is 200nM. All Transducer concentration is 100nM. All Gates concentration is 200nM. All Fuels concentration is 400nM. These simulation were achieved by using source_code_1<br>
+Fig.5 Simulations of model which releases two Output. The concentration of Input is 200nM. All Templates concentration is 200nM. All Transducer concentration is 100nM. All Gates concentration is 200nM. All Fuels concentration is 400nM. These simulation were achieved by using source_code_1<br>
 <br><p>
- Output were released in order as we designed. This results mean that we can program the order of Outputs as well as Enzyme free device.
+ Output were released in order as we designed. This results means we can program the order of Outputs as well as Enzyme free device.
 <br>
-Second, we simulated the model which releases three outputs (Fig.6). <br>
+Second, we simulated the model which releases three output(Fig.6). <br>
 <br>
 <div class="aligncenter">
 <img src="simulation%20date/ABC.png" width="400">
 </div> 
-<p>Fig.6 Simulation of model which releases three Outputs.  The concentration of Input is 200nM. All Templates concentration is 200nM. All Transducers concentration is 100nM. All Gates concentration is 200nM. All Fuels concentration is 400nM. This simulation was achieved by using source_code_2.<br>
+<p>Fig.6 Simulation of model which releases three Output.  The concentration of Input is 200nM. All Templates concentration is 200nM. All Transducers concentration is 100nM. All Gates concentration is 200nM. All Fuels concentration is 400nM. This simulation was achieved by using source_code_2.<br>
 <br>
 
 The device releases three Outputs in order (A then B then C). This result indicates that the number of Outputs is programmable.<br></p>
