@@ -265,3 +265,19 @@ footer a{
 p{
 	text-indent:0.8em;
 }
+
+
+@media print{
+#main {
+	width: 1000px;
+	margin: auto;
+	padding: 10px;
+}
+#contentsnav{
+	display:none;
+}
+
+header {
+	position: fixed;
+	width: 1200px;
+}
