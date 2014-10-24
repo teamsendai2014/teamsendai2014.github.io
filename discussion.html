@@ -119,27 +119,31 @@ window.onload=$(function() {
 <span><h2>Enzyme device</h2></span>
 <hr></hr>
 <p>
-<!--
-<div align="center">
-<img src=""><br>
-Fig. Fitting result of simulation<br>
-</div>
--->
  In this section, we contrast the result of simulation and experiments and discuss differences between these two results.
 As shown in previous section, the reaction velocity in simulation is more 100 times greater than in experiments.
 Perhaps the cause of this difference is in reaction rate constant or reaction process in simulation.
  Rate coefficient of reaction in simulation is quoted from references. However, we    equally decided the reaction velocity in all reaction except gate and the reaction velocity of hybridization with gate DNA is one-tenth as low as that of the value.
  By right, the reaction velocity of hybridization with gate DNA is a lower. Therefore if we determine these reaction rate constants by using experiments and apply the values to simulation, we will perform accurate simulation.
 In each process, some single strand DNAs are released and in simulation, they are released endlessly.   However a quantity of dNTP is limited. Thus they converge on a constant value. Therefore if we apply some treatment to make Signal be a constant value, we can perform accurate simulation. Moreover in simulation DNA denature- reaction does not occur, but actually there are not a few denature reaction. We should experiment about this reaction and consider the impact in simulation.
+簡易ではあるが、我々はシミュレーションと実験で得られたデータのフィッティングを試みた。前述した問題点を考慮して、ゲートとシグナルのハイブリダイゼーションの反応速度定数を5.0*10^5から5.0*10^2に、その他で起こるハイブリダイゼーションの反応速度定数を5.0*10^6から5.0*10^4に変えた。またシグナルが際限なく出続けているのに関しては、シグナルのODEに減少項を加え、一定値に収束するようにした。
+　下の図がフィッティングを行って得られたグラフである。<br>
+<br>
+<div align="center">
+<img src="images/discussion/"><br>
+Fig.1 Fitting result of simulation<br>
+</div>
+<br>
+実験で得られたデータと比較してわかる通り、簡易的な方法ではあるが、十分にフィッティングができたと思われる。
+
 </p>
 </section>
 
 
 
 <section id="contents02">
-<span><h2>Enzyme free device</h2></span>
+<span><h2>Enzyme-free device</h2></span>
 <hr></hr>
-<p>The graph shape of simulation was sigmoid curve while that of experiment was convex upward. We guess that this difference maked beause the thresholding did not work well. We did simulation in which the thresholding does not work. The reslt is shown in following graphs.
+<p>The simulated curve of Output concentration well discribes the experimental results except for the initial transient. This difference is mainly beause the thresholding mechanisum did not work perfectly. 
 <div align="center">
 <img src="images/discussion/EFD_AB_NoThreshold.png" width="500"><br>
 Fig.2 Result of simulation without the function of threshold<br>
@@ -149,7 +153,7 @@ The thresholding is caused by the difference of reaction rate constant of two hy
 </font>
 </div>
 <br>
-The shape of graph is concave up, which is similar to experimental prot. Signal must not hybridize to Transducer early enough compared with the hybridization to Gate for thresholding. However, it is possible that Signal presumes to exist at the beginning of the reaction because we did not conducted purification. The result of experiment may become simillar to simulation by doing purification and/or measurening the concentration of DNAs. These are the next tasks for our Enzyme free device.<br>
+In our design, Signal must hybridize to Transducer before it binds to Gate for thresholding. However, it is difficult to remove all the Signal molecule at the beginning of the reaction because of inperfect purification. <br>
 </p>
 </section>
 </article>

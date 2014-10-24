@@ -93,8 +93,8 @@ $(function() {
 <div id="main">
 <nav id="contentsnav">
 <ul>
-<li><a href="#contents01">Enzyme device</a></li>
-<li><a href="#contents02">Enzyme free device</a></li>
+<li><a href="#contents01">Enzymatic device</a></li>
+<li><a href="#contents02">Enzyme-free device</a></li>
 </ul>
 </nav>
 <div id="maincol">
@@ -106,85 +106,69 @@ $(function() {
 <h2>Enzyme device </h2><hr>
 </span>
 <p>
-Since the components of the Enzyme system can result in
-combinatorially large number of intermediate structures, it is
-difficult to predict the behavior of the device. In addition, it is
-laborious to reveal the relationship between concentration of
-components and time intervals of output DNA by repeating chemical
-experiments.
-To overcome these problems, we formalized ordinary differential
-equations (ODE) based on chemical kinetics model to simulate the
-behavior of the device in a reproducible manner. The numerical
+Many components in the Enzymatic system may result in
+combinatorially large number of intermediate structures. 
+To predict the behavior of the device, we formalized ordinary differential
+equations (ODE) model based on chemical kinetics of the processes. The numerical
 simulation was carried by mathematical software (Scilab), while the
-ODEs were derived by writing down all the possible intermediates by hand
-(more than 400). Raw materials, all intermidiates and more information are
-available [here].
-(<a href="simulation%20date/edsource.pdf" target="_blank">Source_code</a>,
-
-<a href="simulation%20date/intermidiates_ed.html" target="_blank">All_intermidiates</a>
-<a href="simulation%20date/Information_ed.html" target="_blank">Chemical_parameters</a>   )
+ODEs were derived by writing down all the possible intermediate reaction by hand
+(more than 400 equations). Details are available at 
+<a href="simulation%20date/edsource.pdf" target="_blank">Source_code</a>,
+<a href="simulation%20date/intermidiates_ed.html" target="_blank">All_intermidiates</a>,
+<a href="simulation%20date/Information_ed.html" target="_blank">Chemical_parameters</a>.
 </p>
 <br>
-We ran two types of simulation. One is a simulation of A then B while the other is B then A.
+We have conducted two types of simulation. One is a simulation of 2-instruction Inputs(A,B and B,A).
 The results are shown in Fig.1.<br>
 </p><div>
- <img src="simulation%20date/graph_200nM_ab.png" width="400"><img src="simulation%20date/graph_200nM_ba.png" width="400"> 
+ <img src="simulation%20date/graph_200nM_ab.png" width="50%"><img src="simulation%20date/graph_200nM_ba.png" width="50%"> 
 </div>
-Fig.1 Results of simulation of model which releases two outputs
-(left:A then B right: B then A).All concentrations of components are
-200nM. The horizontal and the vertical axes are time and concentration respectively. <br>
+Fig.1 Simulation results of 2-instruction operation 
+(left:A then B right: B then A). Initial concentrations of all the components are set of
+200nM. The horizontal and the vertical axes are time and concentration, respectively. <br>
 <br>
 <p>
-These results indicate that the order of Output is programmable because
-the order to release the Outputs can be coded only in the Input. <br>
+These results indicate that the order of Output is programmable.<br>
 
 
-Second, we increased the number of output from two to three. The result is shown in Fig.2.
+Next, we increased the number of Instruction from two to three. The result is shown in Fig.2.
 </p>
 <div class="aligncenter">
-<img src="simulation%20date/graph_200nM.png" width="400">
+<img src="simulation%20date/graph_200nM.png" width="66%">
 </div>
-Fig.2 Result of simulation of model which releases three outputs. All concentrations of components are 200nM. The horizontal and the vertical axes are time and concentration respectively. <br>
+Fig.2 Simulation result of 3-instruction operation. Initial concentrations of all the components are set at 200nM. The horizontal and the vertical axes are time and concentration respectively. <br>
 <br>   
 <p>
-Three Outputs were released in order (A then B then C).
-This result means that we can program the number of Output.
-Even the model contains more than 400 intermediatesour, our elaborate design makes the device possible to behave as we design.</p> 
+Three Outputs were properly released in order (A then B then C).
+Even the model contains more than 400 intermediates, our elaborate design makes the device possible to behave as programmed.</p> 
 <p>
-Moreover,the time intervals between Outputs can be controlled by tuning
-the concentration of Input or Templates or Gates. We define the
-output-time as a time when 50% of the Output is released.
-Then, time interval is defined as a difference between two output-times.
-Tuning concentration of Input is a simple way to control the time
-interval. Fig.3 shows the relationship between Input concentration and the time interval.<br></p>
+Moreover,time intervals between releases can be controlled by tuning
+the concentration of Input. We define the
+output-time as the time when 50% of the Output is released. We measured the between consecutive output-time.
+Then, time interval is defined as a difference between two output-times by simulation.
+Fig.3 shows the relationship between Input concentration and the time intervals.<br></p><br />
 
 
 
 <div class="aligncenter">
-  <img src="simulation%20date/Input.png" width="400">
+  <img src="simulation%20date/Input.png" width="66%">
 </div> 
-<p>Fig.3 Relationship between Input concentration and the time interval. Time intervals were measured in various Input
-  concentrations.(10nM ,20nM, 50nM and 100nM). The horizontal and the vertical axes are concentration and time intervals respectively. Rhombus, square, and triangle indicate output-time of Output-A, time interval between Output-A and Output-B, time interval between Output-B and Output-C respectively. </p>
+<p>Fig.3 Relationship between Input concentration and time interval. Time intervals were evaluated for various Input
+  concentrations (10nM ,20nM, 50nM and 100nM). The horizontal and the vertical axes are time interval and concentration, respectively. Rhombus, square, and triangle indicate output-time of Output-A, time interval between Output-A and Output-B, time interval between Output-B and Output-C respectively. </p>
 <p> <br>
  <p>
-  In this case,
-  time intervals (between first and second, between second and third) are
-  both controlled together (homogeneous control). Both time interval range from 5sec to more than 10sec.
-  When we change the concentration of Templates or Gates, the time
-  intervals can be controlled separately. (heterogeneous control).For
-  example, Fig.4 shows the relationship between Template-B concentration and time interval. 
   
+  Time intervals (between 1st and 2nd, between 2nd and 3rd) can be independently controlled by changing concentration of Templates or Gates. For example, Fig.4 shows relationship between Template-B concentration and time interval.
+
   <br><br>
   
 </p>
 <div class="aligncenter">
-    <img src="simulation%20date/templateB.png" width="400">
+    <img src="simulation%20date/templateB.png" width="66%">
 </div> 
-<p>Fig.4 Relationship between Template-B concentration and time interval. (Template-B concentration was 10nM, 20nM, 50nM and 100nM). The horizontal and the vertical axes are concentration and time interval respectively. Rhombus, square, and triangle indicate output-time of Output-A, time interval between Output-A and Output-B, time interval between Output-B and Output-C respectively. </p><br>
+<p>Fig.4 Relationship between Template-B concentration and time interval. (Template-B concentration was 10nM, 20nM, 50nM and 100nM). The horizontal and the vertical axes are time interval and concentration, respectively. </p><br>
 <p>
-  Only time interval between Output-A and Output-B can be changed
-  corresponding to Template-B in a range of about 10sec from 6sec.<br>
-More date about time interval are
+More data about time interval control are
   available here (<a href="simulation%20date/templateA.png" target="_blank">Template-A</a>
   <a href="simulation%20date/templateC.png" target="_blank">Template-C</a>
   
@@ -193,81 +177,73 @@ More date about time interval are
   <a href="simulation%20date/gateA.png" target="_blank">Gate-A</a>
   <a href="simulation%20date/gateB.png" target="_blank">Gate-B</a> ) .<br>
   
-  By analyzing this model, we comfirmed the following features.<br>
+  From the simulation results, we comfirmed the following functionalities of our device.<br>
 </p>
 <ul style="margin-left: 20px;"><li>programmability of the permutation of Outputs
 </li>
-  <li>programmability of the number of Outputs</li><li>programmability of the time intervals between Outputs</li></ul>
+  <li>programmability of the number of Outputs</li><li>programmability of the time intervals between Outputs releases</li></ul>
 </section>
   
 
 <section id="contents02">
 <span>
-<h2>Enzyme free device </h2>
+<h2>Enzyme-free device </h2>
 <hr>
 </span>
 <p>
 
 As
-well as Enzyme device, we formalized ordinary differential equations based on chemical kinetic model to simulate the behavior of Enzyme free device. The numerical simulation wes carried by mathematical software (Scilab). Of cource, ODEs were derived by writing down all the possible intermediates by hands. </p>
+well as Enzymatic device, we formalized ordinary differential equations based on chemical kinetics of Enzyme-free device. The numerical simulation wes carried out by mathematical software (Scilab). ODEs were derived by writing down all the possible intermediates by hands. </p>
 Source
   codes, workflows of chemical reactions and more informion are available
   here( <a href="simulation%20date/EFD_AB.pdf" target="_blank">source_code_1,</a>
-  <a href="simulation%20date/EFD_ABC.pdf" target="_blank">source_code_2,</a>
-  <a href="simulation%20date/Information_efd.html" target="_blank">more_information</a> ). 
-  By simulating the models, we analyzed the performance of the Enzyme free device.<br><br>
+<a href="simulation%20date/EFD_ABC.pdf" target="_blank">source_code_2,</a>
+<a href="simulation%20date/intermidiates_efd.html" target="_blank">All_intermediates,</a>
+<a href="simulation%20date/Information_efd.html" target="_blank">Chemical_parameters</a> ). 
+  By simulation, we have analyzed the performance of the Enzyme-free device.<br><br>
   <p>
-  At first, we simulated the model which releases two outputs. The results are shown in Fig.5.<br>
+  At first, we simulated the model of 2-instruction operation. The results are shown in Fig.5.<br>
  <br></p>
  <br>
 <div>
-<img src="simulation%20date/AB.png" width="400"><img src="simulation%20date/BA.png" width="400"> .
+<img src="simulation%20date/AB.png" width="50%"><img src="simulation%20date/BA.png" width="50%"> .
 </div>
-Fig.5 Simulations of model which releases two Output. The concentration of Input is 200nM. All Templates concentration is 200nM. All Transducer concentration is 100nM. All Gates concentration is 200nM. All Fuels concentration is 400nM. These simulation were achieved by using source_code_1<br>
+Fig.5 Simulations of 2-instruction operation. <a href="simulation%20date/EFD_AB.pdf" target="_blank">[source_code_1]</a><br>
 <br><p>
- Output were released in order as we designed. This results means we can program the order of Outputs as well as Enzyme free device.
-<br>
-Second, we simulated the model which releases three output(Fig.6). <br>
+
+Second, we simulated the model of 3-instruction operation of the device(Fig.6). <br>
 <br>
 <div class="aligncenter">
-<img src="simulation%20date/ABC.png" width="400">
+<img src="simulation%20date/ABC.png" width="66%">
 </div> 
-<p>Fig.6 Simulation of model which releases three Output.  The concentration of Input is 200nM. All Templates concentration is 200nM. All Transducers concentration is 100nM. All Gates concentration is 200nM. All Fuels concentration is 400nM. This simulation was achieved by using source_code_2.<br>
+<p>Fig.6 Simulation of 3-instruction operation. Initial concentrations of all the Inputs, Templates, Transducer, Gates, and Fuel are 200, 200, 100, 200, 400nM,respectively. 
+<a href="simulation%20date/EFD_ABC.pdf" target="_blank">[source_code_2]</a>
+<br>
 <br>
 
-The device releases three Outputs in order (A then B then C). This result indicates that the number of Outputs is programmable.<br></p>
+The device releases three Outputs in proper order (A then B then C). This result indicates that the number of Outputs is programmable.<br></p>
   <br>
   <p>
-Next, we analyzed the time intervals of each Output. The time intervals between arbitrary Outputs are programmed by changing relevant components as well as Enzyme device. 
+Next, we analyzed the time intervals between releases. The time intervals can be programmed by changing concentration of some relevant component. 
   Fig.7 shows the time intervals determined by various Input concentrations.
-  The time interval between Output-A and Output-B is changed in the time
-width from 4sec to 8sec, while the time interval between Output-B and
-Output-C is changed in the time width from 12sec to 18sec. <br>
-The time interval between Output-B and Output-C is
-  changed by adjusting Gate-B concentration.
-  (Fig.8)<br>
-  More data about the time intervals are available here. (Changing
+  The time interval between 1st and 2nd is changed from 4sec to 8sec, while the time interval between 2nd and
+third is changed from 12sec to 18sec. <br>
+The time interval between 2nd and 3rd can be controlled by adjusting Gate-B concentration (Fig.8).<br>
+  More data about the time interval control are available here. (Changing
   
   <a href="simulation%20date/EFDgateA.png" target="_blank">Gate-A,</a><a href="simulation%20date/EFDgate.png" target="_blank">All_Gates,</a><a href="simulation%20date/EFDfuel.png" target="_blank">all Fuels,</a><a href="simulation%20date/EFDfuelA.png" target="_blank">Fuel-A,</a><a href="simulation%20date/EFDfuelB.png" target="_blank">Fuel-B,</a><a href="simulation%20date/EFDtrigger.png" target="_blank">Trigger</a>
   )
   <br><br>
 <div class="aligncenter">
-  <img src="simulation%20date/EFDinput.png" width="400">
+  <img src="simulation%20date/EFDinput.png" width="66%">
   
 </div>
 Fig.7 The time intervals corresponding to Input concentrations. Rhombus, square, and triangle indicate output-time of Output-A, time interval between Output-A and Output-B, time interval between Output-B and Output-C respectively. 
 <br><br><div class="aligncenter">
- <img src="simulation%20date/EFDgateB.png" width="400">
+ <img src="simulation%20date/EFDgateB.png" width="66%">
 </div>
-Fig.8 Time intervals corresponding to Gate-B concentrations. Rhombus, square, and triangle indicate output-time of Output-A, time interval between Output-A and Output-B, time interval between Output-B and Output-C respectively. <br><br>
-<p>
-  By analyzing models, we comfirmed the following features.<br>
-</p>
-<ul style="margin-left: 20px;"><li>programmability of the permutation of Outputs
-</li>
-  <li>programmability of the number of Outputs</li><li>programmability of the time intervals between Outputs</li></ul>
-  <br>
-</ul>
+Fig.8 Time intervals corresponding to Gate-B concentrations. <br><br>
+
 </section></div>
 </div>
 

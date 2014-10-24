@@ -47,6 +47,9 @@
 table {
 	margin-right: auto;
 	margin-left: auto;
+	table-layout:fixed;
+	word-break:break-all;
+	word-wrap:break-word;
 }
 
 
@@ -206,17 +209,17 @@ All DNAs for experiments are shown in Fig.1.<br>
 <br>
 
 <div align="center">
-<img src="images/protocol/components enzyme.png" width="700"><br>
+<img src="images/protocol/components enzyme.png" width="90%"><br>
 Fig.1 DNAs for experiments<br>
 </div>
 <br>
 All DNA shown below were purchased from Eurofins.<br><br>
 
 <font size="-1">
-<table>
+<table width="100%">
 <tr>
-<td width="113">Input-AB</td>
-<td width="658"><span class="seqb0">CTAGAACATACGCATTTGATTCGC</span><span class="seqx">GAATTC</span><span class="seqa0">AGCAGTACTATTCAAGCGACGGCT</span></td>
+<td width="19%">Input-AB</td>
+<td width="81%"><span class="seqb0">CTAGAACATACGCATTTGATTCGC</span><span class="seqx">GAATTC</span><span class="seqa0">AGCAGTACTATTCAAGCGACGGCT</span></td>
 </tr>
 <tr>
 <td>Input-BA</td>
@@ -317,25 +320,17 @@ The next table shows the composition of H Buffer.<br>
 <div align="center">
 Table.1 Composition of H Buffer ?~10<br>
 <div align="center">
-<img src="images/protocol/NEB.png" width="300">
+<img src="images/protocol/NEB.png" width="35%">
 </div>
 </p>
 </section>
 
 <section id="contents03">
-<span><h2 id="ed Whole device">Whole device</h2></span>
+<span><h2>Whole device</h2></span>
 <p>
-<h3>First experiment</h3>
-1.All enzymes and DNA molecules were mixed after annaling. Input-AB or BA/Template complex, Transducer, and Gate were formed by annealing(cooling from 95 to 20&#08451 for 75min, -1&#08451/min). <br>
-
- 2.Enzymatic reaction was conducted for various time (1,2,5,10,12,,15,20,25,30,60,100 min), then these were left at 80&#08451 for 30 minutes. After that, all samples were left at room temperature by the time of applying (more than 1 hour).<br>
- 3.15% acrylamide gel was formed with 1&times;TBE buffer.<br>
- 4.The electrophoresis was conducted at 100V for 86 min.<br>
- 5.Imaging by gel imager (BioRad) with Green light.<br>
-<br>
-<h3>Second experiment</h3>
-1.Input-AB or BA/Template complex, Transducer, and Gate were formed by annealing(cooling from 95 to 20&#08451 for 75min, -1&#08451/min). All samples were mixed after the formation of these complexes.<br>
- 2.Enzymatic reaction was conducted for various time (1/6,1/2.1,2,5,10,,12,15,20,25,30,40 min), then these were left at 80&#08451 for 30 minutes. After that, all samples were annealed again for 35 minutes(cooling from 95 to 70&#08451 for 25min, -1&#08451/min, then cooling from 70 to 20&#08451 for 10min, -5&#08451/min).<br>
+<h3 id="ed Whole device">The order of releasing</h3>
+1.Input-AB or BA/Template complex, Transducer, and Gate were formed by annealing (cooling from 95 to 20&#08451 for 75min, -1&#08451/min). All samples were mixed after the formation of these complexes.<br>
+ 2.Enzymatic reaction was conducted for various time (0, 1/6, 1/2, 1, 2, 5, 10, 12, 15, 20, 25, 30, 40 min), then these were left at 80&#08451 for 30 minutes. After that, all samples were annealed again for 35 minutes(cooling from 95 to 70&#08451 for 25min, -1&#08451/min, then cooling from 70 to 20&#08451 for 10min, -5&#08451/min).<br>
  3.15% acrylamide gel was formed with 1&times;TBE buffer.<br>
  4.The electrophoresis was conducted at 100V for 85 min.<br>
  5.Imaging by gel imager with Green light.<br>
@@ -343,11 +338,27 @@ Table.1 Composition of H Buffer ?~10<br>
 <p>
 <a href="experiment.html#ed Whole device ex">Go back to experiment</a><br><br>
 </p>
+
+
+
+
+
+<p>
+<h3 id="ABC">3 Outputs releasing</h3>
+1.Input-ABC <!--or CAB-->/Template complex, Transducer, and Gate were formed by annealing (cooling from 95 to 20&#08451 for 75min, -1&#08451/min). All samples were mixed after the formation of these complexes.<br>
+ 2.Enzymatic reaction was conducted for various time (0, 1/6, 1/2, 1, 2, 5, 10, 12, 15, 20, 22, 25, 30, 35, 40, 45, 50, 60 min), then these were left at 80&#08451 for 30 minutes. After that, all samples were annealed again for 35 minutes (cooling from 95 to 70&#08451 for 25min, -1&#08451/min, then cooling from 70 to 20&#08451 for 10min, -5&#08451/min).<br>
+ 3.15% acrylamide gel was formed with 1&times;TBE buffer.<br>
+ 4.The electrophoresis was conducted at 100V for 85 min.<br>
+ 5.Imaging by gel imager with Green light.<br>
+</p>
+<p>
+<a href="experiment.html#ABC ex">Go back to experiment</a><br><br>
+</p>
 </section>
 
 <section id="contents04">
 <span><h2>Components (3 processes)</h2></span>
-<span><h3 id="Reading Process">Releasing Process</h3></span>
+<span><h3 id="Reading Process">Reading Process</h3></span>
 1.Input and Template was annaled to form the complex.<br>
 Annealing condition: 95 to 20&#08451 (-1&#08451/min) <br>
 2.Enzymatic reaction was conducted at 37&#08451/55&#08451 for 1 hour in thermal cycler.<br>
@@ -356,7 +367,7 @@ Annealing condition: 95 to 20&#08451 (-1&#08451/min) <br>
 <div align="center">
 Table. Recipe of 20% acrylamide gel<br>
 <div align="center">
-<img src="images/protocol/gel formation.png" width="300">
+<img src="images/protocol/gel formation.png" width="35%">
 </div>
 </div>
 
@@ -365,7 +376,7 @@ Table. Recipe of 20% acrylamide gel<br>
 4.Gel-electrophoresis was conducted at 100V for 50 minutes. Then gel was stained by SYBR Gold.<br>
 5.Imaging by gel imager(BioRad)<br>
 <div align="center">
-<img src="images/protocol/gel imager.jpg" width="250"><br>
+<img src="images/protocol/gel imager.jpg" width="35%"><br>
 Fig. Gel imager(BioRad)<br>
 </div>
 </p>
@@ -398,8 +409,7 @@ Fig. Gel imager(BioRad)<br>
 3.Gel-electrophoresis was conducted at 100V for 75 minutes with 15% acrylamide gel. Then gel was stained by SYBR Gold.Then gel was stained by SYBR Gold.<br>
 4.Imaging by gel imager(BioRad).<br>
 <p>
-<a href="experiment.html#Updating Process ex">Go back to experiment</a><br>
-<br>
+<a href="experiment.html#Updating Process ex">Go back to experiment</a><br><br>
 </p>
 
 
@@ -407,7 +417,7 @@ Fig. Gel imager(BioRad)<br>
 <span><h3 id="Combination of 3 processes">Combination of 3 processes</h3></span>
 We apply FRET to detect that Output-A is released inspired by a paper[3]. Before the releasing of Output-A, the 6-FAM does not glow because the fluorescence of 6-FAM is absorbed by BHQ-1 (this fenomenon is named FRET). In the presence of Signal, Output-A is released, and then 6-FAM glows. Therefore, we can confirm whether Output is released or not.
 <div align="center">
-<img src="images/protocol/fret.png" width="650"><br>
+<img src="images/protocol/fret.png" width="65%"><br>
 Fig. Detection of Output-A by using FRET.<br>
 <br>
 </div>
@@ -439,7 +449,7 @@ We designed DNA sequences by Sequence Design. All DNA shown below were purchased
 
 All DNA shown below were purchased from Eurofins.<br><br>
 
-<font size="-1">
+<font size="4">
 <table>
 <tr>
 <td width="121">Input-A +</td>
@@ -555,7 +565,7 @@ The wavelength of excitation light was 492 nm. The fluorescence intensity of 515
 Transducer, Gate, and Trigger were mixtured before the addition of Input.<br>
 <br>
 <div align="center">
-<img src="images/protocol/spectro.jpg" width="250"><br>
+<img src="images/protocol/spectro.jpg" width="35%"><br>
 Fig. Spectrofluorometer(FP6200, JASCO)<br>
 </div>
 
