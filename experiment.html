@@ -11,22 +11,22 @@
 <script type="text/javascript">
 
 
-$(function() {
-	// ÉiÉrÉQÅ[ÉVÉáÉìÇÃÉäÉìÉNÇéwíË
+window.onload=$(function() {
+	// „Éä„Éì„Ç≤„Éº„Ç∑„Éß„É≥„ÅÆ„É™„É≥„ÇØ„ÇíÊåáÂÆö
 	var navLink = $('#contentsnav li a');
 
-	// äeÉRÉìÉeÉìÉcÇÃÉyÅ[ÉWè„ïîÇ©ÇÁÇÃäJénà íuÇ∆èIóπà íuÇîzóÒÇ…äiî[ÇµÇƒÇ®Ç≠
+	// ÂêÑ„Ç≥„É≥„ÉÜ„É≥„ÉÑ„ÅÆ„Éö„Éº„Ç∏‰∏äÈÉ®„Åã„Çâ„ÅÆÈñãÂßã‰ΩçÁΩÆ„Å®ÁµÇ‰∫Ü‰ΩçÁΩÆ„ÇíÈÖçÂàó„Å´Ê†ºÁ¥ç„Åó„Å¶„Åä„Åè
 	var contentsArr = new Array();
 	for (var i = 0; i < navLink.length; i++) {
-		// ÉRÉìÉeÉìÉcÇÃIDÇéÊìæ
+		// „Ç≥„É≥„ÉÜ„É≥„ÉÑ„ÅÆID„ÇíÂèñÂæó
 		var targetContents = navLink.eq(i).attr('href');
-		// ÉyÅ[ÉWì‡ÉäÉìÉNÇ≈Ç»Ç¢ÉiÉrÉQÅ[ÉVÉáÉìÇ™ä‹Ç‹ÇÍÇƒÇ¢ÇÈèÍçáÇÕèúäOÇ∑ÇÈ
+		// „Éö„Éº„Ç∏ÂÜÖ„É™„É≥„ÇØ„Åß„Å™„ÅÑ„Éä„Éì„Ç≤„Éº„Ç∑„Éß„É≥„ÅåÂê´„Åæ„Çå„Å¶„ÅÑ„ÇãÂ†¥Âêà„ÅØÈô§Â§ñ„Åô„Çã
 		if(targetContents.charAt(0) == '#') {
-			// ÉyÅ[ÉWè„ïîÇ©ÇÁÉRÉìÉeÉìÉcÇÃäJénà íuÇ‹Ç≈ÇÃãóó£ÇéÊìæ
+			// „Éö„Éº„Ç∏‰∏äÈÉ®„Åã„Çâ„Ç≥„É≥„ÉÜ„É≥„ÉÑ„ÅÆÈñãÂßã‰ΩçÁΩÆ„Åæ„Åß„ÅÆË∑ùÈõ¢„ÇíÂèñÂæó
 			var targetContentsTop = $(targetContents).offset().top;
-			// ÉyÅ[ÉWè„ïîÇ©ÇÁÉRÉìÉeÉìÉcÇÃèIóπà íuÇ‹Ç≈ÇÃãóó£ÇéÊìæ
+			// „Éö„Éº„Ç∏‰∏äÈÉ®„Åã„Çâ„Ç≥„É≥„ÉÜ„É≥„ÉÑ„ÅÆÁµÇ‰∫Ü‰ΩçÁΩÆ„Åæ„Åß„ÅÆË∑ùÈõ¢„ÇíÂèñÂæó
 			var targetContentsBottom = targetContentsTop + $(targetContents).outerHeight(true) - 1;
-			// îzóÒÇ…äiî[
+			// ÈÖçÂàó„Å´Ê†ºÁ¥ç
 			contentsArr[i] = [targetContentsTop, targetContentsBottom]
 		}
 	};
@@ -41,22 +41,36 @@ $(function() {
 
         var position = target.offset().top;
 
-        $("html, body").animate({scrollTop:position + 2}, speed, "swing");
-		
-//2pixelâ∫Ç…â∫Ç∞ÇƒÉiÉrÇÃÇ∏ÇÍÇâÒî
+        $("html, body").animate({scrollTop:position + 1}, speed, "swing");
+
         return false;
 
     });
 
 
-	// åªç›ínÇÉ`ÉFÉbÉNÇ∑ÇÈ
+	// ÁèæÂú®Âú∞„Çí„ÉÅ„Çß„ÉÉ„ÇØ„Åô„Çã
 	function currentCheck() {
-		// åªç›ÇÃÉXÉNÉçÅ[Éãà íuÇéÊìæ
+
+	for (var i = 0; i < navLink.length; i++) {
+		// „Ç≥„É≥„ÉÜ„É≥„ÉÑ„ÅÆID„ÇíÂèñÂæó
+		var targetContents = navLink.eq(i).attr('href');
+		// „Éö„Éº„Ç∏ÂÜÖ„É™„É≥„ÇØ„Åß„Å™„ÅÑ„Éä„Éì„Ç≤„Éº„Ç∑„Éß„É≥„ÅåÂê´„Åæ„Çå„Å¶„ÅÑ„ÇãÂ†¥Âêà„ÅØÈô§Â§ñ„Åô„Çã
+		if(targetContents.charAt(0) == '#') {
+			// „Éö„Éº„Ç∏‰∏äÈÉ®„Åã„Çâ„Ç≥„É≥„ÉÜ„É≥„ÉÑ„ÅÆÈñãÂßã‰ΩçÁΩÆ„Åæ„Åß„ÅÆË∑ùÈõ¢„ÇíÂèñÂæó
+			var targetContentsTop = $(targetContents).offset().top;
+			// „Éö„Éº„Ç∏‰∏äÈÉ®„Åã„Çâ„Ç≥„É≥„ÉÜ„É≥„ÉÑ„ÅÆÁµÇ‰∫Ü‰ΩçÁΩÆ„Åæ„Åß„ÅÆË∑ùÈõ¢„ÇíÂèñÂæó
+			var targetContentsBottom = targetContentsTop + $(targetContents).outerHeight(true) - 1;
+			// ÈÖçÂàó„Å´Ê†ºÁ¥ç
+			contentsArr[i] = [targetContentsTop, targetContentsBottom]
+		}
+	};
+
+		// ÁèæÂú®„ÅÆ„Çπ„ÇØ„É≠„Éº„É´‰ΩçÁΩÆ„ÇíÂèñÂæó
 		var windowScrolltop = $(window).scrollTop();
 		for (var i = 0; i < contentsArr.length; i++) {
-			// åªç›ÇÃÉXÉNÉçÅ[Éãà íuÇ™ÅAîzóÒÇ…äiî[ÇµÇΩäJénà íuÇ∆èIóπà íuÇÃä‘Ç…Ç†ÇÈÇ‡ÇÃÇí≤Ç◊ÇÈ
+			// ÁèæÂú®„ÅÆ„Çπ„ÇØ„É≠„Éº„É´‰ΩçÁΩÆ„Åå„ÄÅÈÖçÂàó„Å´Ê†ºÁ¥ç„Åó„ÅüÈñãÂßã‰ΩçÁΩÆ„Å®ÁµÇ‰∫Ü‰ΩçÁΩÆ„ÅÆÈñì„Å´„ÅÇ„Çã„ÇÇ„ÅÆ„ÇíË™ø„Åπ„Çã
 			if(contentsArr[i][0] <= windowScrolltop && contentsArr[i][1] >= windowScrolltop) {
-				// äJénà íuÇ∆èIóπà íuÇÃä‘Ç…Ç†ÇÈèÍçáÅAÉiÉrÉQÅ[ÉVÉáÉìÇ…class="current"ÇÇ¬ÇØÇÈ
+				// ÈñãÂßã‰ΩçÁΩÆ„Å®ÁµÇ‰∫Ü‰ΩçÁΩÆ„ÅÆÈñì„Å´„ÅÇ„ÇãÂ†¥Âêà„ÄÅ„Éä„Éì„Ç≤„Éº„Ç∑„Éß„É≥„Å´class="current"„Çí„Å§„Åë„Çã
 				navLink.removeClass('current');
 				navLink.eq(i).addClass('current');
 				i == contentsArr.length;
@@ -64,12 +78,11 @@ $(function() {
 		};
 	}
 
-	// ÉyÅ[ÉWì«Ç›çûÇ›éûÇ∆ÉXÉNÉçÅ[ÉãéûÇ…ÅAåªç›ínÇÉ`ÉFÉbÉNÇ∑ÇÈ
+	// „Éö„Éº„Ç∏Ë™≠„ÅøËæº„ÅøÊôÇ„Å®„Çπ„ÇØ„É≠„Éº„É´ÊôÇ„Å´„ÄÅÁèæÂú®Âú∞„Çí„ÉÅ„Çß„ÉÉ„ÇØ„Åô„Çã
 	$(window).on('load scroll', function() {
 		currentCheck();
 	});
 });
-
 
 </script>
 
@@ -77,32 +90,45 @@ $(function() {
 
 <body>
 <div id="wrapper">
-    <header>
+    <header id="globalheader">
       <nav id="globalnav">
-        <h1><a href="index.html">Tales of the Order</a></h1>
-        <ul>
-          <li><a href="./project.html">PROJECT IDEA</a></li>
+        <a href="index.html"><img src="images/logo3.png"  width="30%"  align="left"></a>
+        <ul style="width:70%; margin-left:30%">
+          <li><a href="./project.html">OUR PROJECT</a></li>
           <li><a href="./design_enzyme.html">DESIGN</a></li>
           <li><a href="./simulation.html">SIMULATION</a></li>
-          <li><a href="./experiment.html">EXPERIMENT</a></li>
+          <li class="currentpage"><a href="./experiment.html">EXPERIMENT</a></li>
+          <li><a href="./protocol.html">MATERIALS&amp;METHODS</a></li>
           <li><a href="./discussion.html">DISCUSSION</a></li>
           <li><a href="./team.html">TEAM</a></li>
         </ul>
       </nav>
     </header>
 
+
+
+
 <div id="main">
+
+
+
+
+
+
+
+
+
+
 <nav id="contentsnav">
 <ul>
-<li><a href="#contents01">Enzyme Device</a></li>
-<li><a href="#contents02">Whole device</a></li>
-<li><a href="#contents03">Components (3 processes)</a></li>
-<li><a href="#contents04">Enzyme free Device</a></li>
-<li><a href="#contents05">Whole device</a></li>
-<li><a href="#contents06">Components (Seesaw gate)</a></li>
+<li><a href="#contents01"><b>‚ñ†Enzymatic device</b></a></li>
+<li><a href="#contents02">Functionality</a></li>
+<li><a href="#contents03">Testing component processes</a></li>
+<li><a href="#contents04"><b>‚ñ†Enzyme-free device</b></a></li>
+<li><a href="#contents05">Functionality</a></li>
+<li><a href="#contents06">Testing component reactions</a></li>
 </ul>
 </nav>
-
 
 
 
@@ -112,103 +138,99 @@ $(function() {
 <article>
 <h1>Experiment</h1>
 <p>
-This page explains about experimental results which proves our device (Enzyme device and Enzyme free device) work properly. Confirmations of whole device are shown first, then confirmations of each components are shown.<br>
+Experimental results of electrophoresis and other chemical observation methods proved our devices to work properly as we designed. This page explains the experimental results of Enzymatic device and Enzyme-free device, both of which include detailed analyses of component reactions.<br>
 </p>
 
-<div id="index">
-<h3>Contents</h3>
-<ul>
-  <li>Enzyme Device</li>
-  <ul>
-    <li>Whole device</li>
-    <li>Components (3 processes)</li>
-    <ul>
-      <li>Reading Process</li>
-      <li>Releasing Process</li>
-      <li>Updating Process</li>
-      <li>Combination of 3 processes</li>
-    </ul>
-  </ul>
-  <li>Enzyme free Device</li>
-  <ul>
-    <li>Whole device</li>
-    <li>Components (Seesaw gate)</li>
-    <ul>
-      <li>Measurement of fluorescence intensity</li>
-      <li>Electrophoresis</li>
-    </ul>
-  </ul>
-</ul>
-</div>
 
 
 
 
 <section id="contents01">
-<span><h1>Enzyme Device</h1></span>
+<span><h1>Enzymatic device</h1></span>
+<hr></hr>
 </section>
 
 
-
-
 <section id="contents02">
-<span><h2>Whole device</h2></span>
+<span><h2 id="ed Whole device ex">Functionality</h2></span>
+<h3>The order of releasing</h3>
 <p>
-Our project is completed if our device releases different output depending on the order coded on Input. 
-We confirmed that by electrophoresis with input that codes "A then B" and "B then A". DNA strands and enzymes were carefully designed and chosen.(For the details check <a href>Method and Material page</a>.)
-TAMRA (a fluorescence molecule) was modified with Output A while nothing was modified with Output B.
-Only 2 bands, Output A and Transducer A, could be detected before staining gel.
-After stainig with SYBR Gold, bands which indicate Output B could be also observed.
-All enzymes and sets of DNA (Transducer, Gate) were mixed at 45 &#08451; , then the reaction starts by adding Input.
-Reaction time for operating the device was set variously (1, 2, 5, 10, 12, 15, 20, 25, 30, 60, 100 min) to evaluete time variation of Output.
-After that, the temperature was heated up to 80 &#08451;  to stop enzymes working then cooled down to the room temperature.
+Our device releases different Outputs in order depending on the information of Input. It was proved by two experimental results of electrophoresis (Fig.1) where we add two types of Inputs (<font color="DB0015">A</font> then <font color="96D050">B</font>, <font color="96D050">B</font> then <font color="DB0015">A</font>). Both Output-A and B were tagged with TAMRA, though the length of two Outputs is different. We conducted quantitative analyses of the band intensity of Outputs. Following graphs show the ratio of Outputs to the total intensity of 2 bands (Transducer, Output) on each lane. <br>
 <br>
 
-<!--
-<div align="center">
-<img src="images/experiment/experiment es second output electrophoresis before AB together_1.0.png" width="800"><br>
-<div>
--->
 
-The result with <font size="+2"><B>Input AB</B></font> is following fig.1. That had not stained yet.<br>
+
+
+
+
 <div align="center">
-<img src="images/experiment/experiment es second output electrophoresis before AB_1.0.png" width="800"><br>
-fig.1 Time variation of Output A with <font size="+2"><B>Input AB</B></font> (before staining)<br>
+<img src="images/experiment/experiment es second output electrophoresis after AB_1.0.png" width="100%"><br>
+Fig.1 Time evolution of Outputs with <font size="+2"><B>Input-<font color="DB0015">A</font><font color="96D050">B</font></B></font> and <font size="+2"><B>Input-<font color="96D050">B</font><font color="DB0015">A</font></B></font><br>
+<font size="-1">
+All enzymes and DNAs (Transducer, Gate) were mixed at 45 &#08451 , then the reactions start when Input is added. Reaction times were 0, 1/6, 1/2, 1, 2, 5, 10, 12, 15, 20, 25, 30, 40 min. After the reaction, the solution was heated up to 80 &#08451 to stop enzymatic activities, then annealed again. The length of Output-A and Output-B is 20 mer and 25 mer, respectively.
+<br>
+</font>
 </div>
+
+
+
+
+
+
+
+
 <br>
-The band intnsity of Output A increases between 1~2 min while that of Transducer A decreases.<br>
-In the next result, all condition is same to fig.1 except for the Input sequence. That is changed to <font size="+2"><B>Input BA</B></font>.<br>
-<br>
-<div align="center">
-<img src="images/experiment/experiment es second output electrophoresis before BA_1.0.png" width="800"><br>
-fig.2 Time variation of Output A with <font size="+2"><B>Input BA</B></font> (before staining)<br>
-</div>
-<br>
-The band of Output A can be observed from 12~15 min. Therefore, the Output A releasing time is later than the case of Input AB.<br>
-We did quantitative analysis about these band intensity.
-In addition, following graph shows the raito of Output A to the total fluorescence (intensity Transducer A + Output A) with various reaction times. That raito is based on the band intensity shown in fig.1 and fig.2.<br>
-<br>
-<div align="center">
-<img src="images/experiment/experiment es second output electrophoresis before output A graph_1.0.png" width="700"><br>
-fig.3 The raito of Output A with various reaction times<br>
-</div>
-<br>
-Output A sturated at 2 min when Input codes "A then B" whike that time is 20 min in the case of Input BA. Thus, time interval of them is about 18 minutes. The raito of Output A is saturated aroud 70 % because Output A with TAMARA would form Transducer A again when the solution cooled down from 80 &#08451;  to room tempereature.<br> In the <a href>discussion page</a>, we are going to discuss about the differnce between this experimental result and simulation result.<br>
-Follwing 2 images shows stained gels of fig.1 and fig.2.<br>
-<br>
-<div align="center">
-<img src="images/experiment/experiment es second output electrophoresis after AB_1.0.png" width="800"><br>
-fig.4 Time variation of Output A and Output B with <font size="+2"><B>Input AB</B></font>(after staining)<br>
-</div>
-<div align="center">
-<img src="images/experiment/experiment es second output electrophoresis after BA_1.0.png" width="800"><br>
-fig.5 Time variation of Output A and Output B with <font size="+2"><B>Input BA</B></font>(after staining)<br>
-</div>
-<br>
-The band intensity of Output coded as second domain increased gradually after the increassing of first domain. This difference is coursed by the sequences of Input only. Therefore, we confirmed the whole function of our device that releases Output depending on the codes written in Input by this experiment.<br>
 </p>
 <p>
-Method and Materials
+These experimental results proved that our device properly releases Outputs in order. The order of Outputs was controlled by the Input sequence. Both graphs show that saturated time of the first and the second Output was 2 and 20 minutes, respectively. More than 90 % of Outputs were released from Transducer.<br> 
+</p>
+<p>
+Detailed experimental conditions are given in <a href="protocol.html#ed Whole device">Materials and Methods</a><br>
+</p>
+<br>
+
+
+
+
+<h3 id="ABC ex">3-instruction operation</h3>
+<p>
+In this experiment, we confirmed that our device properly releases 3 Outputs properly by Input coding "<font color="DB0015">A</font> then <font color="96D050">B</font> then <font color="0070C0">C</font>" 
+
+
+
+<!--
+and "<font color="0070C0">C</font> then <font color="DB0015">A</font> then <font color="96D050">B</font>" 
+-->
+
+
+.
+All Outputs have a different lengths and modified with TAMRA. Following plot shows the ratio of Outputs in the total intensity of 2 bands (Transducer, Output) at each lane.<br>
+<div align="center">
+<img src="images/experiment/experiment es abc_1.0.png" width="50%"><br>
+Fig.2 Time development of Outputs with <font size="+2"><B>Input-<font color="DB0015">A</font><font color="96DO50">B</font><font color="0070C0">C</font></B></font>
+
+
+<!--
+ and <font size="+2"><B>Input-<font color="0070C0">C</font><font color="DB0015">A</font><font color="96D050">B</font></B></font><br>
+-->
+
+
+<br>
+<font size="-1">
+All enzymes and DNAs (Transducer, Gate) were mixed at 45 &#08451. The reaction starts when Input is added. Reaction times were  0, 1/6, 1/2, 1, 2, 5, 10, 12, 15, 20, 22, 25, 30, 35, 40, 45, 50, 60 min. After the reaction, temperature was heated up to 80 &#08451 to stop enzymatic activities, then annealed again. The length of Output-A, Output-B, and Output-C is 20 mer, 25 mer, and 35 mer, respectively.
+<br>
+</font>
+</div>
+</p>
+<p>
+Our device released 3 Outputs in correct order. The saturation time of the first, second, and third Output were 2, 20, and 40 min, respectively.
+</p>
+<p>
+In the <a href="discussion.html">discussion page</a>, we discuss the difference between this result and the simulation.<br>
+<br>
+</p>
+<p>
+<a href="protocol.html#ABC">Materials and Methods</a>
 </p>
 </section>
 
@@ -216,149 +238,105 @@ Method and Materials
 
 
 <section id="contents03">
-
-
-<span><h2>Components (3 processes)</h2></span>
-<p>
-All partial processes work properly as shown in this section. Reaction temperature (45 &#08451;) were decided based on following experiments.<br><br>
-</p>
-
-
-
-
-
-
-
-
-
-
-
-<span><h3>Reading Process</h3></span>
-<p>
-This process should work if Input, Template, Polymerase, Nickase, and dNTP are all in the same solution. If this process works properly, the signal will be amplified.<br>
-</p>
-<p>
-The result of electrophoresis is shown below.<br>
-
-<div align="center">
-<img src="images/experiment/experiment reading process eido_1.0.png" width="500"><br>
-fig.6 Confirmation of Reading process<br>
-Other components include Input/Template complex, Polymerase, Nickase, and dNTP.<br>
-</div>
-</p>
-<p>
-The band of Signal strand apperared on lane2 while that did not appear on lane3.
-Unlike lane1, Signal strand was not contained in the sample of lane3. The band of Signal strand appeared by the function of Polymerase and Nickase. Reading process works precisely when the reaction temperature is 37 &#08451; ~45 &#08451; .<br>
-</p>
-<p>
-Method and Materials<br>
-<br>
-</p>
-
-
-
-
-
-<span><h3>Releasing Process</h3></span>
-<p>
-In this process, existing Output should be released by both the hybridization of Signal strand and the displacement of polymerase.<br>
-</p>
-<p>
-The results of electrophoresis is shown below.<br>
-<div align="center">
-<img src="images/experiment/experiment releasing process eido_1.0.png" width="500"><br>
-fig.7 Confirmation of Releasing process<br>
-Other components include Output transducer, Polymerase, and dNTP.<br>
-</div>
-</p>
-<p>
-Output did not appear on lane1 in which Signal was not contained. Output appeared on lane2 and lane3 in which Siganl was contained. From this result, we can conclude that Releasing process works correctly. Lane2 and lane3 differ on the reaction temperature, the band of Output appeared on both lane2 and lane3. Releasing process would work precisely when the reaction temperature is between 37 &#08451;  and 45 &#08451; .<br>
-</p>
-<p>
-Method and Materials
-</p>
-
-
-
-
-
-
-
-<span><h3>Updating Process</h3></span>
-<p>
-In this process, Updater is released by both the hybridization of Signal and the displacement of polymerase. Recognition sequence is formed by the hybridization of Updater and Input, then EcoRI cuts the Input.<br>
-</p>
-<p>
-The result of electrophoresis is shown below.<br>
-<div align="center">
-<img src="images/experiment/experiment updating process eido_1.0.png" width="600"><br>
-fig.8 Confirmation of Updating process<br>
-Other components include Input, Gate, Polymerase, EcoRI, and dNTP.<br>
-</div>
-</p>
-<p>
-From the result of lane1 and lane2, we found that Updated complex and Waste are generated when Signal is entered. Therefore, Updating process works correctly by the function of EcoRI and Polymerase.<br>
-</p>
-<p>
-Method and Materials
-</p>
-
-
-
-
-
-
-<span><h3>Combination of 3 processes</h3></span>
-<p>
-3 processes with Polymerase, Nickase, and restriction enzyme need to work in the same H buffer as we designaed. The release of first output was confirmed in this overall device. In addition, how long did it take to release first Output was evaluated by this experiment.<br>
-Therefore, enzymatic reaction times were set variously. <br>
-The release of the first output correspond to Input AB, that is Output A, was confirmed in this experiment. Output A is modified with fluorescent molecule TAMRA. Before stained by SYBR Gold, a band contains Output A (Transducer, Output) must be able to be observed.<br>
-The result of electrophoresis is shown below.
-<div align="center">
-<img src="images/experiment/experiment es first output electrophoresis 01_1.0.png" width="600"><br>
-fig.9 Result of electrophoresis to confirm the first output releasing (before staining)<br>
-<br>
-</div>
-The time variation of fluorescence intensity of Output band is shown in the graph below. <br>
-<br>
-<div align="center">
-<img src="images/experiment/experiment es first output electrophoresis 01 graph_1.0.png" width="600"><br>
-fig.10 The time variation of fluorescence intensity of Output A<br>
-<br>
-</div>
+<span><h2>Testing component processes</h2></span>
 <!--
-The graph includes the time variation of fluorescence intensity of Complex 
-ÅiComments are required for at least one of them. Åjby Imai
-
-<div align="center">
-<img src="images/experiment/experiment es first output electrophoresis 01 graph_1.1.png" width="600"><br>
-fig. The time variation of fluorescence intensity of Output and Transducer <br>
+<p>
+Reaction conditions such as temperature, concentration, and time were determined by preliminary experiment of components reactions in advance to the experiment in the previous section. DNA strands and enzyme were carefully designed and chosen (For details, see <a href="protocol.html">Method and Material page</a>).<br>
 <br>
-</div>
-
+</p>
 -->
+<br>
+<img src="images/experiment/experiment reading process eido_1.0.png" width="35%"align="right" style="margin-left:10px">
+
+<span><h3 id="Reading Process ex">Reading Process</h3></span>
+<p>
+When Input, Template, polymerase, nickase, and dNTP are all mixed together in the same solution, this process produces Signal.
+<br>
 </p>
 <p>
-Fluorescent intensity of Output was increased as reaction time became longer. The result of lane8 can be regarded as an outcome when reaction time is 0 minutes. The graph above shows the ratio of fluorescence intensity of Output in lane 1 to 7, when the fluorescence intensity sum of Output and Transducer in each lanes set to 100%. Although about 10% of Output exists at the initial stage of reactions, it can be thought to be the Output that missed to form Transducer when annealing. Concentration of this Output must be able to decrease by refining the solution. Output was saturated about 10 minutes later. In the end, it became clear that 50 to 60% of fluorescent molecule exists from the first is released.<br>
+The result of electrophoresis is shown right. The band of Signal appeared in lane2 and lane3 by the function of polymerase and nickase. Reading process works properly at 37 &#08451; ~45 &#08451; .<br>
+</p><br />
+<p>
+Detailed experimental conditions are given in <a href="protocol.html#Reading Process">Materials and Methods</a><br>
+<br clear="right">
+</p>
+<div style="text-align:right">
+Fig.3 Confirmation of Reading process<br>
+<font size="-2">* Other components include Input/Template complex, polymerase, nickase, and dNTP.</font>
+</div>
+
+
+<span><h3 id="Releasing Process ex"  style="margin-top:15px">Releasing Process</h3></span>
+<img src="images/experiment/experiment releasing process eido_1.0.png" width="35%" align="right" style="margin-left:10px">
+<p>
+In this process, Signal hybridizes at the toehold of transduction, and then it initiates polymerization, resulting in releasing of Output.<br>
 </p>
 <p>
-Figure below shows the result of electrophoresis above. DNA is stained with SYBR Gold.<br>
+The result of electrophoresis is Fig.4. Output did not appear in lane1 when no Signal applied. Under the presence of Signal, Output appeared (lane2 and 3). From these results, we conclude that Releasing process works properly. Releasing process works at 37 &#08451;  ~ 45 &#08451; .<br>
+</p>
+<p style="margin-bottom:100px">
+Detailed experimental conditions are given in <a href="protocol.html#Releasing Process">Materials and Methods</a><br>
+</p>
+<clear="right">
+
+<div style="text-align:right">
+<br>
+<br>
+<br>
+Fig.4 Confirmation of Releasing process<br />
+<font size="-2">* Other components include Output transducer, polymerase, and dNTP.</font>
+</div>
+
+
+<span><h3 id="Updating Process ex" style="margin-top:20px">Updating Process</h3></span>
+<img src="images/experiment/experiment_updating_process_eido_1.0.png" width="35%" align="right" style="margin-top:60px; margin-left:10px;"><br />
+
+<p>
+In this process, Signal hybridizes at the toehold of Gate, and then it initiates polymerization, resulting in releasing of Updater. Then, recognition sequence is formed by the hybridization between Updater and Input, and then EcoRI cleaves the Input.<br>
+</p>
+<p>
+The result of electrophoresis is in Fig.5. In lane1 and 2, we verified that Updated complex and Waste were generated when Signal is applied.<br>
+</p>
+<p>
+Detailed experimental conditions are given in <a href="protocol.html#Updating Process">Materials and Methods</a><br>
+</p>
+
+<clear="right">
+<br>
+<br>
+<br>
+<br>
+<br>
+<div style="text-align:right">
+Fig.5 Confirmation of Updating process<br>
+<font size="-2">Other components include Input, Gate, polymerase, EcoRI, and dNTP.</font>
+</div>
+
+<span><h3 id="Combination of 3 processes ex" style="margin-top:20px">Reaction speed measurement</h3></span>
+<p>
+Here, we evaluated the speed of releasing the first Output. The release of the first Output (Output-A) by Input-AB, was confirmed by a gel shift assey. Output-A is modified with fluorescent molecule TAMRA. Before stained by SYBR Gold, a band contains Output-A (Transducer, Output) is observed.<br>
+<br>
 <div align="center">
-<img src="images/experiment/experiment es first output electrophoresis 02_1.0.png" width="600"><br>
-fig.11 Result of electrophoresis to confirm the first output releasing (after staining)<br>
+<img src="images/experiment/experiment es first output electrophoresis 01_1.0.png" width="60%"><br>
+Fig.6 Result of electrophoresis to confirm the first output releasing (before SYBR Gold staining)<br>
 <br>
 </div>
-When reaction time is over 20 minutes, Signal band emerged. 
-The reason can be thought that Output discharged in Releasing process saturated, and Signal exceeded. 
-This excess Signal is used in next Updating process. <br>
+<p>
+Fluorescent intensity of Output was increased until it is saturated around 10 minutes.<br>
+<br>
+</p>
+<div align="center">
+<img src="images/experiment/experiment es first output electrophoresis 02_1.0.png" width="60%"><br>
+Fig.7 Result of electrophoresis to confirm the first output releasing (after SYBR Gold staining)<br>
+<br>
+</div>
+<p>
+When reaction time is over 20 minutes, Signal band emerged in Fig.7 because Output is released by excess amount of Signal. This Signal will be used in the next Updating process. <br>
 </p>
 <p>
-Method and Materials
+Detailed experimental conditions are given in <a href="protocol.html#Combination of 3 processes">Materials and Methods</a><br>
 </p>
 </section>
-
-
-
 
 
 
@@ -367,26 +345,32 @@ Method and Materials
 
 
 <section id="contents04">
-<span><h1>Enzyme free device</h1></span>
+<span><h1>Enzyme-free device</h1></span>
+<hr></hr>
 </section>
 
 
 
 
 
+
+
 <section id="contents05">
-<span><h2>Whole device</h2></span>
+<span><h2 id="efd Whole device ex">Functionality</h2></span>
 <p>
-It is necessary to confirm that enzyme free device we designed really releases Output depends on Input sequences in order. This experiment measures the intensity of FAM (modified with Output A). We prepared Input AB and Input BA.  The order of releasing would be changed depending on these Inputs if our device works properly.<br>
-Following graph shows the result.<br>
+To confirm the functionality of the Enzyme-free device, we have designed the following experiments. The first experiment measures the intensity of Output-A modified with FAM. We prepared Input-AB and Input-BA.  The order of releasing is changed depending on the Inputs. Fig.8 shows the time development of Output-A.<br>
+</p>
 <div align="center">
-<img src="images/experiment/experiment efs whole device spectro together_1.0.png" width="700"><br>
-fig.12 The intensity of Output A (FAM). The fluorescence wavelength is 520nm. To do quantitative analysis the highest intensity data was defined 100% while the lowest was defined 0 %.<br>
+<img src="images/experiment/experiment efs whole device spectro together_1.0.png" width="60%"><br>
+Fig.8 The intensity of Output-A (FAM) measured by spectrofluorometer.<br> <font size="-1">The fluorescence wavelength is 520nm. For quantitative analysis, the highest intensity data is defined as 100%, and the lowest was defined as 0 %.</font><br>
 </div>
 <br>
-According to the left graph, the intensity of Output A coded as second domain was increased later than that was first domain. Therefore, this result shows our device releases Output based on the code written in Input.
-The time difference between first and second releasing is about 40 minutes.<br>
-We are going to discuss about this result along with simulation.
+<p>
+According to the plot, the intensity of Output-A was increased later when it was coded as the second section. Therefore, this result shows our device releases Output based on the order coded on Input. The time difference between the first and the second releasing is about 40 minutes.<br>
+We discuss this result along with simulation in <a href="discussion.html">Discussion page</a>.
+</p>
+<p>
+Experimental conditions are written in <a href="protocol.html#efd Whole device">Materials and Methods</a><br>
 </p>
 </section>
 
@@ -395,32 +379,37 @@ We are going to discuss about this result along with simulation.
 
 
 <section id="contents06">
-<span><h2>Component (Seesaw gate)</h2></span>
+<span><h2>Testing component reactions</h2></span>
 <p>
-We checked the function of one seesaw gate by measuring fluorescence intensity and doing electrophoresis.<br>
-If first Output is released, we can conclude that one Seesaw gate works properly.
+We have checked the function of one Seesaw gate by fluorescence measurement and electrophoresis.<br>
+<br>
 </p>
 
 
 
 
 
-<span><h3>Measurement of fluorescence</h3></span>
+<span><h3 id="Measurement of fluorescence ex">Measurement of fluorescence</h3></span>
 <p>
-Output is modified with FAM. The DNA that hybridizes with Output previously is modified with BHQ. Click <a href>here</a> for more information about FRET. Input is designed to release A then B. FAM is modified with Output A. The final concentration of all components (Input, Transducer, Gate, Trigger) are 100nM.<br>
-Time change of fluorescence is shown in following figure.  0[s] is the time when Trigger was added into the solution in which Input, Transducer, and Gate were mixed. <br>
+We quantify Output released from Transducer. We prepared a DNA modified with BHQ that hybridizes with Output. 
+<!--
+Click <a href>here</a> for more information about FRET. 
+-->
+Input A then B is used. The final concentration of all components (Input, Transducer, Gate, Trigger) were 100nM.<br>
+Time evolution of fluorescence is shown in Fig.9. We added Trigger into the solution at 0 [s].<br>
 <br>
 
 <div align="center">
-<img src="images/experiment/experiment efs seesaw 1stoutputdetecting spectro_1.0.png" width="650"><br>
-fig.13 Time change of Output A measured by spectrofluorometer<br>
+<img src="images/experiment/experiment efs seesaw 1stoutputdetecting spectro_1.0.png" width="65%"><br>
+Fig.9 Time change of Output-A measured by spectrofluorometer<br>
 </div>
 </p>
 <p>
-To do quantitative analysis, 100% was defined the fluorescence intensity level of DNA modified FAM, and 0% was the level of the solution with Input, Transducer, and Gate. After adding Trigger, strength of fluorescence increased gradually. Therefore, Output A was released by the function of the device properly. The increase of fluorescence stopped at about 1700sec. Probably the reaction ended at this point. Half of Output strands were released according to the fluorescence intensity.<br>
+For quantitative analysis, we define the fluorescence intensity of DNA modified FAM as 100%, and the level of the solution with Input, Transducer, and Gate as 0%. After adding Trigger, fluorescence increased gradually. The increase of fluorescence stopped around 1700sec. The reaction ends at this point. About a half of Output strands were released according to the fluorescence measurement.<br>
 </p>
 <p>
-Method and Materials
+Detailed experimental conditions are given in <a href="protocol.html#Measurement of fluorescence">Materials and Methods</a><br>
+<br>
 </p>
 
 
@@ -428,36 +417,36 @@ Method and Materials
 
 
 
-<span><h3>Electrophoresis</h3></span>
+<span><h3 id="Electrophoresis ex">Electrophoresis</h3></span>
 <p>
-We carried out the electrophoresis with FAM modified Output. Only Output can be observed with no coloring matter.<br>
-The result of electrophoresis is shown below.<br>
+We also evaluated the ratio of first Output by electrophoresis to confirm the function of the Seesaw gate.<br>
+The result of electrophoresis is shown in Fig.10.<br>
 <div align="center">
-<img src="images/experiment/experiment efs seesaw 1stoutputdetecting eido_1.0.png"  width="600"><br>
-fig.14 Cofirmation of Seesaw gate by electrophoresis<br>
+<img src="images/experiment/experiment efs seesaw 1stoutputdetecting eido_1.0.png"  width="40%"><br>
+Fig.10 Confirmation of Seesaw gate by electrophoresis<br>
 </div>
 <br>
-In two bands appeared on lane1 and lane3 in the figure, the upper one is Transducer, and the lower one is Outout.  <br>
-The fluorescence intensity of lane1 with Trigger is strong. <br>
-On the figure, the results of measuring the fluorescence intensity of lane1 and lane3 are following table.<br>
+Two bands appeared on lane1 and lane3. The upper one is Transducer, and the lower one is Output. The fluorescence intensity of Output in lane1 with Trigger is stronger than that in lane3. Fig.11 shows the fluorescence intensity of 2 bands in lane 1 and 3.<br>
+</p>
 <!--
 <div align="center">
 <img src="images/experiment/experiment efs seesaw 1stoutputdetecting eido intensity analysis lane2_1.0.png"  width="650"><br>
-fig. Lane1ÇÃåuåıã≠ìxï™êÕ<br>
+fig. Lane1??u?????x????<br>
 <img src="images/experiment/experiment efs seesaw 1stoutputdetecting eido intensity analysis lane4_1.0.png"  width="650"><br>
-fig. Lane3ÇÃåuåıã≠ìxï™êÕ<br>
+fig. Lane3??u?????x????<br>
 </div>
 -->
 <br>
 <div align="center">
-table.1 Band intensity of Transducer A and Output A<br>
-<img src="images/experiment/experiment efs seesaw 1stoutputdetecting eido intensity analysis table_1.0.png"  width="400"><br>
+<img src="images/experiment/experiment efs seesaw 1stoutputdetecting eido intensity analysis table_1.0.png"  width="40%"><br>
+Fig.11 Band intensity of Transducer and Output<br>
 </div>
 <br>
-Comparing lane1 (with Trigger) with lane3 (with no Trigger), the intensity of Output increased by 83.0%, and Transducer decreased 83.0% when Trigger was added. We can conclude that Output is released by Trigger.<br>
+<p>
+The intensity of Output increased by 83.0%, and Transducer decreased 83.0% when Trigger was added. We conclude that Output is released by adding Trigger.<br>
 </p>
 <p>
-Method and Materials
+Detailed experimental conditions are given in <a href="protocol.html#Electrophoresis">Materials and Methods</a><br>
 </p>
 </section>
 
@@ -486,7 +475,7 @@ Method and Materials
 <div id="pageinfo">
 <a href="mailto:teamsendai2014@gmail.com" id="info_mail"><img src="images/icon_mail.png" width="18" height="12" alt="mail">TeamSendai2014@gmail.com</a><br />
 <span id="info_copyright">Copyright c 2014 Biomod 2014 team Sendai All rights reserved.</span>
-<span id="info_lab"><a href="http://www.molbot.mech.tohoku.ac.jp/eng/index.html" target=Åh_blankÅh><img src="images/Muratalab-icon2_dark-01.png" height="60"></a></span>
+<span id="info_lab"><a href="http://www.molbot.mech.tohoku.ac.jp/eng/index.html" target=?h_blank?h><img src="images/Muratalab-icon2_dark-01.png" height="60"></a></span>
 </div>
 </footer>
 

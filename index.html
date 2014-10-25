@@ -2,24 +2,33 @@
 <html lang="ja">
   <head>
   <meta charset="UTF-8" />
+
     <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Roboto+Slab' rel='stylesheet' type='text/css'>
     <link href="styles/top.css" rel="stylesheet" type="text/css">
-    <link href="styles/common_index.css" rel="stylesheet" type="text/css">
+    <link href="styles/common.css" rel="stylesheet" type="text/css">
+    <style type="text/css">
+
+    </style>
     <script src="scripts/jquery-1.11.1.min.js"></script>
     <script src="scripts/retina.js"></script>
+     <script type="text/javascript" src="scripts/video/js/mootools.js"></script>
+  <script type="text/javascript" src="scripts/video/js/swfobject.js"></script>
+  <script type="text/javascript" src="scripts/video/js/videobox.js"></script>
+  <link rel="stylesheet" href="scripts/video/css/videobox.css" type="text/css" />
     <title>Tales of the Taste | team Sendai - Biomod 2014</title>
   </head>
   
   <body>
     <header>
       <nav id="globalnav">
-        <h1><a href="index.html">Tales of the Order</a></h1>
-        <ul>
-          <li><a href="./project.html">PROJECT IDEA</a></li>
+	<img src="images/logo3.png"  width="30%"  align="left">
+        <ul style="width:70%; margin-left:30%">
+          <li><a href="./project.html">OUR PROJECT</a></li>
           <li><a href="./design_enzyme.html">DESIGN</a></li>
           <li><a href="./simulation.html">SIMULATION</a></li>
           <li><a href="./experiment.html">EXPERIMENT</a></li>
+          <li><a href="./protocol.html">MATERIALS&amp;METHODS</a></li>
           <li><a href="./discussion.html">DISCUSSION</a></li>
           <li><a href="./team.html">TEAM</a></li>
         </ul>
@@ -30,12 +39,15 @@
       <article>
         <section id="section-hero">
           <div class="wrapper">
-            <img src="./images/box_angle.Scene.00017.png" width="960px" height="540px">
+            <img src="./images/box_angle.Scene.00017.jpg" width="100%" style="margin-top:60px; ">
 
 <h2>Abstract</h2>
-Our goal is to realize a device which is able to generate different DNA strands in a given arbitrary order. The device consists of a tape and a black box. The tape is a long single-stranded DNA which describes the order of the output. There is no limitation in the length of the tape. The black box is a set of molecules that reads out the information on the tape to generate corresponding output strands. To achieve this, we have designed a reaction network by using DNA computing. When the tape is put in the box (e.g. a test tube containing the molecules), a section on its 3’-end is read and corresponding output is produced. When the concentration of the output reaches the threshold, the tape strand is updated though disabling the first section and enabling the next section. By repeating this, the device generates single stranded DNA in order.<br>
-In this summer, we designed two type of chemical reaction pathway for the device and analyzed the behaviors of them both in vitro and in scilico. In vitro, we actually assembled the chemical spices of the devices and demonstrated that our devices release different single stranded DNA in order. In silico, we made models of our devices for the computer simulation. Time intervals between each output can be predicted by analyzing the models. As well as the number and permutation of outputs, we can also program the time interval. <br>
-By using our devices, we can program various complex molecular reactions such as sequential assembly of nanostructures and behavior control of molecular robots. <br>
+<p style="margin:10px">
+Our goal is to realize a device which is able to generate different DNA strands in a given arbitrary order. The device consists of a tape and a box. The tape is a long single stranded DNA which describes the order of the output. There is no limitation in the length of the tape. The box is a set of molecules that reads out the information on the tape to generate corresponding output strands. To achieve this concept, we have designed a reaction network by using DNA computing. When the tape is put in the box (e.g. a test tube containing the molecules), a section on its 3’-end is read and corresponding output is produced. When the concentration of the output reaches the threshold, the tape strand is updated though disabling the first section and enabling the next section. By repeating this, the device generates single stranded DNA in the order described on the tape.<br></p>
+<p style="margin:10px">
+In this summer, we have designed two types of chemical reaction for the device and analyzed the behaviors of them both <i>in vitro</i> and <i>in scilico</i>. Results of <i>in vitro</i> experiments demonstrate that our devices are able to release different single stranded DNA in proper order such as A-B, B-A, A-B-C, and C-B-A. The further properties such as output releasing intervals are predicted by <i>in scilico</i> simulations.<br></p>
+<p style="margin:10px">By using our devices, we can program various complex molecular reactions such as sequential of nanostructures and behavior control of molecular robots. <br>
+</p>
 
 
           </div>
@@ -43,7 +55,7 @@ By using our devices, we can program various complex molecular reactions such as
         <section>
           <div class="wrapper">
             <h2>Youtube</h2>
-<iframe width="560" height="315" src="http://www.youtube.com/embed/3ahnPcQxzhk?rel=0"  frameborder="0" allowfullscreen></iframe>
+<a href="https://www.youtube.com/watch?v=3ahnPcQxzhk" rel="vidbox 854 480 title="Tales of the Order -Universal Strand Generator-"><img src="images/youtubethumb.png" width="60%" border="0" onMouseOver="this.src='images/youtubethumb-over.png'" onMouseOut="this.src='images/youtubethumb.png'" style="margin-left:20%"></a>
           </div>
         </section>
 

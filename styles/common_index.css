@@ -33,6 +33,7 @@ header #globalnav h1 a{
 	color: #ffffff;
 }
 
+
 #globalnav ul {
 	position: absolute;
 	top: 18px;
@@ -106,4 +107,3 @@ footer a{
 #pageinfo a img {
 	margin-right: 5px;
 }
-
