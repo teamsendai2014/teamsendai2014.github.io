@@ -92,14 +92,9 @@ window.onload=$(function() {
 <div id="wrapper">
     <header id="globalheader">
       <nav id="globalnav">
-<<<<<<< HEAD
         <a href="index.html">
 	<img src="images/logo3.png"  width="30%"  align="left"></a>
         <ul style="width:70%; margin-left:30%">
-=======
-        <a href="index.html"><img src="images/logo3.png" height="60px" width="300px" style="margin-right:40px; margin-left:20px" align="left"></a>
-        <ul>
->>>>>>> origin/master
           <li><a href="./project.html">OUR PROJECT</a></li>
           <li class="currentpage"><a href="./design_enzyme.html">DESIGN</a></li>
           <li><a href="./simulation.html">SIMULATION</a></li>
@@ -130,7 +125,6 @@ window.onload=$(function() {
 <section id="contents01" style="padding-bottom:0">
 <span><h2>Enzymatic device</h2></font></span>
 <hr>
-<<<<<<< HEAD
 <p>Here, we explain the device composed of DNA and enzymes. First, we overview the outline of  mechanism.</p>
 <p>
 <img src="images/design/device_rough_image.png" width="80%"  alt="design">
@@ -168,77 +162,23 @@ Step3. Output DNA is released by the strand displacement activity of polymerase.
 <p>
 This process takes place just after reading process because the toehold region of Transducer is slightly longer than that of  Gate.
 <img src="images/design/workflow2(enzyme)1025neo.png" width="793"alt="design">
-=======
-<p>Here, we explain the device composed of DNA and enzymes. First, we explain outline of the mechanism.</p>
-<p>
-<img src="images/design/device_rough_image.png" width="80%"  alt="design">
-</p>
-<p>The device is composed of three processes. Input DNA codes sequence of Output releasing. the three processes are reading process, releasing process and updating process. In reading process, Input DNA gives instructions of the releasing order to the device. With the first instruction, a corresponding signal is activated and cascades of next processes. In releasing process, Output is released by the signal from the previous process. After the releasing process, updating process starts. In updating process, the Input is renewed by deleting the first instruction in the Input DNA.
-By cycling these three processes, single stranded DNAs are generated in order.
-</p>
-
-
-</section>
-
-<section id="contents02">
-<h3>Reading process</h3>
-<p>In the following part, we explain the details of the three processes.
-The reading process is composed of Templates, Transducer and Gates as shown below.<img src="images/design/components(enzyme)02.png" width="80%"  alt="design" style="margin-bottom:0">
-<br><br>
-<p>The reading process consists of four steps.</p>
-Step1. Templates hybridize with input DNA. <br>
-Step2. Polymerase elongates Input at its from 3' end. We introduce unpaired bases at 5' end of the Template to prevent undesired elongation.<br>
-Step3. Nickase cleaves elongated Input.<br>
-Step4. Polymerase elongates remaining Input from 3' end again with its strand displacement activity. As a result, Signal is released.<br><br>
-<P>
-Repeating Step3 and Step4, single stranded DNA (Signal) is amplified. The signal will be used in the next processes: releasing and updating process.
-<p><img src="images/design/workflow1(enzyme)02.png" width="80%"  alt="design"></p>
-<br clear="left">
-</p>
-</section>
-
-<section id="contents03">
-<h3>Releasing process</h3>
-<p> Following chemical reactions represent the releaseing process. It involves Signal, Transducer, and polymerase.<br><br>
-
-
-Step1. Signal hybridizes with a single stranded part of Transducer.<br>
-Step2. Polymerase elongates Signal from 3' end.<br>
-Step3. Output DNA are released by the strand displacement activity of polymerase.<br> </p>
-<p>
-This process takes place just after reading process because the toehold region of Transducer is slightly longer than that of the gates.
-<img src="images/design/workflow2(enzyme)02.png" width="80%"alt="design">
->>>>>>> origin/master
 <br clear="left">
 </p>
 </section>
 
 <section id="contents04">
 <h3>Updating process</h3>
-<<<<<<< HEAD
 <p>Updating process composed of Input/Template complex, Signal, and Gate.<br><br>
-=======
-<p>Updating process involves Input/Template, Signal, and Gate.<br><br>
->>>>>>> origin/master
 
 Step1. Signal hybridizes with a single stranded part of Gate.<br>
 Step2. Polymerase elongates DNA from 3' end.<br>
 Step3. Single stranded DNA (Updater) is released by strand displacement activity of polymerase.<br>
-<<<<<<< HEAD
 Step4. Updater hybridizes with Input/Template complex to form a recognition site of restriction enzyme.<br>
 Step5. Template-A is released from Input by strand displacement.<br>
 Step6. Restriction enzyme cleaves duplex of Updater and Input/Template complex. Consequently, Input is updated for the next cycle.<br>
 
 <p>This cycle is repeated again and again until all the instructions written in Input are executed. Eventually, the Outputs are released in programmed order. </p>
 <p><img src="images/design/workflow3(enzyme)1025neo.png" width="695" alt="design"></p>
-=======
-Step4. Updater hybridizes with Input/template complex.<br>
-Step5. Template-A is released from Input by strand displacement.<br>
-Step6. Restriction enzyme cleaves duplex of Updater and Input/template complex. Consenquently Input is updated for the next cycle.<br>
-
-<p>This cycle is repeated again and again until all the instructions written in Input are executed. Eventually, the Outputs are released in programmed order. 
-<img src="images/design/workflow3(enzyme)02.png" width="80%" alt="design"></p>
->>>>>>> origin/master
 
 <br clear="left"> 
 </section>
@@ -246,7 +186,6 @@ Step6. Restriction enzyme cleaves duplex of Updater and Input/template complex. 
 <section id="contents05">
 <h2><span>Enzyme-free device</span></h2>
 <hr>
-<<<<<<< HEAD
   <p>Here, we explain the mechanisms of Enzyme-free device (using only DNA).
 
     Enzyme-free device is designed based on seesaw gates [1] which is capable of cascading strand displacement reactions. Components of the device are Input, Trigger, Gate, Transducer,  and Fuel.<br>
@@ -267,41 +206,11 @@ Step6. Restriction enzyme cleaves duplex of Updater and Input/template complex. 
 <p>The device repeats the cascading reaction until all Outputs are released. As well as Enzymatic device, programmability is an important feature of the device. </p><br />
 
 <p><img src="images/design/workflow(E-free)1025neo.png" width="833"alt="design" style="margin:0"></p>
-=======
-  <p>Here,we explain the mechanisms of enzyme-free device(using only DNA).
-
-    Enzyme-free device is designed based on seesaw gates[1] which is capable of cascading strand displacement reactions.<br>
-    <br>
-   <p><img src="images/design/components(Enzymefree).png" width="100%"alt="design" style="margin-left:5%"> 
-   </p>
-<br>
-  <p>Components of the device are Input , Trigger, Gate, Transducer  and Fuel.<br>
-    Like Enzymatic device, the order of releasing output is coded in Input, while other DNA components are utilized for cascading the reactions.
-   <p> Cascading reactions are implemented by the following steps.</p>
-
-<p><img src="images/design/workflow(enzymefree)02.png" width="100%"alt="design" style="margin:0"></p>
-
-  Step1. Trigger hybridizes with Input. <br>
-  Step2. Signal is released by strand displacement reaction.<br>
-  Step3. Signal hybridizes with Transducer. This step takes place just after step2 because the toehold region of Transducer is slightly longer than that of Gates.<br>
-  Step4. The first Output is released by strand displacement.<br>
-  Step5. Remaining Signal starts to hybridize with Gate. Since this is catalytic reaction, sufficient amount of trigger is released from small amount of Signal.<br>
-  Step6. A new Trigger is consequently released for the next cascades.<br>
-  Step7. The new trigger hybridizes with a single stranded part of Input.<br>
-  Step8. A new Signal is released by strand displacement reaction.
-</p>
-<p>The device repeats the cascading reaction until all Outputs are released. As well as Enzymatic device, programmability is an important feature of the device. </p><br />
-
->>>>>>> origin/master
 
 
 <span>
 <h2>Reference</h2></span> 
-<<<<<<< HEAD
 <hr><br />[1] L. Qian, E, Winfree, Science 332 (6034) (2011) 1196-1201
-=======
-<hr><br />[1]L. Qian, E, Winfree, Science 332 (6034) (2011) 1196-1201
->>>>>>> origin/master
 </section>
 </article>
 </div>

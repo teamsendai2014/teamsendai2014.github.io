@@ -12,7 +12,6 @@
 
 
 window.onload=$(function() {
-<<<<<<< HEAD
 	// ナビゲーションのリンクを指定
 	var navLink = $('#contentsnav li a');
 
@@ -28,23 +27,6 @@ window.onload=$(function() {
 			// ページ上部からコンテンツの終了位置までの距離を取得
 			var targetContentsBottom = targetContentsTop + $(targetContents).outerHeight(true) - 1;
 			// 配列に格納
-=======
-	// �i�r�Q�[�V�����̃����N��w��
-	var navLink = $('#contentsnav li a');
-
-	// �e�R���e���c�̃y�[�W�㕔����̊J�n�ʒu�ƏI���ʒu��z��Ɋi�[���Ă���
-	var contentsArr = new Array();
-	for (var i = 0; i < navLink.length; i++) {
-		// �R���e���c��ID��擾
-		var targetContents = navLink.eq(i).attr('href');
-		// �y�[�W�����N�łȂ��i�r�Q�[�V�������܂܂�Ă���ꍇ�͏��O����
-		if(targetContents.charAt(0) == '#') {
-			// �y�[�W�㕔����R���e���c�̊J�n�ʒu�܂ł̋�����擾
-			var targetContentsTop = $(targetContents).offset().top;
-			// �y�[�W�㕔����R���e���c�̏I���ʒu�܂ł̋�����擾
-			var targetContentsBottom = targetContentsTop + $(targetContents).outerHeight(true) - 1;
-			// �z��Ɋi�[
->>>>>>> origin/master
 			contentsArr[i] = [targetContentsTop, targetContentsBottom]
 		}
 	};
@@ -66,7 +48,6 @@ window.onload=$(function() {
     });
 
 
-<<<<<<< HEAD
 	// 現在地をチェックする
 	function currentCheck() {
 
@@ -80,40 +61,16 @@ window.onload=$(function() {
 			// ページ上部からコンテンツの終了位置までの距離を取得
 			var targetContentsBottom = targetContentsTop + $(targetContents).outerHeight(true) - 1;
 			// 配列に格納
-=======
-	// ���ݒn��`�F�b�N����
-	function currentCheck() {
-
-	for (var i = 0; i < navLink.length; i++) {
-		// �R���e���c��ID��擾
-		var targetContents = navLink.eq(i).attr('href');
-		// �y�[�W�����N�łȂ��i�r�Q�[�V�������܂܂�Ă���ꍇ�͏��O����
-		if(targetContents.charAt(0) == '#') {
-			// �y�[�W�㕔����R���e���c�̊J�n�ʒu�܂ł̋�����擾
-			var targetContentsTop = $(targetContents).offset().top;
-			// �y�[�W�㕔����R���e���c�̏I���ʒu�܂ł̋�����擾
-			var targetContentsBottom = targetContentsTop + $(targetContents).outerHeight(true) - 1;
-			// �z��Ɋi�[
->>>>>>> origin/master
 			contentsArr[i] = [targetContentsTop, targetContentsBottom]
 		}
 	};
 
-<<<<<<< HEAD
 		// 現在のスクロール位置を取得
 		var windowScrolltop = $(window).scrollTop();
 		for (var i = 0; i < contentsArr.length; i++) {
 			// 現在のスクロール位置が、配列に格納した開始位置と終了位置の間にあるものを調べる
 			if(contentsArr[i][0] <= windowScrolltop && contentsArr[i][1] >= windowScrolltop) {
 				// 開始位置と終了位置の間にある場合、ナビゲーションにclass="current"をつける
-=======
-		// ���݂̃X�N���[���ʒu��擾
-		var windowScrolltop = $(window).scrollTop();
-		for (var i = 0; i < contentsArr.length; i++) {
-			// ���݂̃X�N���[���ʒu���A�z��Ɋi�[�����J�n�ʒu�ƏI���ʒu�̊Ԃɂ����̂𒲂ׂ�
-			if(contentsArr[i][0] <= windowScrolltop && contentsArr[i][1] >= windowScrolltop) {
-				// �J�n�ʒu�ƏI���ʒu�̊Ԃɂ���ꍇ�A�i�r�Q�[�V������class="current"�����
->>>>>>> origin/master
 				navLink.removeClass('current');
 				navLink.eq(i).addClass('current');
 				i == contentsArr.length;
@@ -121,11 +78,7 @@ window.onload=$(function() {
 		};
 	}
 
-<<<<<<< HEAD
 	// ページ読み込み時とスクロール時に、現在地をチェックする
-=======
-	// �y�[�W�ǂݍ��ݎ��ƃX�N���[�����ɁA���ݒn��`�F�b�N����
->>>>>>> origin/master
 	$(window).on('load scroll', function() {
 		currentCheck();
 	});
@@ -139,13 +92,8 @@ window.onload=$(function() {
 <div id="wrapper">
     <header id="globalheader">
       <nav id="globalnav">
-<<<<<<< HEAD
         <a href="index.html"><img src="images/logo3.png"  width="30%"  align="left"></a>
         <ul style="width:70%; margin-left:30%">
-=======
-        <a href="index.html"><img src="images/logo3.png" height="60px" width="300px" style="margin-right:40px; margin-left:20px" align="left"></a>
-        <ul>
->>>>>>> origin/master
           <li><a href="./project.html">OUR PROJECT</a></li>
           <li><a href="./design_enzyme.html">DESIGN</a></li>
           <li><a href="./simulation.html">SIMULATION</a></li>
@@ -205,9 +153,9 @@ Experimental results of electrophoresis and other chemical observation methods p
 
 <section id="contents02">
 <span><h2 id="ed Whole device ex">Functionality</h2></span>
-<h3>The order of releasing</h3>
+<h3>2-instruction operation</h3>
 <p>
-Our device releases different Outputs in order depending on the information of Input. It was proved by two experimental results of electrophoresis (Fig.1) where we add two types of Inputs (<font color="DB0015">A</font> then <font color="96D050">B</font>, <font color="96D050">B</font> then <font color="DB0015">A</font>). Both Output-A and B were tagged with TAMRA, though the length of two Outputs is different. We conducted quantitative analyses of the band intensity of Outputs. Following graphs show the ratio of Outputs to the total intensity of 2 bands (Transducer, Output) on each lane. <br>
+Enzymatic device releases different Outputs in order depending on the information of Input. It was proved by two experimental results of electrophoresis (Fig.1) where we added two types of Inputs (<font color="DB0015">A</font> then <font color="96D050">B</font>, <font color="96D050">B</font> then <font color="DB0015">A</font>). Both Output-A and B were tagged with TAMRA, though the length of two Outputs was different. We conducted quantitative analyses of the band intensity of Outputs. Following graphs show the ratio of Outputs to the total intensity of 2 bands (Transducer, Output) on each lane. <br>
 <br>
 
 
@@ -219,7 +167,7 @@ Our device releases different Outputs in order depending on the information of I
 <img src="images/experiment/experiment es second output electrophoresis after AB_1.0.png" width="100%"><br>
 Fig.1 Time evolution of Outputs with <font size="+2"><B>Input-<font color="DB0015">A</font><font color="96D050">B</font></B></font> and <font size="+2"><B>Input-<font color="96D050">B</font><font color="DB0015">A</font></B></font><br>
 <font size="-1">
-All enzymes and DNAs (Transducer, Gate) were mixed at 45 &#08451 , then the reactions start when Input is added. Reaction times were 0, 1/6, 1/2, 1, 2, 5, 10, 12, 15, 20, 25, 30, 40 min. After the reaction, the solution was heated up to 80 &#08451 to stop enzymatic activities, then annealed again. The length of Output-A and Output-B is 20 mer and 25 mer, respectively.
+All enzymes and DNAs (Transducer, Gate) were mixed at 45 &#08451 , then the reactions started when Input was added. Reaction times were 0, 1/6, 1/2, 1, 2, 5, 10, 12, 15, 20, 25, 30, 40 min. After the reaction, the solution was heated up to 80 &#08451 to stop enzymatic activities, then annealed again. The length of Output-A and Output-B is 20 mer and 25 mer, respectively.
 <br>
 </font>
 </div>
@@ -234,7 +182,7 @@ All enzymes and DNAs (Transducer, Gate) were mixed at 45 &#08451 , then the reac
 <br>
 </p>
 <p>
-These experimental results proved that our device properly releases Outputs in order. The order of Outputs was controlled by the Input sequence. Both graphs show that saturated time of the first and the second Output was 2 and 20 minutes, respectively. More than 90 % of Outputs were released from Transducer.<br> 
+These experimental results proves that our device properly released Outputs in order. The order of Outputs was controlled by the Input sequence. Both graphs show that saturated time of the first and the second Output was 2 and 20 minutes, respectively. More than 90 % of Outputs were released from Transducer.<br> 
 </p>
 <p>
 Detailed experimental conditions are given in <a href="protocol.html#ed Whole device">Materials and Methods</a><br>
@@ -282,7 +230,7 @@ In the <a href="discussion.html">discussion page</a>, we discuss the difference 
 <br>
 </p>
 <p>
-<a href="protocol.html#ABC">Materials and Methods</a>
+Detailed experimental conditions are given in <a href="protocol.html#ABC">Materials and Methods</a>
 </p>
 </section>
 
