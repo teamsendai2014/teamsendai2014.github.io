@@ -7,7 +7,6 @@
 <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Roboto+Slab' rel='stylesheet' type='text/css'>
 <script src="scripts/jquery-1.11.1.min.js"></script>
-<script src="scripts/retina.js"></script>
 <script type="text/javascript">
 
 
@@ -128,7 +127,7 @@ For an accurate analysis, fitting each rate constant to an experimental value on
  In the simulation, Signal DNAs are amplified without limit because we assume constant concentration of dNTP.
 Our model of the simulation can be refined if we take into account the saturation of Signal DNAs by formalizing Michaelis-Menten kinetics [3].
 Moreover, our model ignores minor reactions such as denaturation of stable DNA duplex. Although the reaction kinetics of the denaturation should be negligibly small in real experiment, we still have the space to improve our model. <br>
- As described in the result of experiment,“ABC” or “CAB” can be released as output in order but the same output such as “ABB” or “ABA” cannot be released again in this Enzymatic device. The structure of this device has ample room for further improvement. We tried to fit data obtained from simulations and experiments, though fitting is a simple way. Considering the previously described problems, we changed the reaction rate constant of hybridization between Gate and Signal from 5.0*10^5 to 5.0*10^2, and that of hybridization between other substances from 5.0*10^6 to 5.0*10^4. We added decrease terms to ordinary differential equations so that they converge on a constant value.
+ As described in the result of experiment, “ABC” or “CAB” can be released as output in order but the same output such as “ABB” or “ABA” cannot be released again in this Enzymatic device. The structure of this device has ample room for further improvement. We tried to fit data obtained from simulations and experiments, though fitting is a simple way. Considering the previously described problems, we changed the reaction rate constant of hybridization between Gate and Signal from 5.0*10^5 to 5.0*10^2, and that of hybridization between other substances from 5.0*10^6 to 5.0*10^4. We added decrease terms to ordinary differential equations so that they converge on a constant value.
 <br>
 <br>
 <div align="center">

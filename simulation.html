@@ -7,7 +7,6 @@
 <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Roboto+Slab' rel='stylesheet' type='text/css'>
 <script src="scripts/jquery-1.11.1.min.js"></script>
-<script src="scripts/retina.js"></script>
 <script type="text/javascript">
 
 
@@ -119,7 +118,7 @@ ODEs were derived by writing down all the possible intermediate reaction by hand
 </p>
 <br>
 <br>
-</p><div>
+<div>
  <img src="simulation%20date/graph_200nM_ab.png" width="50%"><img src="simulation%20date/graph_200nM_ba.png" width="50%"> 
 </div>
 Fig.1 Simulation results of 2-instruction operation 
@@ -128,26 +127,25 @@ Fig.1 Simulation results of 2-instruction operation
 <br>
 <p>
 We have conducted two simulations with Input A then B (Fig.1 left) and B then A (Fig.1 right). These results indicate that the order of Output is programmable. 
- 
-</p>
+ </p><br><br>
 <div class="aligncenter">
 <img src="simulation%20date/graph_200nM.png" width="66%">
-</div>
+</div><br>
 Fig.2 Simulation result of 3-instruction operation (A then B then C). Initial concentrations of all the components are set at 200nM. The horizontal and the vertical axes are time and concentration respectively. <br>
 <br>   
 <p>Next, we increased the number of Instruction from two to three. The result is shown in Fig.2. Three Outputs were properly released in order (A then B then C).
 Even the model contains more than 400 intermediates, our elaborate design makes the device possible to behave as programmed.</p> 
 <br>
-
+<br>
 <div class="aligncenter">
   <img src="simulation%20date/Input.png" width="66%">
 </div> 
 <p>Fig.3 Relationship between Input concentration and time interval. Time intervals were evaluated for various Input
   concentrations (10nM ,20nM, 50nM, and 100nM). The horizontal and the vertical axes are time interval and concentration, respectively. </p>
-<p> <br>
-Moreover, time intervals between releases can be controlled by tuning the concentration of Input. We define the output-time as the time when 50% of the Output is released. We measured the time between consecutive output-time. Fig.3 shows the relationship between Input concentration and the time intervals.
-<br><br>
-  
+<p>
+Moreover, time intervals between releases can be controlled by tuning the concentration of Input. We define the output-time as the time when 50% of the Output is released. We measured the time between consecutive output-time. Fig.3 shows the relationship between Input concentration and the time intervals.</p>
+<br>
+<br>
 <div class="aligncenter">
     <img src="simulation%20date/templateB.png" width="66%">
 </div> 
@@ -181,14 +179,14 @@ More data about controlling time intervals are
 </span>
 <p>
 As
-well as Enzymatic device, we formalized ordinary differential equations based on chemical kinetics of Enzyme-free device. The numerical simulation was carried out by mathematical software (Scilab). ODEs were derived by writing down all the possible intermediates by hands. </p>
+well as Enzymatic device, we formalized ordinary differential equations based on chemical kinetics of Enzyme-free device. The numerical simulation was carried out by mathematical software (Scilab). ODEs were derived by writing down all the possible intermediates by hands. 
 Source
   codes, workflows of chemical reactions and more information are available
   here ( <a href="simulation%20date/EFD_AB.pdf" target="_blank">source_code_1,</a>
 <a href="simulation%20date/EFD_ABC.pdf" target="_blank">source_code_2,</a>
 <a href="simulation%20date/intermidiates_efd.html" target="_blank">All_intermediates,</a>
 <a href="simulation%20date/Information_efd.html" target="_blank">Chemical_parameters</a>). 
-  By simulation, we have analyzed the performance of the Enzyme-free device.<br>
+  By simulation, we have analyzed the performance of the Enzyme-free device.</p><br>
   <br>
 <br>
 <div>
@@ -196,22 +194,22 @@ Source
 </div>
 Fig.5 Simulations of 2-instruction operation. <a href="simulation%20date/EFD_AB.pdf" target="_blank">[source_code_1]</a><br>
 <br>
-<br>
 <p>
 At first, we simulated the model of 2-instruction operation. The results are shown in Fig.5.</p>
-
-<div class="aligncenter">
-<img src="simulation%20date/ABC.png" width="66%">
-</div> 
-<p>Fig.6 Simulation of 3-instruction operation. Initial concentrations of all the Inputs, Templates, Transducer, Gates, and Fuel are 200, 200, 100, 200, 400nM, respectively. 
-<a href="simulation%20date/EFD_ABC.pdf" target="_blank">[source_code_2]</a>
 <br>
+<br>
+<br>
+<div class="aligncenter"><img src="simulation%20date/ABC.png" width="66%">
+</div> 
+<p>Fig.6 Simulation of 3-instruction operation. Initial concentrations of all the Inputs, Templates, Transducer, Gates, and Fuel are 200, 200, 100, 200, 400nM, respectively.
+</p> 
+<a href="simulation%20date/EFD_ABC.pdf" target="_blank">[source_code_2]</a></p>
 <br>
 <p>Second, we simulated the model of 3-instruction operation of the device (Fig.6).
 The device releases three Outputs in proper order (A then B then C). This result indicates that the number of Outputs is scalable.</p>
-  <br>
+  <br><br>
   <img src="simulation%20date/EFDinput.png" width="48%" style="margin-right:4%"><img src="simulation%20date/EFDgateB.png" width="48%">
-<table>
+
 Fig.7 The time intervals corresponding to Input concentrations. 
 
 Fig.8 Time intervals corresponding to Gate-B concentrations. 
@@ -224,11 +222,14 @@ Next, we analyzed the time intervals between releases. The time intervals can be
 3rd ranges from 12sec to 18sec.
 In addition, the time interval between 2nd and 3rd can be controlled by adjusting Gate-B concentration (Fig.8). More data about the time interval control are available here. (Changing
   
-  <a href="simulation%20date/EFDgateA.png" target="_blank">Gate-A,</a><a href="simulation%20date/EFDgate.png" target="_blank">All_Gates,</a><a href="simulation%20date/EFDfuel.png" target="_blank">all Fuels,</a><a href="simulation%20date/EFDfuelA.png" target="_blank">Fuel-A,</a><a href="simulation%20date/EFDfuelB.png" target="_blank">Fuel-B,</a><a href="simulation%20date/EFDtrigger.png" target="_blank">Trigger</a>
-  )
-  <br><br>
+  <a href="simulation%20date/EFDgateA.png" target="_blank">Gate-A,</a><a href="simulation%20date/EFDgate.png" target="_blank">All_Gates,</a><a href="simulation%20date/EFDfuel.png" target="_blank">all Fuels,</a><a href="simulation%20date/EFDfuelA.png" target="_blank">Fuel-A,</a><a href="simulation%20date/EFDfuelB.png" target="_blank">Fuel-B,</a><a href="simulation%20date/EFDtrigger.png" target="_blank">Trigger</a></p>
+  
+  <br>
 
-</section></div>
+</section>
+</article>
+</div>
+
 </div>
 
 

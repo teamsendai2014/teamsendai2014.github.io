@@ -7,7 +7,6 @@
 <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Roboto+Slab' rel='stylesheet' type='text/css'>
 <script src="scripts/jquery-1.11.1.min.js"></script>
-<script src="scripts/retina.js"></script>
 <script type="text/javascript">
 
 
@@ -138,59 +137,52 @@ By cycling these three processes, single stranded DNAs are generated in order, w
 <section id="contents02">
 <h3>Reading process</h3>
 <p>In the following part, we explain the details of the three processes.
-The reading process is composed of Templates, Transducer and Gates as shown below.<img src="images/design/components(enzyme)02.png" width="80%"  alt="design" style="margin-bottom:0">
+The reading process is composed of Templates, Transducer and Gates as shown below.</p>
+<p><img src="images/design/components(enzyme)02.png" width="80%"  alt="design" style="margin-bottom:0"></p>
 <br><br>
 Step1. Templates hybridize with Input DNA, which results in Input/Template complex. <br>
 Step2. Polymerase elongates Input from  3' end. We introduce unpaired bases at 5' end of the Template to prevent undesired elongation.<br>
 Step3. Nickase cleaves elongated Input.<br>
 Step4. Polymerase elongates remaining Input from 3' end again with its strand displacement activity. As a result, Signal is released.<br><br>
 <P>
-Repeating Step3 and Step4, single stranded DNA (Signal) is amplified. The signal will be transmitted to the next processes: releasing and updating processes.
-<p><img src="images/design/workflow1(enzyme)1025neo.png" width="794"  alt="design"></p>
+Repeating Step3 and Step4, single stranded DNA (Signal) is amplified. The signal will be transmitted to the next processes: releasing and updating processes.</P>
+<p><img src="images/design/workflow1(enzyme)1025neo.png" width="80%"  alt="design"></p>
 <br clear="left">
-</p>
 </section>
 
 <section id="contents03">
 <h3>Releasing process</h3>
-<p> Following chemical reactions represent the releasing process. It conposed of Signal, Transducer, and polymerase.<br><br>
-
-
+<p> Following chemical reactions represent the releasing process. It conposed of Signal, Transducer, and polymerase.</p>
+<br>
 Step1. Signal hybridizes with a single stranded part of Transducer.<br>
 Step2. Polymerase elongates Signal from 3' end.<br>
-Step3. Output DNA is released by the strand displacement activity of polymerase.<br> </p>
-<p>
-This process takes place just after reading process because the toehold region of Transducer is slightly longer than that of  Gate.
-<img src="images/design/workflow2(enzyme)1025neo.png" width="793"alt="design">
+Step3. Output DNA is released by the strand displacement activity of polymerase.<br> 
+<p>This process takes place just after reading process because the toehold region of Transducer is slightly longer than that of  Gate.</p>
+<p><img src="images/design/workflow2(enzyme)1025neo.png" width="80%"alt="design"></p>
 <br clear="left">
-</p>
 </section>
 
 <section id="contents04">
 <h3>Updating process</h3>
-<p>Updating process composed of Input/Template complex, Signal, and Gate.<br><br>
-
+<p>Updating process composed of Input/Template complex, Signal, and Gate.</p>
+<br>
 Step1. Signal hybridizes with a single stranded part of Gate.<br>
 Step2. Polymerase elongates DNA from 3' end.<br>
 Step3. Single stranded DNA (Updater) is released by strand displacement activity of polymerase.<br>
 Step4. Updater hybridizes with Input/Template complex to form a recognition site of restriction enzyme.<br>
 Step5. Template-A is released from Input by strand displacement.<br>
 Step6. Restriction enzyme cleaves duplex of Updater and Input/Template complex. Consequently, Input is updated for the next cycle.<br>
-
 <p>This cycle is repeated again and again until all the instructions written in Input are executed. Eventually, the Outputs are released in programmed order. </p>
-<p><img src="images/design/workflow3(enzyme)1025neo.png" width="695" alt="design"></p>
-
+<p><img src="images/design/workflow3(enzyme)1025neo.png" width="80%" alt="design"></p>
 <br clear="left"> 
 </section>
 
 <section id="contents05">
 <h2><span>Enzyme-free device</span></h2>
 <hr>
-  <p>Here, we explain the mechanisms of Enzyme-free device (using only DNA).
-
-    Enzyme-free device is designed based on seesaw gates [1] which is capable of cascading strand displacement reactions. Components of the device are Input, Trigger, Gate, Transducer,  and Fuel.<br>
+  <p>Here, we explain the mechanisms of Enzyme-free device (using only DNA).Enzyme-free device is designed based on seesaw gates [1] which is capable of cascading strand displacement reactions. Components of the device are Input, Trigger, Gate, Transducer,  and Fuel.</p>
     <br>
-   <p><img src="images/design/components(E-free)1025neo.png" width="765"alt="design" style="margin-left:5%"> 
+   <p><img src="images/design/components(E-free)1025neo.png" width="80%"alt="design" style="margin-left:5%"> 
    </p>
 <br>
   <p>
@@ -205,7 +197,7 @@ Step6. Restriction enzyme cleaves duplex of Updater and Input/Template complex. 
   Step8. A new Signal is released by strand displacement reaction.<br>
 <p>The device repeats the cascading reaction until all Outputs are released. As well as Enzymatic device, programmability is an important feature of the device. </p><br />
 
-<p><img src="images/design/workflow(E-free)1025neo.png" width="833"alt="design" style="margin:0"></p>
+<p><img src="images/design/workflow(E-free)1025neo.png" width="80%"alt="design" style="margin:0"></p>
 
 
 <span>
