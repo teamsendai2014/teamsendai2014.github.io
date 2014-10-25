@@ -106,8 +106,8 @@ window.onload=$(function() {
 <div id="main">
 <nav id="contentsnav">
 <ul>
-<li><a href="#contents01"><b>Enzyme device</b></a></li>
-<li><a href="#contents02"><b>Enzyme free device</b></a></li>
+<li><a href="#contents01"><b>Enzymatic device</b></a></li>
+<li><a href="#contents02"><b>Enzyme-free device</b></a></li>
 </ul>
 
 </nav>
@@ -115,19 +115,23 @@ window.onload=$(function() {
 <article>
 <h1>Discussion</h1>
 <section id="contents01">
-<span><h2>Enzyme device</h2></span>
+<span><h2>Enzymatic device</h2></span>
 <hr></hr>
 <p>
- In this page, we discuss the difference between the results of simulation and experiment.
-As shown in previous page, the reaction velocity in simulation is 100 times bigger than in experiments.
-Disagreement between reaction kinetics in the experiment and rate constants in the simulation seems to result in the difference.
-In particular, we referred to two articles [1,2] for the rate constants in the simulation.
-We assumed that the rate constant of hybridization between Signal and Gate was ten times smaller than that between Signal and Transducer.
-For an accurate analysis, fitting each rate constant to an experimental value one by one is required. <br>
- In the simulation, Signal DNAs are amplified without limit because we assume constant concentration of dNTP.
+In this page, we firstly discuss the difference between the results of simulation and experiment.
+As shown in previous pages, the reaction velocity in simulation was 7 times faster than that in experiment.
+Disagreement of reaction kinetic between siimulation and the experiment seems to cause the difference.
+In particular, we referred to two articles [1,2] for the most of the rate constants for the simulation.
+We selected arbitrary but realistic rate constants for the rest.
+For an accurate simulation, fitting each rate constant to an experimental value is required. </p>
+<p>
+In the simulation, single stranded DNAs are synthesized without limit because we assume constant concentration of dNTP.
+Since the concentration of dNTP is not constant in real experiment, the synthesis of single stranded DNAs will be saturated. 
 Our model of the simulation can be refined if we take into account the saturation of Signal DNAs by formalizing Michaelis-Menten kinetics [3].
-Moreover, our model ignores minor reactions such as denaturation of stable DNA duplex. Although the reaction kinetics of the denaturation should be negligibly small in real experiment, we still have the space to improve our model. <br>
- As described in the result of experiment, “ABC” or “CAB” can be released as output in order but the same output such as “ABB” or “ABA” cannot be released again in this Enzymatic device. The structure of this device has ample room for further improvement. We tried to fit data obtained from simulations and experiments, though fitting is a simple way. Considering the previously described problems, we changed the reaction rate constant of hybridization between Gate and Signal from 5.0*10^5 to 5.0*10^2, and that of hybridization between other substances from 5.0*10^6 to 5.0*10^4. We added decrease terms to ordinary differential equations so that they converge on a constant value.
+Moreover, our model ignores minor reactions such as denaturation of DNA. We can improve our model if we include such denaturing reaction. </p>
+
+<p>In fact, we tried to fit the simulation results to experimental data by hand. We changed the rate constant of hybridization between Gate and Signal from 5.0&times;10<sup>5</sup> to 5.0&times;10<sup>2</sup>, and that of other hybridization from 5.0&times;10<sup>6</sup> to 5.0&times;10<sup>4</sup>. We also added decrease terms to ordinary differential equations so that they converge to a constant value. The graph shown below is obtained by fitting. Comparing with the data obtained from experiments, we can guess that fitting was carried on sufficiently in a simple way. </p>
+
 <br>
 <br>
 <div align="center">
@@ -135,28 +139,24 @@ Moreover, our model ignores minor reactions such as denaturation of stable DNA d
 Fig.1 Fitting result of simulation<br>
 </div>
 <br>
-
-The graph shown below is obtained by fitting. Comparing with the data obtained from experiments, we can guess that fitting was carried on sufficiently in a simple way. 
-
-</p>
+<br>
+<p>As described in the result of experiment, “ABC” or “CAB” can be released as output in order but the same output such as “ABB” or “ABA” cannot be released in the Enzymatic device. This is remained for future improvement. </p>
+<br>
+<br>
 </section>
 
 
 
 <section id="contents02">
-<span><h2>Enzyme free device</h2></span>
+<span><h2>Enzyme-free device</h2></span>
 <hr></hr>
-<p>The graph of simulation was sigmoid curve while that of experiment was convex upward. We guess that insufficient thresholding caused the results.
+<p>The outline of the graph of simulation and experiment differs from each other. We guess that insufficient thresholding caused the difference. The result of supplemental simulation without thresholding supports the idea (Fig. 2). Concretely, the thresholding is caused by the difference of rate constant of two hybridizations: Signal to Output and Signal to Gate. The rate constant of them were the same in this simulation.</p>
 <div align="center">
 <img src="images/discussion/EFD_AB_NoThreshold.png" width="60%"><br>
 Fig.2 Result of simulation without the function of threshold<br>
-<font size="-2">
-The thresholding is caused by the difference of reaction rate constant of two hybridizations: Signal to Output and Signal to Gate.<br>
- We set same number for that constant in this simulation.
-</font>
 </div>
 <br>
-The shape of graph is convex upward, which is similar to experimental plot. To get a sigmoid results in experiment, we may need to optimize the length of toehold so that we can overcome the problem of thresholding. Purification of DNA structures is another possible solution to deal with the problem because it can prevent stoichiometric inaccuracy. Such solutions may improve the performance of our Enzyme free device in the future. <br>
+<p>On the other hand, we may need to optimize the length of toehold to make experiment similar to the original simulation with thresholding. Purification of DNA structures is another possible solution because it can prevent stoichiometric inaccuracy. Such solutions may improve the performance of our Enzyme-free device in the future. <br>
 </p>
 </section>
 </article>

@@ -79,6 +79,22 @@ table {
 	margin-right: auto;
 	margin-left: auto;
 }
+
+.basex{
+	color:rgb(26,77,255);
+}
+.basey{
+	color:rgb(219,0,21);
+}
+.basex1{
+	color:rgb(51,255,64);
+}
+.baseabct{
+	color:rgb(255,241,15);
+}
+.basexdash{
+	color:rgb(255,128,13);
+}
 </style>
 <script src="scripts/jquery-1.11.1.min.js"></script>
 <script type="text/javascript">
@@ -580,67 +596,67 @@ We designed DNA sequences by Sequence Design. All DNA shown below were purchased
 <table width="78%" class="sequencetable">
 <tr>
 <td width="16%">Input-A +</td>
-<td width="50%"><span class="">CAGATGACTTTACGA</span><span class="">GATAC</span><span class="">GATATTCCTTCTGCC</span></td>
+<td width="50%"><span class="basex">CAGATGACTTTACGA</span><span class="baseabct">GATAC</span><span class="basey">GATATTCCTTCTGCC</span></td>
 </tr>
 <tr>
 <td>Input-A -</td>
-<td><span class="">GTATC</span><span class="">TCGTAAAGTCATCTG</span><span class="">CATAG</span></td>
+<td><span class="baseabct">GTATC</span><span class="basex">TCGTAAAGTCATCTG</span><span class="baseabct">CATAG</span></td>
 </tr>
 <tr>
 <td>Input-B -</td>
-<td><span class="">CAGATGACTTTACGA</span><span class="">TCAAG</span><span class="">GATATTCCTTCTGCC</span></td>
+<td><span class="basex">CAGATGACTTTACGA</span><span class="baseabct">TCAAG</span><span class="basey">GATATTCCTTCTGCC</span></td>
 </tr>
 <tr>
 <td>Input-AB +</td>
-<td><span class="">CTTGA</span><span class="">TCGTAAAGTCATCTG</span><span class="">GTATCTCGTAAAGTCATCTG</span><span class="">CATAG</span></td>
+<td><span class="baseabct">CTTGA</span><span class="basex">TCGTAAAGTCATCTG</span><span class="baseabct">GTATC</span><span class="basex">TCGTAAAGTCATCTG</span><span class="baseabct">CATAG</span></td>
 </tr>
 <tr>
 <td>Input-BA +</td>
-<td><span class="">GTATC</span><span class="">TCGTAAAGTCATCTG</span><span class="">CTTGA</span><span class="">TCGTAAAGTCATCTG</span><span class="">CATAG</span></td>
+<td><span class="baseabct">GTATC</span><span class="basex">TCGTAAAGTCATCTG</span><span class="baseabct">CTTGA</span><span class="basex">TCGTAAAGTCATCTG</span><span class="baseabct">CATAG</span></td>
 </tr>
 <tr>
 <td>Trigger</td>
-<td><span class="">CTATG</span><span class="">CAGATGACTTTACGA</span></td>
+<td><span class="baseabct">CTATG</span><span class="basex">CAGATGACTTTACGA</span></td>
 </tr>
 <tr>
 <td>Output-A</td>
-<td>[FAM]-<span class="">CAGATGACTTTACG</span></td>
+<td>[FAM]-<span class="basexdash">CAGATGACTTTACG</span></td>
 </tr>
 <tr>
 <td>Transducer-A -</td>
-<td><span class="">C</span><span class="">GTATC</span><span class="">T</span><span class="">CGTAAAGTCATCTG</span>-[BHQ1]</td>
+<td><span class="basex1">C</span><span class="baseabct">GTATC</span><span class="basex1">T</span><span class="basexdash">CGTAAAGTCATCTG</span>-[BHQ1]</td>
 </tr>
 <tr>
 <td>Output-B</td>
-<td><span class="">CAGATGACTTTACG<span></td>
+<td><span class="basexdash">CAGATGACTTTACG<span></td>
 </tr>
 <tr>
 <td>Transducer-B -</td>
-<td><span class="">C</span><span class="">CTTGA</span><span class="">T</span><span class="">CGTAAAGTCATCTG</span></td>
+<td><span class="basex1">C</span><span class="baseabct">CTTGA</span><span class="basex1">T</span><span class="basexdash">CGTAAAGTCATCTG</span></td>
 </tr>
 <tr>
 <td>Gate-A +</td>
-<td><span class="">GATATTCCTTCTGCC</span><span class="">GATAC</span><span class="">CAGATGACTTTACGA</span></td>
+<td><span class="basey">GATATTCCTTCTGCC</span><span class="baseabct">GATAC</span><span class="basex">CAGATGACTTTACGA</span></td>
 </tr>
 <tr>
 <td>Gate-A -</td>
-<td><span class="">GTATC</span><span class="">GGCAGAAGGAATATC</span><span class="">GTATC</span></td>
+<td><span class="baseabct">GTATC</span><span class="basey">GGCAGAAGGAATATC</span><span class="baseabct">GTATC</span></td>
 </tr>
 <tr>
 <td>Gate-B +</td>
-<td><span class="">GATATTCCTTCTGCC</span><span class="">TCAAG</span><span class="">CAGATGACTTTACGA</span></td>
+<td><span class="basey">GATATTCCTTCTGCC</span><span class="baseabct">TCAAG</span><span class="basex">CAGATGACTTTACGA</span></td>
 </tr>
 <tr>
 <td>Gate-B -</td>
-<td><span class="">CTTGA</span><span class="">>GGCAGAAGGAATATC</span><span class="">CTTGA</span></td>
+<td><span class="baseabct">CTTGA</span><span class="basey">GGCAGAAGGAATATC</span><span class="baseabct">CTTGA</span></td>
 </tr>
 <tr>
 <td>Fuel-A</td>
-<td><span class="">GATATTCCTTCTGCC</span><span class="">GATAC</span></td>
+<td><span class="basey">GATATTCCTTCTGCC</span><span class="baseabct">GATAC</span></td>
 </tr>
 <tr>
 <td>Fuel-B</td>
-<td><span class="">GATATTCCTTCTGCC</span><span class="">TCAAG</span></td>
+<td><span class="basey">GATATTCCTTCTGCC</span><span class="baseabct">TCAAG</span></td>
 </tr>
 </table>
 

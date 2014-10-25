@@ -124,28 +124,28 @@ window.onload=$(function() {
 <section id="contents01" style="padding-bottom:0">
 <span><h2>Enzymatic device</h2></font></span>
 <hr>
-<p>Here, we explain the device composed of DNA and enzymes. First, we overview the outline of  mechanism.</p>
+<p>Here, we explain the device using DNA and enzymes. First, we overview the outline of  mechanism.</p>
 <p>
 <img src="images/design/device_rough_image.png" width="80%"  alt="design">
 </p>
-<p>The device includes three processes, which are reading process, releasing process and updating process. In reading process, Input DNA gives instructions of the releasing order to the device. With the first instruction, a corresponding signal is activated and transmitted to next processes. In releasing process, Output is released by the signal from the previous process. After the releasing process, updating process starts. In updating process, the Input is renewed by deleting the first instruction in the Input DNA.
-By cycling these three processes, single stranded DNAs are generated in order, whose sequence is coded in Input DNA.</p>
+<p>The device includes three processes, which are reading process, releasing process and updating process. In reading process, Input DNA gives instructions of the releasing order to the device. With the first instruction, a corresponding signal is activated and transmitted to next processes. In releasing process, Output is released by the signal from the previous process. After releasing, updating process starts. In the updating process, Input is renewed by deleting the first instruction on it.
+By cycling these three processes, single-stranded DNA output are generated in order, whose sequence is coded in Input DNA.</p>
 
 
 </section>
 
 <section id="contents02">
 <h3>Reading process</h3>
-<p>In the following part, we explain the details of the three processes.
-The reading process is composed of Templates, Transducer and Gates as shown below.</p>
+<p>In the following, we explain the details of the three processes.
+For the reading process, we need Templates, Transducer and Gates as shown below.</p>
 <p><img src="images/design/components(enzyme)02.png" width="80%"  alt="design" style="margin-bottom:0"></p>
 <br><br>
-Step1. Templates hybridize with Input DNA, which results in Input/Template complex. <br>
-Step2. Polymerase elongates Input from  3' end. We introduce unpaired bases at 5' end of the Template to prevent undesired elongation.<br>
+Step1. Templates hybridize with Input, which results in Input/Template complex. <br>
+Step2. Polymerase elongates Input at its 3' end. We introduce unpaired bases at 5' end of the Template to prevent undesired elongation.<br>
 Step3. Nickase cleaves elongated Input.<br>
 Step4. Polymerase elongates remaining Input from 3' end again with its strand displacement activity. As a result, Signal is released.<br><br>
 <P>
-Repeating Step3 and Step4, single stranded DNA (Signal) is amplified. The signal will be transmitted to the next processes: releasing and updating processes.</P>
+Repeating Step3 and Step4, single stranded DNA (Signal) is amplified. The Signal will be transmitted to the next processes: releasing and updating processes.</P>
 <p><img src="images/design/workflow1(enzyme)1025neo.png" width="80%"  alt="design"></p>
 <br clear="left">
 </section>
@@ -156,7 +156,7 @@ Repeating Step3 and Step4, single stranded DNA (Signal) is amplified. The signal
 <br>
 Step1. Signal hybridizes with a single stranded part of Transducer.<br>
 Step2. Polymerase elongates Signal from 3' end.<br>
-Step3. Output DNA is released by the strand displacement activity of polymerase.<br> 
+Step3. Output DNA is released by strand displacement activity of polymerase.<br> 
 <p>This process takes place just after reading process because the toehold region of Transducer is slightly longer than that of  Gate.</p>
 <p><img src="images/design/workflow2(enzyme)1025neo.png" width="80%"alt="design"></p>
 <br clear="left">
@@ -164,7 +164,7 @@ Step3. Output DNA is released by the strand displacement activity of polymerase.
 
 <section id="contents04">
 <h3>Updating process</h3>
-<p>Updating process composed of Input/Template complex, Signal, and Gate.</p>
+<p>Updating process composed of Input/Template complex, Signal and Gate.</p>
 <br>
 Step1. Signal hybridizes with a single stranded part of Gate.<br>
 Step2. Polymerase elongates DNA from 3' end.<br>
@@ -189,15 +189,15 @@ Step6. Restriction enzyme cleaves duplex of Updater and Input/Template complex. 
     Like Enzymatic device, the order of releasing output is coded in Input, while other DNA components are utilized for cascading the reactions. Cascading reactions are implemented by the following steps.</p><br>
    Step1. Trigger hybridizes with Input. <br>
   Step2. Signal is released by strand displacement reaction.<br>
-  Step3. Signal hybridizes with Transducer. This step takes place just after step2 because the toehold region of Transducer is slightly longer than that of Gates.<br>
+  Step3. Signal hybridizes with Transducer. This step takes place just after Step2 because the toehold region of Transducer is slightly longer than that of Gates.<br>
   Step4. The first Output is released by strand displacement.<br>
   Step5. Remaining Signal starts to hybridize with Gate. <br>
-  Step6. By consuming Fuel, a new Trigger is released for the next cascades. Since this is catalytic reaction, sufficient amount of trigger is released from small amount of Signal.<br>
+  Step6. By consuming Fuel, a new Trigger is released for the next reaction. Since this is catalytic reaction, sufficient amount of trigger is released from small amount of Signal.<br>
   Step7. The new trigger hybridizes with a single stranded part of Input.<br>
   Step8. A new Signal is released by strand displacement reaction.<br>
-<p>The device repeats the cascading reaction until all Outputs are released. As well as Enzymatic device, programmability is an important feature of the device. </p><br />
+<p>The device repeats this cycle until all Outputs are released. As well as Enzymatic device, programmability is an important feature of the device. </p><br />
 
-<p><img src="images/design/workflow(E-free)1025neo.png" width="80%"alt="design" style="margin:0"></p>
+<p><img src="images/design/workflow(E-free)1025neo.png" width="80%"alt="design" style="margin:auto"></p>
 
 
 <span>
