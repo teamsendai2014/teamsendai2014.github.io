@@ -12,6 +12,7 @@
 
 
 window.onload=$(function() {
+<<<<<<< HEAD
 	// ナビゲーションのリンクを指定
 	var navLink = $('#contentsnav li a');
 
@@ -27,6 +28,23 @@ window.onload=$(function() {
 			// ページ上部からコンテンツの終了位置までの距離を取得
 			var targetContentsBottom = targetContentsTop + $(targetContents).outerHeight(true) - 1;
 			// 配列に格納
+=======
+	// �i�r�Q�[�V�����̃����N��w��
+	var navLink = $('#contentsnav li a');
+
+	// �e�R���e���c�̃y�[�W�㕔����̊J�n�ʒu�ƏI���ʒu��z��Ɋi�[���Ă���
+	var contentsArr = new Array();
+	for (var i = 0; i < navLink.length; i++) {
+		// �R���e���c��ID��擾
+		var targetContents = navLink.eq(i).attr('href');
+		// �y�[�W�����N�łȂ��i�r�Q�[�V�������܂܂�Ă���ꍇ�͏��O����
+		if(targetContents.charAt(0) == '#') {
+			// �y�[�W�㕔����R���e���c�̊J�n�ʒu�܂ł̋�����擾
+			var targetContentsTop = $(targetContents).offset().top;
+			// �y�[�W�㕔����R���e���c�̏I���ʒu�܂ł̋�����擾
+			var targetContentsBottom = targetContentsTop + $(targetContents).outerHeight(true) - 1;
+			// �z��Ɋi�[
+>>>>>>> origin/master
 			contentsArr[i] = [targetContentsTop, targetContentsBottom]
 		}
 	};
@@ -48,6 +66,7 @@ window.onload=$(function() {
     });
 
 
+<<<<<<< HEAD
 	// 現在地をチェックする
 	function currentCheck() {
 
@@ -61,16 +80,40 @@ window.onload=$(function() {
 			// ページ上部からコンテンツの終了位置までの距離を取得
 			var targetContentsBottom = targetContentsTop + $(targetContents).outerHeight(true) - 1;
 			// 配列に格納
+=======
+	// ���ݒn��`�F�b�N����
+	function currentCheck() {
+
+	for (var i = 0; i < navLink.length; i++) {
+		// �R���e���c��ID��擾
+		var targetContents = navLink.eq(i).attr('href');
+		// �y�[�W�����N�łȂ��i�r�Q�[�V�������܂܂�Ă���ꍇ�͏��O����
+		if(targetContents.charAt(0) == '#') {
+			// �y�[�W�㕔����R���e���c�̊J�n�ʒu�܂ł̋�����擾
+			var targetContentsTop = $(targetContents).offset().top;
+			// �y�[�W�㕔����R���e���c�̏I���ʒu�܂ł̋�����擾
+			var targetContentsBottom = targetContentsTop + $(targetContents).outerHeight(true) - 1;
+			// �z��Ɋi�[
+>>>>>>> origin/master
 			contentsArr[i] = [targetContentsTop, targetContentsBottom]
 		}
 	};
 
+<<<<<<< HEAD
 		// 現在のスクロール位置を取得
 		var windowScrolltop = $(window).scrollTop();
 		for (var i = 0; i < contentsArr.length; i++) {
 			// 現在のスクロール位置が、配列に格納した開始位置と終了位置の間にあるものを調べる
 			if(contentsArr[i][0] <= windowScrolltop && contentsArr[i][1] >= windowScrolltop) {
 				// 開始位置と終了位置の間にある場合、ナビゲーションにclass="current"をつける
+=======
+		// ���݂̃X�N���[���ʒu��擾
+		var windowScrolltop = $(window).scrollTop();
+		for (var i = 0; i < contentsArr.length; i++) {
+			// ���݂̃X�N���[���ʒu���A�z��Ɋi�[�����J�n�ʒu�ƏI���ʒu�̊Ԃɂ����̂𒲂ׂ�
+			if(contentsArr[i][0] <= windowScrolltop && contentsArr[i][1] >= windowScrolltop) {
+				// �J�n�ʒu�ƏI���ʒu�̊Ԃɂ���ꍇ�A�i�r�Q�[�V������class="current"�����
+>>>>>>> origin/master
 				navLink.removeClass('current');
 				navLink.eq(i).addClass('current');
 				i == contentsArr.length;
@@ -78,7 +121,11 @@ window.onload=$(function() {
 		};
 	}
 
+<<<<<<< HEAD
 	// ページ読み込み時とスクロール時に、現在地をチェックする
+=======
+	// �y�[�W�ǂݍ��ݎ��ƃX�N���[�����ɁA���ݒn��`�F�b�N����
+>>>>>>> origin/master
 	$(window).on('load scroll', function() {
 		currentCheck();
 	});
@@ -92,8 +139,13 @@ window.onload=$(function() {
 <div id="wrapper">
     <header id="globalheader">
       <nav id="globalnav">
+<<<<<<< HEAD
         <a href="index.html"><img src="images/logo3.png"  width="30%"  align="left"></a>
         <ul style="width:70%; margin-left:30%">
+=======
+        <a href="index.html"><img src="images/logo3.png" height="60px" width="300px" style="margin-right:40px; margin-left:20px" align="left"></a>
+        <ul>
+>>>>>>> origin/master
           <li><a href="./project.html">OUR PROJECT</a></li>
           <li><a href="./design_enzyme.html">DESIGN</a></li>
           <li><a href="./simulation.html">SIMULATION</a></li>
