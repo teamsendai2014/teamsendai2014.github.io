@@ -180,10 +180,14 @@ window.onload=$(function() {
 
 <body>
 <div id="wrapper">
-    <header id="globalheader">
+    <header id="globalheader" style="display:table">
+     <div style="width:30%; text-align:center; vertical-align:middle; display:table-cell">
+        <a href="index.html">
+	<img src="images/logo3.png" width="90%">
+        </a>
+     </div>
       <nav id="globalnav">
-        <a href="index.html"><img src="images/logo3.png" height="60px" width="300px" style="margin-right:40px; margin-left:20px" align="left"></a>
-        <ul>
+	<ul>
           <li><a href="./project.html">OUR PROJECT</a></li>
           <li><a href="./design_enzyme.html">DESIGN</a></li>
           <li><a href="./simulation.html">SIMULATION</a></li>
@@ -201,11 +205,11 @@ window.onload=$(function() {
 <li><a href="#contents02"><b>■Enzymatic System</b></a></li>
 <li><a href="#contents03">Sample Preparation </a></li>
 <li><a href="#contents04">Functionality</a></li>
-<li><a href="#contents05">Testing component process</a></li>
+<li><a href="#contents05">Testing elementary processes</a></li>
 <li><a href="#contents06"><b>■Enzyme-free device</b></a></li>
 <li><a href="#contents07">Preparation of DNA sequences</a></li>
 <li><a href="#contents08">Functionality</a></li>
-<li><a href="#contents09">Testing component reactions</a></li>
+<li><a href="#contents09">Testing elementary reactions</a></li>
 </ul>
 </nav>
 
@@ -219,7 +223,7 @@ window.onload=$(function() {
 <section id="contents01">
 <span><h1>Simulation Condition</h1></span>
 <p>
-<h2>Enzymatic Device(Simulation)</h2>
+<h2>Enzymatic Device (Simulation)</h2>
 <hr>
 Values of chemical parameters are as follows. <br>
 
@@ -241,7 +245,7 @@ Our model neglects reverse reactions for the sake of simplicity.
 <hr>
 </p>
 <p>
-<h2>Enzyme Free Device(Simulation)</h2>
+<h2>Enzyme Free Device (Simulation)</h2>
 <hr>
 Values of chemical parameters are as follows.<br>
 
@@ -259,7 +263,7 @@ These parameter are referenced from followings.<br>
 </section>
 
 <section id="contents02">
-<span><h1>Enzymatic Device(Experiment)</h1><hr></span>
+<span><h1>Enzymatic Device (Experiment)</h1><hr></span>
 </section>
 
 <section id="contents03">
@@ -382,13 +386,40 @@ Fig.1 DNAs for experiments<br>
 </tr>
 </table>
 
+
+
+
+
+
+
+
+<img src="images/protocol/design-principle03.png" width="35%"align="right" style="margin-left:10px">
+<p>
+Signal hybridizes to Transducer faster than to Gate. That is because Signal is completely complementary to Transducer, while that is  partialy to Gate. By this design, Updating process does not work until Output is released at sufficient levels.<br>
+<br clear="right">
+</p>
+<div style="text-align:right">
+Fig. Thresholding of<br>
+</div>
+
+
+
+
+
+
+
 </p>
 
 
 <br>
 <h3>Enzymes</h3>
 <p>
-Both Polymerase (Bst DNA Polymerase, Large Fragment) and Nickase (Nt.BstNBI)were purchased from NEW ENGLAND BioLabs JAPAN. EcoRI (TAKARA BIO INC.) was used as restriction enzyme.<br>
+Both Polymerase (Bst DNA Polymerase, Large Fragment) and Nickase (Nt.BstNBI)were purchased from NEW ENGLAND BioLabs JAPAN. EcoRI (TAKARA BIO INC.) was used as restriction enzyme. The recognition sites for nickase and EcoRI are shown in following Fig.???????????????????.<br>
+
+<div align="center">
+<img src="images/protocol/design-principle01.png" width="80%"><br>
+Fig. Recognition sites for nickase and EcoRI<br>
+</div>
 </p>
 <br>
 <h3>H Buffer</h3>
@@ -406,7 +437,7 @@ Table.1 Composition of H Buffer<br>
 <section id="contents04">
 <span><h2>Functionality</h2></span>
 <p>
-<h3 id="ed Whole device">The order of releasing</h3>
+<h3 id="ed Whole device">2-instruction operation</h3>
 <ol style="margin-left:3%">
 <li>
 Input-AB or BA/Template complex, Transducer, and Gate were formed by annealing (cooling from 95 to 20&#08451 for 75min, -1&#08451/min). All samples were mixed after the formation of complexes.<br>
@@ -434,7 +465,7 @@ Imaging by gel imager with Green light.<br>
 
 
 <p>
-<h3 id="ABC">3 Outputs releasing</h3>
+<h3 id="ABC">3-instruction operation</h3>
 <ol style="margin-left:3%">
 <li>
 Input-ABC <!--or CAB-->/Template complex, Transducer, and Gate were formed by annealing (cooling from 95 to 20&#08451 for 75min, -1&#08451/min). All samples were mixed after the formation of these complexes.<br>
@@ -459,7 +490,7 @@ Imaging by gel imager with Green light.<br>
 </section>
 
 <section id="contents05">
-<span><h2>Testing component processes</h2></span>
+<span><h2>Testing elementary processes</h2></span>
 <span><h3 id="Reading Process">Reading Process</h3></span>
 <ol style="margin-left:3%">
 <li>
@@ -548,7 +579,7 @@ Imaging by gel imager (BioRad).<br>
 
 
 
-<span><h3 id="Combination of 3 processes">Combination of 3 processes</h3></span>
+<span><h3 id="Combination of 3 processes">Reaction speed measurement</h3></span>
 Inspired by a paper[3], we apply FRET to detect the release of Output-A. Before the releasing, the 6-FAM does not glow because the fluorescence of 6-FAM is absorbed by BHQ-1. In the presence of Signal, Output-A is released, and then 6-FAM glows. Therefore, we can confirm whether Output is released or not.
 <div align="center">
 <img src="images/protocol/fret.png" width="65%"><br>
@@ -582,7 +613,7 @@ Gel was stained by SYBR Gold then imaged with UV light (Stained gel image).<br>
 
 
 <section id="contents06">
-<span><h1>Enzyme-free device(Experiment)</h1><hr></span>
+<span><h1>Enzyme-free device (Experiment)</h1><hr></span>
 </section>
 
 <section id="contents07">
@@ -661,6 +692,7 @@ We designed DNA sequences by Sequence Design. All DNA shown below were purchased
 </table>
 
 
+
 </p>
 </section>
 
@@ -701,7 +733,7 @@ Fluorescence intensity was measured by spectrofluorometer(FP6200, JASCO). The wa
 </section>
 
 <section id="contents09">
-<span><h2>Testing component reaction</h2></span>
+<span><h2>Testing elementary reactions</h2></span>
 
 <span><h3 id="Measurement of fluorescence">Measurement of fluorescence</h3></span>
 <ol style="margin-left:3%">
@@ -755,7 +787,7 @@ Gel was stained by SYBR Gold then imaged with UV light (Stained gel image).<br>
 <br />
 [1]F. Tanaka, M. Nakatsugawa, M. Yamamoto, T. Shiba, A. Ohuchi, 10.1109/CEC.2002.1006212<br>
 [2]Soo-Yong Shin, In-Hee Lee, Dongmin Kim, Byoung-Tak Zhang , 10.1109/TEVC.2005.844166 <br>
-[3]<br>
+[3]Douglas Horejsh*, Federico Martini, Fabrizio Poccia, Giuseppe Ippolito, Antonino Di Caro and Maria R. Capobianchi, Nucleic Acids Research,  Vol. 33(2005),<br>
 </section>
 
 
