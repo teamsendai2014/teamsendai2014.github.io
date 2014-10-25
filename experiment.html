@@ -12,21 +12,21 @@
 
 
 window.onload=$(function() {
-	// ƒiƒrƒQ[ƒVƒ‡ƒ“‚ÌƒŠƒ“ƒN‚ğw’è
+	// ï¿½iï¿½rï¿½Qï¿½[ï¿½Vï¿½ï¿½ï¿½ï¿½ï¿½Ìƒï¿½ï¿½ï¿½ï¿½Nï¿½ï¿½wï¿½ï¿½
 	var navLink = $('#contentsnav li a');
 
-	// ŠeƒRƒ“ƒeƒ“ƒc‚Ìƒy[ƒWã•”‚©‚ç‚ÌŠJnˆÊ’u‚ÆI—¹ˆÊ’u‚ğ”z—ñ‚ÉŠi”[‚µ‚Ä‚¨‚­
+	// ï¿½eï¿½Rï¿½ï¿½ï¿½eï¿½ï¿½ï¿½cï¿½Ìƒyï¿½[ï¿½Wï¿½ã•”ï¿½ï¿½ï¿½ï¿½ÌŠJï¿½nï¿½Ê’uï¿½ÆIï¿½ï¿½ï¿½Ê’uï¿½ï¿½zï¿½ï¿½ÉŠiï¿½[ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½
 	var contentsArr = new Array();
 	for (var i = 0; i < navLink.length; i++) {
-		// ƒRƒ“ƒeƒ“ƒc‚ÌID‚ğæ“¾
+		// ï¿½Rï¿½ï¿½ï¿½eï¿½ï¿½ï¿½cï¿½ï¿½IDï¿½ï¿½æ“¾
 		var targetContents = navLink.eq(i).attr('href');
-		// ƒy[ƒW“àƒŠƒ“ƒN‚Å‚È‚¢ƒiƒrƒQ[ƒVƒ‡ƒ“‚ªŠÜ‚Ü‚ê‚Ä‚¢‚éê‡‚ÍœŠO‚·‚é
+		// ï¿½yï¿½[ï¿½Wï¿½ï¿½ï¿½ï¿½ï¿½Nï¿½Å‚È‚ï¿½ï¿½iï¿½rï¿½Qï¿½[ï¿½Vï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ü‚Ü‚ï¿½Ä‚ï¿½ï¿½ï¿½ê‡ï¿½Íï¿½ï¿½Oï¿½ï¿½ï¿½ï¿½
 		if(targetContents.charAt(0) == '#') {
-			// ƒy[ƒWã•”‚©‚çƒRƒ“ƒeƒ“ƒc‚ÌŠJnˆÊ’u‚Ü‚Å‚Ì‹——£‚ğæ“¾
+			// ï¿½yï¿½[ï¿½Wï¿½ã•”ï¿½ï¿½ï¿½ï¿½Rï¿½ï¿½ï¿½eï¿½ï¿½ï¿½cï¿½ÌŠJï¿½nï¿½Ê’uï¿½Ü‚Å‚Ì‹ï¿½ï¿½ï¿½ï¿½ï¿½æ“¾
 			var targetContentsTop = $(targetContents).offset().top;
-			// ƒy[ƒWã•”‚©‚çƒRƒ“ƒeƒ“ƒc‚ÌI—¹ˆÊ’u‚Ü‚Å‚Ì‹——£‚ğæ“¾
+			// ï¿½yï¿½[ï¿½Wï¿½ã•”ï¿½ï¿½ï¿½ï¿½Rï¿½ï¿½ï¿½eï¿½ï¿½ï¿½cï¿½ÌIï¿½ï¿½ï¿½Ê’uï¿½Ü‚Å‚Ì‹ï¿½ï¿½ï¿½ï¿½ï¿½æ“¾
 			var targetContentsBottom = targetContentsTop + $(targetContents).outerHeight(true) - 1;
-			// ”z—ñ‚ÉŠi”[
+			// ï¿½zï¿½ï¿½ÉŠiï¿½[
 			contentsArr[i] = [targetContentsTop, targetContentsBottom]
 		}
 	};
@@ -48,29 +48,29 @@ window.onload=$(function() {
     });
 
 
-	// Œ»İ’n‚ğƒ`ƒFƒbƒN‚·‚é
+	// ï¿½ï¿½ï¿½İ’nï¿½ï¿½`ï¿½Fï¿½bï¿½Nï¿½ï¿½ï¿½ï¿½
 	function currentCheck() {
 
 	for (var i = 0; i < navLink.length; i++) {
-		// ƒRƒ“ƒeƒ“ƒc‚ÌID‚ğæ“¾
+		// ï¿½Rï¿½ï¿½ï¿½eï¿½ï¿½ï¿½cï¿½ï¿½IDï¿½ï¿½æ“¾
 		var targetContents = navLink.eq(i).attr('href');
-		// ƒy[ƒW“àƒŠƒ“ƒN‚Å‚È‚¢ƒiƒrƒQ[ƒVƒ‡ƒ“‚ªŠÜ‚Ü‚ê‚Ä‚¢‚éê‡‚ÍœŠO‚·‚é
+		// ï¿½yï¿½[ï¿½Wï¿½ï¿½ï¿½ï¿½ï¿½Nï¿½Å‚È‚ï¿½ï¿½iï¿½rï¿½Qï¿½[ï¿½Vï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ü‚Ü‚ï¿½Ä‚ï¿½ï¿½ï¿½ê‡ï¿½Íï¿½ï¿½Oï¿½ï¿½ï¿½ï¿½
 		if(targetContents.charAt(0) == '#') {
-			// ƒy[ƒWã•”‚©‚çƒRƒ“ƒeƒ“ƒc‚ÌŠJnˆÊ’u‚Ü‚Å‚Ì‹——£‚ğæ“¾
+			// ï¿½yï¿½[ï¿½Wï¿½ã•”ï¿½ï¿½ï¿½ï¿½Rï¿½ï¿½ï¿½eï¿½ï¿½ï¿½cï¿½ÌŠJï¿½nï¿½Ê’uï¿½Ü‚Å‚Ì‹ï¿½ï¿½ï¿½ï¿½ï¿½æ“¾
 			var targetContentsTop = $(targetContents).offset().top;
-			// ƒy[ƒWã•”‚©‚çƒRƒ“ƒeƒ“ƒc‚ÌI—¹ˆÊ’u‚Ü‚Å‚Ì‹——£‚ğæ“¾
+			// ï¿½yï¿½[ï¿½Wï¿½ã•”ï¿½ï¿½ï¿½ï¿½Rï¿½ï¿½ï¿½eï¿½ï¿½ï¿½cï¿½ÌIï¿½ï¿½ï¿½Ê’uï¿½Ü‚Å‚Ì‹ï¿½ï¿½ï¿½ï¿½ï¿½æ“¾
 			var targetContentsBottom = targetContentsTop + $(targetContents).outerHeight(true) - 1;
-			// ”z—ñ‚ÉŠi”[
+			// ï¿½zï¿½ï¿½ÉŠiï¿½[
 			contentsArr[i] = [targetContentsTop, targetContentsBottom]
 		}
 	};
 
-		// Œ»İ‚ÌƒXƒNƒ[ƒ‹ˆÊ’u‚ğæ“¾
+		// ï¿½ï¿½ï¿½İ‚ÌƒXï¿½Nï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½Ê’uï¿½ï¿½æ“¾
 		var windowScrolltop = $(window).scrollTop();
 		for (var i = 0; i < contentsArr.length; i++) {
-			// Œ»İ‚ÌƒXƒNƒ[ƒ‹ˆÊ’u‚ªA”z—ñ‚ÉŠi”[‚µ‚½ŠJnˆÊ’u‚ÆI—¹ˆÊ’u‚ÌŠÔ‚É‚ ‚é‚à‚Ì‚ğ’²‚×‚é
+			// ï¿½ï¿½ï¿½İ‚ÌƒXï¿½Nï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½Ê’uï¿½ï¿½ï¿½Aï¿½zï¿½ï¿½ÉŠiï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½Jï¿½nï¿½Ê’uï¿½ÆIï¿½ï¿½ï¿½Ê’uï¿½ÌŠÔ‚É‚ï¿½ï¿½ï¿½ï¿½Ì‚ğ’²‚×‚ï¿½
 			if(contentsArr[i][0] <= windowScrolltop && contentsArr[i][1] >= windowScrolltop) {
-				// ŠJnˆÊ’u‚ÆI—¹ˆÊ’u‚ÌŠÔ‚É‚ ‚éê‡AƒiƒrƒQ[ƒVƒ‡ƒ“‚Éclass="current"‚ğ‚Â‚¯‚é
+				// ï¿½Jï¿½nï¿½Ê’uï¿½ÆIï¿½ï¿½ï¿½Ê’uï¿½ÌŠÔ‚É‚ï¿½ï¿½ï¿½ê‡ï¿½Aï¿½iï¿½rï¿½Qï¿½[ï¿½Vï¿½ï¿½ï¿½ï¿½ï¿½ï¿½class="current"ï¿½ï¿½Â‚ï¿½ï¿½ï¿½
 				navLink.removeClass('current');
 				navLink.eq(i).addClass('current');
 				i == contentsArr.length;
@@ -78,7 +78,7 @@ window.onload=$(function() {
 		};
 	}
 
-	// ƒy[ƒW“Ç‚İ‚İ‚ÆƒXƒNƒ[ƒ‹‚ÉAŒ»İ’n‚ğƒ`ƒFƒbƒN‚·‚é
+	// ï¿½yï¿½[ï¿½Wï¿½Ç‚İï¿½ï¿½İï¿½ï¿½ÆƒXï¿½Nï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½ÉAï¿½ï¿½ï¿½İ’nï¿½ï¿½`ï¿½Fï¿½bï¿½Nï¿½ï¿½ï¿½ï¿½
 	$(window).on('load scroll', function() {
 		currentCheck();
 	});
@@ -121,10 +121,10 @@ window.onload=$(function() {
 
 <nav id="contentsnav">
 <ul>
-<li><a href="#contents01"><b>Enzymatic device</b></a></li>
+<li><a href="#contents01"><b>â– Enzymatic device</b></a></li>
 <li><a href="#contents02">Functionality</a></li>
 <li><a href="#contents03">Testing component processes</a></li>
-<li><a href="#contents04"><b>Enzyme-free device</b></a></li>
+<li><a href="#contents04"><b>â– Enzyme-free device</b></a></li>
 <li><a href="#contents05">Functionality</a></li>
 <li><a href="#contents06">Testing component reactions</a></li>
 </ul>
@@ -152,7 +152,7 @@ Experimental results of electrophoresis and other chemical observation methods p
 
 
 <section id="contents02">
-<span><h2 id="ed Whole device ex">Whole device</h2></span>
+<span><h2 id="ed Whole device ex">Functionality</h2></span>
 <h3>The order of releasing</h3>
 <p>
 Our device releases different Outputs in order depending on the information of Input. It was proved by two experimental results of electrophoresis (Fig.1) where we add two types of Inputs (<font color="DB0015">A</font> then <font color="96D050">B</font>, <font color="96D050">B</font> then <font color="DB0015">A</font>). Both Output-A and B were tagged with TAMRA, though the length of two Outputs is different. We conducted quantitative analyses of the band intensity of Outputs. Following graphs show the ratio of Outputs to the total intensity of 2 bands (Transducer, Output) on each lane. <br>
@@ -238,13 +238,14 @@ In the <a href="discussion.html">discussion page</a>, we discuss the difference 
 
 
 <section id="contents03">
-<span><h2>Components (3 processes)</h2></span>
+<span><h2>Testing component processes</h2></span>
 <!--
 <p>
 Reaction conditions such as temperature, concentration, and time were determined by preliminary experiment of components reactions in advance to the experiment in the previous section. DNA strands and enzyme were carefully designed and chosen (For details, see <a href="protocol.html">Method and Material page</a>).<br>
 <br>
 </p>
 -->
+<br>
 <img src="images/experiment/experiment reading process eido_1.0.png" width="35%"align="right" style="margin-left:10px">
 
 <span><h3 id="Reading Process ex">Reading Process</h3></span>
