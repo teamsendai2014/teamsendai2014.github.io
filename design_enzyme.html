@@ -129,9 +129,13 @@ window.onload=$(function() {
 <hr>
 <p>Here, we explain the device using DNA and enzymes. First, we overview the outline of  mechanism.</p>
 <p>
-<img src="images/design/device_rough_image.png" width="80%"  alt="design">
+<video autoplay loop>
+<source src="video/designenzyme.mp4" type="video/mp4">
+<source src="video/designenzyme.ogv" type="video/ogg">
+<img src="images/design/device_rough_image.png" width="80%">
+</video>
 </p>
-<p>The device includes three processes, which are reading process, releasing process and updating process. In reading process, Input DNA gives instructions of the releasing order to the device. With the first instruction, a corresponding signal is activated and transmitted to next processes. In releasing process, Output is released by the signal from the previous process. After releasing, updating process starts. In the updating process, Input is renewed by deleting the first instruction on it.
+<p>The device includes three processes, which are Reading process, Releasing process and Updating process. In Reading process, Input DNA gives instructions of the releasing order to the device. With the first instruction, a corresponding Signal is activated and transmitted to next processes. In Releasing process, Output is released by the Signal from the previous process. After releasing, Updating process starts. In the Updating process, Input is renewed by deleting the first instruction on it.
 By cycling these three processes, single-stranded DNA output are generated in order, whose sequence is coded in Input DNA.</p>
 
 
@@ -140,7 +144,7 @@ By cycling these three processes, single-stranded DNA output are generated in or
 <section id="contents02">
 <h3>Reading process</h3>
 <p>In the following, we explain the details of the three processes.
-For the reading process, we need Templates, Transducer and Gates as shown below.</p>
+For the Reading process, we need Templates, Transducer, and Gates as shown below.</p>
 <p><img src="images/design/components(enzyme)02.png" width="80%"  alt="design" style="margin-bottom:0"></p>
 <br><br>
 <div class="step">
@@ -153,14 +157,14 @@ Step3. Nickase cleaves elongated Input.</div>
 <div class="step">
 Step4. Polymerase elongates remaining Input from 3' end again with its strand displacement activity. As a result, Signal is released.</div><br />
 <p>
-Repeating Step3 and Step4, single stranded DNA (Signal) is amplified. The Signal will be transmitted to the next processes: releasing and updating processes.</p>
+Repeating Step3 and Step4, single stranded DNA (Signal) is amplified. The Signal will be transmitted to the next processes: Releasing and Updating processes.</p>
 <p><img src="images/design/workflow1(enzyme)1025neo.png" width="80%"  alt="design"></p>
 <br clear="left">
 </section>
 
 <section id="contents03">
 <h3>Releasing process</h3>
-<p> Following chemical reactions represent the releasing process. It conposed of Signal, Transducer, and polymerase.</p>
+<p> Following chemical reactions represent the Releasing process. It is conposed of Signal, Transducer, and polymerase.</p>
 <br>
 <div class="step">
 Step1. Signal hybridizes with a single stranded part of Transducer.
@@ -178,7 +182,7 @@ Step3. Output DNA is released by strand displacement activity of polymerase.
 
 <section id="contents04">
 <h3>Updating process</h3>
-<p>Updating process composed of Input/Template complex, Signal and Gate.</p>
+<p>Updating process composed of Input/Template complex, Signal, and Gate.</p>
 <div class="step">
 Step1.Signal hybridizes with a single stranded part of Gate.
 </div>
