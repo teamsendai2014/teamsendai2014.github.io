@@ -227,7 +227,9 @@ window.onload=$(function() {
 Values of chemical parameters are as follows. <br>
 
 <table class="table">
-<tr><td>Hybridization:</td><td>k<sub>h</sub>=3.0&times;10<sup>8</sup>[M<sup>-1</sup>min<sup>-1</sup>]
+<tr><td>Hybridization:</td><td>k<sub>h1</sub>=3.0&times;10<sup>8</sup>[M<sup>-1</sup>min<sup>-1</sup>]
+</td></tr>
+<tr><td></td><td>k<sub>h2</sub>=3.0&times;10<sup>7</sup>[M<sup>-1</sup>min<sup>-1</sup>]
 </td></tr>
 <tr><td>Denaturation:</td><td>k<sub>d</sub>=1.0&times;10<sup>5</sup>[min<sup>-1</sup>]
 </td></tr>
@@ -283,15 +285,15 @@ Fig.1 DNAs for experiments<br>
 <table width="78%" class="sequencetable">
 <tr>
 <td width="14%">Input-AB</td>
-<td width="86%"><span class="seqb0">CTAGAACATACGCATTTGATTCGC</span><span class="seqx">GAATTC</span><span class="seqa0">AGCAGTACTATTCAAGCGACGGCT</span></td>
+<td width="86%">5'-<span class="seqb0">CTAGAACATACGCATTTGATTCGC</span><span class="seqx">GAATTC</span><span class="seqa0">AGCAGTACTATTCAAGCGACGGCT</span>-3'</td>
 </tr>
 <tr>
 <td>Input-BA</td>
-<td><span class="seqa0">AGCAGTACTATTCAAGCGACGGCT</span><span class="seqx">GAATTC</span><span class="seqb0">CTAGAACATACGCATTTGATTCGC</span></td>
+<td>5'-<span class="seqa0">AGCAGTACTATTCAAGCGACGGCT</span><span class="seqx">GAATTC</span><span class="seqb0">CTAGAACATACGCATTTGATTCGC</span>-3'</td>
 </tr>
 <tr>
 <td>Input-ABC</td>
-<td><span class="seqc0">GCCTGATAGACCGTTTCCGTAGTA</span><span class="seqx">GAATTC</span><span class="seqb0">CTAGAACATACGCATTTGATTCGC</span><span class="seqx">GAATTC</span><span class="seqa0">AGCAGTACTATTCAAGCGACGGCT</span></td>
+<td>5'-<span class="seqc0">GCCTGATAGACCGTTTCCGTAGTA</span><span class="seqx">GAATTC</span><span class="seqb0">CTAGAACATACGCATTTGATTCGC</span><span class="seqx">GAATTC</span><span class="seqa0">AGCAGTACTATTCAAGCGACGGCT</span>-3'</td>
 </tr>
 
 
@@ -300,7 +302,7 @@ Fig.1 DNAs for experiments<br>
 
 
 <td>Input-CAB</td>
-<td><span class="seqb0">CTAGAACATACGCATTTGATTCGC</span><span class="seqx">GAATTC</span><span class="seqa0">AGCAGTACTATTCAAGCGACGGCT</span><span class="seqx">GAATTC</span><span class="seqc0">GCCTGATAGACCGTTTCCGTAGTA</span></td>
+<td>5'-<span class="seqb0">CTAGAACATACGCATTTGATTCGC</span><span class="seqx">GAATTC</span><span class="seqa0">AGCAGTACTATTCAAGCGACGGCT</span><span class="seqx">GAATTC</span><span class="seqc0">GCCTGATAGACCGTTTCCGTAGTA</span>-3'</td>
 </tr>
 
 
@@ -310,75 +312,75 @@ Fig.1 DNAs for experiments<br>
 
 <tr>
 <td>Template-A</td>
-<td><span class="seqtmpa">TCACTTCTGCATCGA</span><span class="seqnick"><span class="seqnick">TCACGACTC</span></span><span class="seqa0-">AGCCGTCGCTTGAATAGT</span><span class="seqtemphead">GTTA</span></td>
+<td>5'-<span class="seqtmpa">TCACTTCTGCATCGA</span><span class="seqnick"><span class="seqnick">TCACGACTC</span></span><span class="seqa0-">AGCCGTCGCTTGAATAGT</span><span class="seqtemphead">GTTA</span>-3'</td>
 </tr>
 <tr>
 <td>Template-B</td>
-<td><span class="seqtmpb">AGGATATGCTCTCGT</span><span class="seqnick">TCACGACTC</span><span class="seqb0-">GCGAATCAAATGCGTATG</span><span class="seqtemphead">GTTA</span></td>
+<td>5'-<span class="seqtmpb">AGGATATGCTCTCGT</span><span class="seqnick">TCACGACTC</span><span class="seqb0-">GCGAATCAAATGCGTATG</span><span class="seqtemphead">GTTA</span>-3'</td>
 </tr>
 <tr>
 <td>Template-C</td>
-<td><span class="seqtmpc">AATCTACTCGCTACA</span><span class="seqnick">TCACGACTC</span><span class="seqc0-">TACTACGGAAACGGTCTA</span><span class="seqtemphead">GTTA</span></td>
+<td>5'-<span class="seqtmpc">AATCTACTCGCTACA</span><span class="seqnick">TCACGACTC</span><span class="seqc0-">TACTACGGAAACGGTCTA</span><span class="seqtemphead">GTTA</span>-3'</td>
 </tr>
 <tr>
 <td>Output-A</td>
-<td><span class="seqouta">TAGGTACGCTCCGACAAGGT</span></td>
+<td>5'-<span class="seqouta">TAGGTACGCTCCGACAAGGT</span>-3'</td>
 </tr>
 <tr>
 <td>Output-B</td>
-<td><span class="seqoutb">GTACAGGCATCTATACGTTACCATA</span></td>
+<td>5'-<span class="seqoutb">GTACAGGCATCTATACGTTACCATA</span>-3'</td>
 </tr>
 <tr>
 <td>Output-C</td>
-<td><span class="seqoutc">AGCTTATGTTGCATATCTTAGTGTCCATCGCGTAG</span></td>
+<td>5'-<span class="seqoutc">AGCTTATGTTGCATATCTTAGTGTCCATCGCGTAG</span>-3'</td>
 </tr>
 <tr>
 <td>Transducer-A</td>
-<td><span class="seqtra">ACCTTGTCGGAGCGTACCTA</span><span class="seqsga-">TCACTTCTGCATCGA</span></td>
+<td>5'-<span class="seqtra">ACCTTGTCGGAGCGTACCTA</span><span class="seqsga-">TCACTTCTGCATCGA</span>-3'</td>
 </tr>
 <tr>
 <td>Transducer-B</td>
-<td><span class="seqtrb">TATGGTAACGTATAGATGCCTGTAC</span><span class="seqsgb-">AGGATATGCTCTCGT</span></td>
+<td>5'-<span class="seqtrb">TATGGTAACGTATAGATGCCTGTAC</span><span class="seqsgb-">AGGATATGCTCTCGT</span>-3'</td>
 </tr>
 <tr>
 <td>Transducer-C</td>
-<td><span class="seqtrc">CTACGCGATGGACACTAAGATATGCAACATAAGCT</span><span class="seqsgc-">AATCTACTCGCTACA</span></td>
+<td>5'-<span class="seqtrc">CTACGCGATGGACACTAAGATATGCAACATAAGCT</span><span class="seqsgc-">AATCTACTCGCTACA</span>-3'</td>
 </tr>
 <tr>
 <td>Gate-A +</td>
-<td><span class="seqother">AGCGTCATCGGTCTTTA</span><span class="seqa0">AGCAGTACTATTCAAGCGACGGCT</span><span class="seqa1-">TCACTTCTGC</span></td>
+<td>5'-<span class="seqother">AGCGTCATCGGTCTTTA</span><span class="seqa0">AGCAGTACTATTCAAGCGACGGCT</span><span class="seqa1-">TCACTTCTGC</span>-3'</td>
 </tr>
 <tr>
 <td>Gate-A -</td>
-<td><span class="seqnick">TCACGACTC</span><span class="seqa0-">AGCCGTCGCTTGAATAGTACTGCT</span><span class="seqx">GAATTC</span><span class="seqother">CCGATGACGCT</span></td>
+<td>5'-<span class="seqnick">TCACGACTC</span><span class="seqa0-">AGCCGTCGCTTGAATAGTACTGCT</span><span class="seqx">GAATTC</span><span class="seqother">CCGATGACGCT</span>-3'</td>
 </tr>
 <tr>
 <td>Gate-B +</td>
-<td><span class="seqother">TGCTTAGAACGAGGCTT</span><span class="seqb0">CTAGAACATACGCATTTGATTCGC</span><span class="seqb1-">AGGATATGCT</span></td>
+<td>5'-<span class="seqother">TGCTTAGAACGAGGCTT</span><span class="seqb0">CTAGAACATACGCATTTGATTCGC</span><span class="seqb1-">AGGATATGCT</span>-3'</td>
 </tr>
 <tr>
 <td>Gate-B -</td>
-<td><span class="seqnick">TCACGACTC</span><span class="seqb0-">GCGAATCAAATGCGTATGTTCTAG</span><span class="seqx">GAATTC</span><span class="seqother">CGTTCTAAGCA</span></td>
+<td>5'-<span class="seqnick">TCACGACTC</span><span class="seqb0-">GCGAATCAAATGCGTATGTTCTAG</span><span class="seqx">GAATTC</span><span class="seqother">CGTTCTAAGCA</span>-3'</td>
 </tr>
 <tr>
 <td>Gate-C +</td>
-<td><span class="seqother">GCCAGATTCCACATCCG</span><span class="seqc0">GCCTGATAGACCGTTTCCGTAGTA</span><span class="seqc1-">AATCTACTCG</span></td>
+<td>5'-<span class="seqother">GCCAGATTCCACATCCG</span><span class="seqc0">GCCTGATAGACCGTTTCCGTAGTA</span><span class="seqc1-">AATCTACTCG</span>-3'</td>
 </tr>
 <tr>
 <td>Gate-C -</td>
-<td><span class="seqnick">TCACGACTC</span><span class="seqc0-">TACTACGGAAACGGTCTATCAGGC</span><span class="seqx">GAATTC</span><span class="seqother">TGGAATCTGGC</span></td>
+<td>5'-<span class="seqnick">TCACGACTC</span><span class="seqc0-">TACTACGGAAACGGTCTATCAGGC</span><span class="seqx">GAATTC</span><span class="seqother">TGGAATCTGGC</span>-3'</td>
 </tr>
 <tr>
 <td>Signal-A</td>
-<td><span class="seqsga">TCGATGCAGAAGTGA</span></td>
+<td>5'-<span class="seqsga">TCGATGCAGAAGTGA</span>-3'</td>
 </tr>
 <tr>
 <td>Signal-B</td>
-<td><span class="seqsgb">ACGAGAGCATATCCT</span></td>
+<td>5'-<span class="seqsgb">ACGAGAGCATATCCT</span>-3'</td>
 </tr>
 <tr>
 <td>Siganl-C</td>
-<td><span class="seqsgc">TGTAGCGAGTAGATT</span></td>
+<td>5'-<span class="seqsgc">TGTAGCGAGTAGATT</span>-3'</td>
 </tr>
 </table>
 
@@ -422,7 +424,7 @@ Fig.1 DNAs for experiments<br>
 
 <img src="images/protocol/design-principle03.png" width="35%"align="right" style="margin-left:10px">
 <p>
-Signal hybridizes to Transducer faster than to Gate. That is because Signal is completely complementary to Transducer, while that is  partialy to Gate. By this design, Updating process does not work until Output is released at sufficient levels.<br>
+Signal hybridizes to Transducer faster than to Gate. That is because Transducer has a longer toe-hold to Signal than Gate. By this design, Updating process does not occur until most of Output is released from Transducer.<br>
 <br clear="right">
 </p>
 <div style="text-align:right">
@@ -441,7 +443,7 @@ Fig.2 Design for thresholding<br>
 <br>
 <h3>Enzymes</h3>
 <p>
-Both Polymerase (Bst DNA Polymerase, Large Fragment) and Nickase (Nt.BstNBI)were purchased from NEW ENGLAND BioLabs JAPAN. EcoRI (TAKARA BIO INC.) was used as restriction enzyme. The recognition sites for nickase and EcoRI are shown in following Fig.3.<br>
+Both Polymerase (Bst DNA Polymerase, Large Fragment) and Nickase (Nt.BstNBI) were purchased from NEW ENGLAND BioLabs JAPAN. EcoRI (TAKARA BIO INC.) was used as restriction enzyme. The recognition sites for nickase and EcoRI are shown in Fig.3.<br>
 
 <div align="center">
 <img src="images/protocol/design-principle01.png" width="80%"><br>
@@ -451,10 +453,10 @@ Fig.3 Recognition sites for nickase (left) and EcoRI (right)<br>
 <br>
 <h3>H Buffer</h3>
 <p>
-The composition of H Buffer is as follows.<br>
+The composition of 1 &times; H Buffer is as follows.<br>
 <br>
 <div align="center">
-Table.1 Composition of H Buffer<br>
+Table.1 Composition of 1 &times; H Buffer<br>
 <div align="center">
 <img src="images/protocol/NEB.png" width="35%">
 </div>
@@ -467,10 +469,10 @@ Table.1 Composition of H Buffer<br>
 <h3 id="ed Whole device">2-instruction operation</h3>
 <ol style="margin-left:3%">
 <li>
-Input-AB or BA/Template complex, Transducer, and Gate were formed by annealing (cooling from 95 to 20&#08451 for 75min, -1&#08451/min). All samples were mixed after the formation of complexes.<br>
+Input-AB or BA/Template complex, Transducer, and Gate were formed by annealing (cooling from 95 to 20&deg;C for 75min, -1&deg;C/min). All samples were mixed after the formation of complexes (final concemtration of each components were 200nM).<br>
 </li>
 <li>
-Enzymatic reaction was conducted for various time (0, 1/6, 1/2, 1, 2, 5, 10, 12, 15, 20, 25, 30, 40 min), then these were left at 80&#08451 for 30 minutes. After that, all the samples were annealed again for 35 minutes (cooling from 95 to 70&#08451 for 25min, -1&#08451/min, then cooling from 70 to 20&#08451 for 10min, -5&#08451/min).<br>
+Enzymatic reaction was conducted for various time (0, 1/6, 1/2, 1, 2, 5, 10, 12, 15, 20, 25, 30, 40 min), then these were left at 80&deg;C for 30 minutes. After that, all the samples were annealed again for 35 minutes (cooling from 95 to 70&deg;C for 25min, -1&deg;C/min, then cooling from 70 to 20&deg;C for 10min, -5&deg;C/min).<br>
 </li>
 <li>
 15% acrylamide gel was formed with 1&times;TBE buffer.<br>
@@ -495,10 +497,10 @@ Imaging by gel imager with Green light.<br>
 <h3 id="ABC">3-instruction operation</h3>
 <ol style="margin-left:3%">
 <li>
-Input-ABC or CAB/Template complex, Transducer and Gate were formed by annealing (cooling from 95 to 20&#08451 for 75min, -1&#08451/min). All samples were mixed after the formation of these complexes.<br>
+Input-ABC or CAB/Template complex, Transducer and Gate were formed by annealing (cooling from 95 to 20&deg;C for 75min, -1&deg;C/min). All samples were mixed after the formation of these complexes (final concemtration of each components were 200nM).<br>
 </li>
 <li>
-Enzymatic reaction was conducted for various time (0, 1/6, 1/2, 1, 2, 5, 10, 12, 15, 20, 22, 25, 30, 35, 40, 45, 50, 60 min), then these were left at 80&#08451 for 30 minutes. After that, all samples were annealed again for 35 minutes (cooling from 95 to 70&#08451 for 25min, -1&#08451/min, then cooling from 70 to 20&#08451 for 10min, -5&#08451/min).<br>
+Enzymatic reaction was conducted for various time (0, 1/6, 1/2, 1, 2, 5, 10, 12, 15, 20, 22, 25, 30, 35, 40, 45, 50, 60 min), then these were left at 80&deg;C for 30 minutes. After that, all samples were annealed again for 35 minutes (cooling from 95 to 70&deg;C for 25min, -1&deg;C/min, then cooling from 70 to 20&deg;C for 10min, -5&deg;C/min).<br>
 </li>
 <li>
 15% acrylamide gel was formed with 1&times;TBE buffer.<br>
@@ -522,10 +524,10 @@ Imaging by gel imager with Green light.<br>
 <ol style="margin-left:3%">
 <li>
 Input and Template was annaled to form the complex.<br>
-(Cooling from 95 to 20&#08451 (-1&#08451/min)). <br>
+(Cooling from 95 to 20&deg;C (-1&deg;C/min)). <br>
 </li>
 <li>
-Enzymatic reaction was conducted at 37&#08451/55&#08451 for 1 hour in thermal cycler.<br>
+Enzymatic reaction was conducted at 37&deg;C/55&deg;C for 1 hour in thermal cycler.<br>
 </li>
 <li>
 Formation of 20% acrylamide gel<br>
@@ -567,10 +569,10 @@ Fig.4 Gel imager (BioRad)<br>
 <span><h3 id="Releasing Process">Releasing process</h3></span>
 <ol style="margin-left:3%">
 <li>
-Anchor, Output and Key were mixed and then annealed from 95 to 20&#08451 (-1&#08451/min).<br>
+Transducer and Signal were mixed and then annealed from 95 to 20&deg;C (-1&deg;C/min).<br>
 </li>
 <li>
-Enzymatic reaction was conducted at 37&#08451/55&#08451 for 1 hour in thermal cycler.<br>
+Enzymatic reaction was conducted at 37&deg;C/55&deg;C for 1 hour in thermal cycler.<br>
 </li>
 <li>
 Gel-electrophoresis was conducted at 100V for 100 minutes with 20% acrylamide gel. Then gel was stained by SYBR Gold. Then gel was stained by SYBR Gold.<br>
@@ -588,10 +590,10 @@ Imaging by gel imager (BioRad).<br>
 <span><h3 id="Updating Process">Updating process</h3></span>
 <ol style="margin-left:3%">
 <li>
-Input-Template complex and Gate were formed by annealing (95 to 20&#08451, -1&#08451/min).<br>
+Input-Template complex and Gate were formed by annealing (95 to 20&deg;C, -1&deg;C/min).<br>
 </li>
 <li>
-Enzymatic reaction was conducted at 45&#08451 for 3 hour in thermal cycler.<br>
+Enzymatic reaction was conducted at 45&deg;C for 3 hour in thermal cycler.<br>
 </li>
 <li>
 Gel-electrophoresis was conducted at 100V for 75 minutes with 15% acrylamide gel. Then gel was stained by SYBR Gold.<br>
@@ -609,10 +611,10 @@ Imaging by gel imager (BioRad).<br>
 <span><h3 id="Combination of 3 processes">Reaction speed measurement</h3></span>
 <ol style="margin-left:3%">
 <li>
-Input/Template complex and Output complex were formed by annealing (cooling from 95 to 20&#08451 for 75min, -1&#08451/min). All samples were mixed after the formation of complexes.<br>
+Input/Template complex and Output complex were formed by annealing (cooling from 95 to 20&deg;C for 75min, -1&deg;C/min). All samples were mixed after the formation of complexes.<br>
 </li>
 <li>
-Enzymatic reaction was conducted for various time (1,2,5,10,20,50 min), then were kept at 80&#08451 for 20 min. After that, all the samples were left at room temperature until the time of applying (more than 1 hour).<br>
+Enzymatic reaction was conducted for various time (1,2,5,10,20,50 min), then were kept at 80&deg;C for 20min. After that, all the samples were left at room temperature until the time of applying (more than 1 hour).<br>
 </li>
 <li>
 15% acrylamide gel was formed with 1&times;TBE buffer.<br>
@@ -648,69 +650,82 @@ We designed DNA sequences by Sequence Design. All DNA shown below were purchased
 <table width="78%" class="sequencetable">
 <tr>
 <td width="16%">Input-A +</td>
-<td width="50%"><span class="basex">CAGATGACTTTACGA</span><span class="baseabct">GATAC</span><span class="basey">GATATTCCTTCTGCC</span></td>
+<td width="50%">5'-<span class="basex">CAGATGACTTTACGA</span><span class="baseabct">GATAC</span><span class="basey">GATATTCCTTCTGCC</span>-3'</td>
 </tr>
 <tr>
 <td>Input-A -</td>
-<td><span class="baseabct">GTATC</span><span class="basex">TCGTAAAGTCATCTG</span><span class="baseabct">CATAG</span></td>
+<td>5'-<span class="baseabct">GTATC</span><span class="basex">TCGTAAAGTCATCTG</span><span class="baseabct">CATAG</span>-3'</td>
 </tr>
 <tr>
 <td>Input-B -</td>
-<td><span class="basex">CAGATGACTTTACGA</span><span class="baseabct">TCAAG</span><span class="basey">GATATTCCTTCTGCC</span></td>
+<td>5'-<span class="basex">CAGATGACTTTACGA</span><span class="baseabct">TCAAG</span><span class="basey">GATATTCCTTCTGCC</span>-3'</td>
 </tr>
 <tr>
 <td>Input-AB +</td>
-<td><span class="baseabct">CTTGA</span><span class="basex">TCGTAAAGTCATCTG</span><span class="baseabct">GTATC</span><span class="basex">TCGTAAAGTCATCTG</span><span class="baseabct">CATAG</span></td>
+<td>5'-<span class="baseabct">CTTGA</span><span class="basex">TCGTAAAGTCATCTG</span><span class="baseabct">GTATC</span><span class="basex">TCGTAAAGTCATCTG</span><span class="baseabct">CATAG</span>-3'</td>
 </tr>
 <tr>
 <td>Input-BA +</td>
-<td><span class="baseabct">GTATC</span><span class="basex">TCGTAAAGTCATCTG</span><span class="baseabct">CTTGA</span><span class="basex">TCGTAAAGTCATCTG</span><span class="baseabct">CATAG</span></td>
+<td>5'-<span class="baseabct">GTATC</span><span class="basex">TCGTAAAGTCATCTG</span><span class="baseabct">CTTGA</span><span class="basex">TCGTAAAGTCATCTG</span><span class="baseabct">CATAG</span>-3'</td>
 </tr>
 <tr>
 <td>Trigger</td>
-<td><span class="baseabct">CTATG</span><span class="basex">CAGATGACTTTACGA</span></td>
+<td>5'-<span class="baseabct">CTATG</span><span class="basex">CAGATGACTTTACGA</span>-3'</td>
 </tr>
 <tr>
 <td>Output-A</td>
-<td>[FAM]-<span class="basexdash">CAGATGACTTTACG</span></td>
+<td>5'-[FAM]-<span class="basexdash">CAGATGACTTTACG</span>-3'</td>
 </tr>
 <tr>
 <td>Transducer-A -</td>
-<td><span class="basex1">C</span><span class="baseabct">GTATC</span><span class="basex1">T</span><span class="basexdash">CGTAAAGTCATCTG</span>-[BHQ1]</td>
+<td>5'-<span class="basex1">C</span><span class="baseabct">GTATC</span><span class="basex1">T</span><span class="basexdash">CGTAAAGTCATCTG</span>-[BHQ1]-3'</td>
 </tr>
 <tr>
 <td>Output-B</td>
-<td><span class="basexdash">CAGATGACTTTACG<span></td>
+<td>5'-<span class="basexdash">CAGATGACTTTACG<span>-3'</td>
 </tr>
 <tr>
 <td>Transducer-B -</td>
-<td><span class="basex1">C</span><span class="baseabct">CTTGA</span><span class="basex1">T</span><span class="basexdash">CGTAAAGTCATCTG</span></td>
+<td>5'-<span class="basex1">C</span><span class="baseabct">CTTGA</span><span class="basex1">T</span><span class="basexdash">CGTAAAGTCATCTG</span>-3'</td>
 </tr>
 <tr>
 <td>Gate-A +</td>
-<td><span class="basey">GATATTCCTTCTGCC</span><span class="baseabct">GATAC</span><span class="basex">CAGATGACTTTACGA</span></td>
+<td>5'-<span class="basey">GATATTCCTTCTGCC</span><span class="baseabct">GATAC</span><span class="basex">CAGATGACTTTACGA</span>-3'</td>
 </tr>
 <tr>
 <td>Gate-A -</td>
-<td><span class="baseabct">GTATC</span><span class="basey">GGCAGAAGGAATATC</span><span class="baseabct">GTATC</span></td>
+<td>5'-<span class="baseabct">GTATC</span><span class="basey">GGCAGAAGGAATATC</span><span class="baseabct">GTATC</span>-3'</td>
 </tr>
 <tr>
 <td>Gate-B +</td>
-<td><span class="basey">GATATTCCTTCTGCC</span><span class="baseabct">TCAAG</span><span class="basex">CAGATGACTTTACGA</span></td>
+<td>5'-<span class="basey">GATATTCCTTCTGCC</span><span class="baseabct">TCAAG</span><span class="basex">CAGATGACTTTACGA</span>-3'</td>
 </tr>
 <tr>
 <td>Gate-B -</td>
-<td><span class="baseabct">CTTGA</span><span class="basey">GGCAGAAGGAATATC</span><span class="baseabct">CTTGA</span></td>
+<td>5'-<span class="baseabct">CTTGA</span><span class="basey">GGCAGAAGGAATATC</span><span class="baseabct">CTTGA</span>-3'</td>
 </tr>
 <tr>
 <td>Fuel-A</td>
-<td><span class="basey">GATATTCCTTCTGCC</span><span class="baseabct">GATAC</span></td>
+<td>5'-<span class="basey">GATATTCCTTCTGCC</span><span class="baseabct">GATAC</span>-3'</td>
 </tr>
 <tr>
 <td>Fuel-B</td>
-<td><span class="basey">GATATTCCTTCTGCC</span><span class="baseabct">TCAAG</span></td>
+<td>5'-<span class="basey">GATATTCCTTCTGCC</span><span class="baseabct">TCAAG</span>-3'</td>
 </tr>
 </table><br />
+
+
+
+
+
+
+<h3 id="consuming fuel"></h3>
+
+
+
+Fig.5 shows the details of catalytic reaction by consuming fuel.<br>
+
+
 
 <div align="center">
 <img src="images/design/enzymefree(omake).png" width="80%"><br>
@@ -743,7 +758,7 @@ Final concentration of each component are<br>
 <td>400nM</td>
 </tr>
 </table>
-Input, Transducer, and Gate were annealed for 75 minutes in advance (from 95 to 20&#08451, -1&#08451/1 min).<br />
+Input, Transducer, and Gate were annealed for 75 minutes in advance (from 95 to 20&#08451, -1&deg;C/1 min).<br />
 </li>
 <li>
 Fluorescence intensity was measured by spectrofluorometer (FP6200, JASCO). The wavelength of excitation was 465 nm. The fluorescence intensity at 520 nm was measured.<br>
@@ -760,7 +775,7 @@ Fluorescence intensity was measured by spectrofluorometer (FP6200, JASCO). The w
 <span><h2>Testing elementary reactions</h2></span>
 
 <span><h3 id="Measurement of fluorescence">Measurement of fluorescence</h3></span>
-Inspired by a paper [6], we apply FRET to detect the release of Output-A. Before the releasing, the 6-FAM does not glow because the fluorescence of 6-FAM is absorbed by BHQ-1. In the presence of Signal, Output-A is released, and then 6-FAM glows. Therefore, we can confirm whether Output is released or not.
+We apply FRET [6] to detect the release of Output-A. Before the releasing, the 6-FAM does not glow because the fluorescence of 6-FAM is absorbed by BHQ-1. In the presence of Signal, Output-A is released, and then 6-FAM glows. Therefore, we can confirm whether Output is released or not.
 <div align="center">
 <img src="images/protocol/fret.png" width="65%"><br>
 Fig.6 Detection of Output-A by FRET<br>
@@ -769,7 +784,7 @@ Fig.6 Detection of Output-A by FRET<br>
 <ol style="margin-left:3%">
 <li>
 Input was annealed at the consentration of 10&micro;M.<by>
-The annealing was conducted for 75 minutes (from 95 to 20&#08451, 1&#08451/1 min).<br> 
+The annealing was conducted for 75 minutes (from 95 to 20&deg;C, 1&deg;C/1 min).<br> 
 </li>
 <li>
 Fluorescence intensity was measured by spectrofluorometer (FP6200, JASCO) for 5000 seconds with 10 second interval. <br>
@@ -792,10 +807,10 @@ Fig.7 Spectrofluorometer(FP6200, JASCO)<br>
 <span><h3 id="Electrophoresis">Electrophoresis</h3></span>
 <ol style="margin-left:3%">
 <li>
-Input and Output were formed by annealing (cooling from 95 to 20&#08451 for 75min, -1&#08451/min). All samples were mixed after the formation of complexes.<br>
+Input and Output were formed by annealing (cooling from 95 to 20&deg;C1 for 75min, -1&deg;C/min). All samples were mixed after the formation of complexes.<br>
 </li>
 <li>
-15% acryl amide gel was formed with 1&times;TAE buffer.<br>
+15% acrylamide gel was formed with 1&times;TAE buffer.<br>
 </li>
 <li>
 The electrophoresis was conducted  at 100V for 75 min.<br>
@@ -815,12 +830,18 @@ Gel was stained by SYBR Gold then imaged with UV light (Stained gel image).<br>
 
 <span><h2>Reference</h2></span>
 <br />
-[1]Zhan and winfree (2009)<br>
-[2]K.Montagne, R.Plasson, Y.sakai, T Fujii, Y. Rondelez, Mol.Sys.Biol.7 (2011) 1-7<br>
-[3]Lulu Qian, Erik Winfree: Supporting Online Material for “Scaling Up Digital Circuit Computation with DNA Strand Displacement Cascades”, Science, 332, 1196--1201, 2011<br>
-[4]F. Tanaka, M. Nakatsugawa, M. Yamamoto, T. Shiba, A. Ohuchi, 10.1109/CEC.2002.1006212<br>
-[5]Soo-Yong Shin, In-Hee Lee, Dongmin Kim, Byoung-Tak Zhang , 10.1109/TEVC.2005.844166 <br>
-[6]Douglas Horejsh*, Federico Martini, Fabrizio Poccia, Giuseppe Ippolito, Antonino Di Caro and Maria R. Capobianchi, Nucleic Acids Research,  Vol. 33(2005),<br>
+<div class="num2">
+[1] D. Yu Zhan and E. Winfree JACS (131) (2009) 17303-17314</div>
+<div class="num2">
+[2] K.Montagne, R.Plasson, Y.sakai, T Fujii, Y. Rondelez, Mol.Sys.Biol.7 (2011) 1-7</div>
+<div class="num2">
+[3] Lulu Qian, Erik Winfree: Supporting Online Material for “Scaling Up Digital Circuit Computation with DNA Strand Displacement Cascades”, Science, 332, 1196--1201, 2011</div>
+<div class="num2">
+[4] F. Tanaka, M. Nakatsugawa, M. Yamamoto, T. Shiba, A. Ohuchi, 10.1109/CEC.2002.1006212</div>
+<div class="num2">
+[5] Soo-Yong Shin, In-Hee Lee, Dongmin Kim, Byoung-Tak Zhang , 10.1109/TEVC.2005.844166 </div>
+<div class="num2">
+[6] Douglas Horejsh*, Federico Martini, Fabrizio Poccia, Giuseppe Ippolito, Antonino Di Caro and Maria R. Capobianchi, Nucleic Acids Research,  Vol. 33(2005),</div>
 </section>
 
 

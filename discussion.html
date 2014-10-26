@@ -134,7 +134,7 @@ Since the concentration of dNTP is not constant in real experiment, the synthesi
 Our model of the simulation can be refined if we take into account the saturation of Signal DNAs by formalizing Michaelis-Menten kinetics [3].
 Moreover, our model ignores minor reactions such as denaturation of DNA. We can improve our model if we include such denaturing reaction. </p>
 
-<p>In fact, we tried to fit the simulation results to experimental data by hand. We changed the rate constant of hybridization between Gate and Signal from 3.0&times;10<sup>7</sup> to 1.0&times;10<sup>5</sup>, and that of other hybridization from 3.0&times;10<sup>8</sup> to 3.0&times;10<sup>6</sup>. We also added decrease terms to ordinary differential equations so that they converge to a constant value. The graph shown below is obtained by fitting. </p>
+<p>In fact, we tried to fit the simulation results to experimental data by hand. We changed the rate constant of hybridization between Gate and Signal from 3.0&times;10<sup>8</sup>[M<sup>-1</sup>min<sup>-1</sup>] to 1.0&times;10<sup>5</sup>[M<sup>-1</sup>min<sup>-1</sup>], and that of other hybridization from 3.0&times;10<sup>8</sup>[M<sup>-1</sup>min<sup>-1</sup>] to 3.0&times;10<sup>6</sup>[M<sup>-1</sup>min<sup>-1</sup>]. We also added decrease terms to ordinary differential equations so that they converge to a constant value. The graph shown below is obtained by fitting. </p>
 
 <div align="center">
 <img src="images/discussion/enzyme_fitting.png" width="60%"><br>
@@ -150,7 +150,7 @@ Fig.1 Fitting result of simulation (Enzyme dvice)<br>
 <section id="contents02">
 <span><h2>Enzyme-free device</h2></span>
 <hr></hr>
-<p>The outline of the graph of simulation and experiment differs from each other. We guess that insufficient thresholding caused the difference. The result of supplemental simulation without thresholding supports the idea (Fig.2). Concretely, the thresholding is caused by the difference of rate constant of two hybridizations: Signal to Output and Signal to Gate. The rate constant of them were the same in this simulation. In addition, we tried to fit the simulation results to experimental data by hand. We changed the rate constant of seesawing reactions from 5.0&times;10<sup>4</sup>[M<sup>-1</sup>s<sup>-1</sup>] to 1.0&times;10<sup>4</sup>[M<sup>-1</sup>s<sup>-1</sup>].</p>
+<p>The outline of the graph of simulation and experiment differs from each other. We guess that insufficient thresholding caused the difference. The result of supplemental simulation without thresholding supports the idea (Fig.2). Concretely, the thresholding is caused by the difference of rate constant of two hybridizations: Signal to Output and Signal to Gate. The rate constant of them were the same in this simulation. Additionally, we tried to fit the simulation results to experimental data in the same way as Enzymatic decive. We changed the rate constant of seesawing reactions from 5.0&times;10<sup>4</sup>[M<sup>-1</sup>s<sup>-1</sup>] to 1.0&times;10<sup>4</sup>[M<sup>-1</sup>s<sup>-1</sup>].</p>
 <br>
 <div align="center">
 <img src="images/discussion/EFD_AB_NoThreshold.png" width="60%"><br>
@@ -160,6 +160,15 @@ Fig.2 Fitting result of simulation (Enzyme-free dvice)<br>
 <p>On the other hand, we may need to optimize the length of toehold to make experiment similar to the original simulation with thresholding. Purification of DNA structures is another possible solution because it can prevent stoichiometric inaccuracy. Such solutions may improve the performance of our Enzyme-free device in the future. <br>
 </p>
 </section>
+
+<span><h2>Reference</h2></span>
+<br />
+[1] D. Yu Zhan and E. Winfree JACS (131) (2009) 17303-17314<br>
+[2] K.Montagne, R.Plasson, Y.sakai, T Fujii, Y. Rondelez, Mol.Sys.Biol.7 (2011) 1-7<br>
+[3] Lulu Qian, Erik Winfree: Supporting Online Material for “Scaling Up Digital Circuit Computation with DNA Strand Displacement Cascades”, Science, 332, 1196--1201, 2011<br>
+</section>
+
+
 </article>
 </div>
 </div>
